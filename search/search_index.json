@@ -1,1 +1,1 @@
-{"config":{"lang":["en"],"separator":"[\\s\\-]+","pipeline":["stopWordFilter"]},"docs":[{"location":"","title":"Welcome to Knowledge bank","text":"<p>Idea</p>"},{"location":"blog/","title":"Blog","text":""}]}
+{"config":{"lang":["en"],"separator":"[\\s\\-]+","pipeline":["stopWordFilter"]},"docs":[{"location":"","title":"Welcome to Knowledge bank","text":"<p>Idea</p>"},{"location":"blog/","title":"Blog","text":"<p>Idea</p>"}]}
