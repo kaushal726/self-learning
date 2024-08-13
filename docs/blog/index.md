@@ -1,2 +1,4 @@
 # Blog
 
+
+[Idea](../../idea.md)
