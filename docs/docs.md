@@ -20,5 +20,3 @@ Welcome to the documentation portal. Here you'll find comprehensive guides and r
 - [Java Documentation](java.md)
 - [Spring Boot Documentation](spring-boot.md)
 - [Node.js Documentation](nodejs.md) -->
-
-Feel free to explore each section to find detailed information and guides on the respective topics. If you have any questions or need further assistance, don't hesitate to reach out.
