@@ -14,9 +14,4 @@ Welcome to the documentation portal. Here you'll find comprehensive guides and r
 ## Table of Contents
 
 - [GitHub Documentation](./tech/github.md)
-<!-- - [React.js Documentation](react.md)
-- [JavaScript Documentation](javascript.md)
-- [Excel Formulas Documentation](excel.md)
-- [Java Documentation](java.md)
-- [Spring Boot Documentation](spring-boot.md)
-- [Node.js Documentation](nodejs.md) -->
+- [Excel](./tech/excel.md)
