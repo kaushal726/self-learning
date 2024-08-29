@@ -110,25 +110,9 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#excel-google-sheets-formula-reference-guide" class="nav-link">Excel &amp; Google Sheets Formula Reference Guide</a>
+            <li class="nav-item" data-bs-level="1"><a href="#excel" class="nav-link">Excel</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#table-of-contents" class="nav-link">Table of Contents</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#basic-arithmetic-and-rounding" class="nav-link">Basic Arithmetic and Rounding</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#sum-and-average-calculation" class="nav-link">SUM and Average Calculation</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#working-with-multiple-sheets" class="nav-link">Working with Multiple Sheets</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#linking-data-between-google-sheets" class="nav-link">Linking Data Between Google Sheets</a>
+            <li class="nav-item" data-bs-level="2"><a href="#basic-formulas" class="nav-link">Basic Formulas</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -139,86 +123,8 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="excel-google-sheets-formula-reference-guide">Excel &amp; Google Sheets Formula Reference Guide<a class="headerlink" href="#excel-google-sheets-formula-reference-guide" title="Permanent link">¶</a></h1>
-<h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">¶</a></h2>
-<ol>
-<li><a href="#basic-arithmetic-and-rounding">Basic Arithmetic and Rounding</a></li>
-<li><a href="#divide-function">DIVIDE Function</a></li>
-<li><a href="#round-function">ROUND Function</a></li>
-<li><a href="#sum-and-average-calculation">SUM and Average Calculation</a></li>
-<li><a href="#sum-function">SUM Function</a></li>
-<li><a href="#combining-sum-and-divide-with-round">Combining SUM and DIVIDE with ROUND</a></li>
-<li><a href="#working-with-multiple-sheets">Working with Multiple Sheets</a></li>
-<li><a href="#referencing-data-from-another-sheet">Referencing Data from Another Sheet</a></li>
-<li><a href="#dynamic-sheet-references">Dynamic Sheet References</a></li>
-<li><a href="#linking-data-between-google-sheets">Linking Data Between Google Sheets</a></li>
-<li><a href="#importrange-function">IMPORTRANGE Function</a></li>
-<li><a href="#using-importrange-with-dynamic-cell-references">Using IMPORTRANGE with Dynamic Cell References</a></li>
-</ol>
-<h2 id="basic-arithmetic-and-rounding">Basic Arithmetic and Rounding<a class="headerlink" href="#basic-arithmetic-and-rounding" title="Permanent link">¶</a></h2>
-<h3 id="divide-function">DIVIDE Function<a class="headerlink" href="#divide-function" title="Permanent link">¶</a></h3>
-<p>The <code>DIVIDE</code> function is used to divide one number by another.</p>
-<p><strong>Syntax:</strong></p>
-<pre class="highlight"><code class="language-plaintext">=DIVIDE(numerator, denominator)</code></pre>
-<p><strong>Example:</strong></p>
-<pre class="highlight"><code class="language-plaintext">=DIVIDE(C9, 12)</code></pre>
-<p>This divides the value in cell <code>C9</code> by <code>12</code>.</p>
-<h3 id="round-function">ROUND Function<a class="headerlink" href="#round-function" title="Permanent link">¶</a></h3>
-<p>The <code>ROUND</code> function is used to round a number to a specified number of digits.</p>
-<p><strong>Syntax:</strong></p>
-<pre class="highlight"><code class="language-plaintext">=ROUND(number, num_digits)</code></pre>
-<p><strong>Example:</strong></p>
-<pre class="highlight"><code class="language-plaintext">=ROUND(DIVIDE(C9, 12), 0)</code></pre>
-<p>This divides the value in <code>C9</code> by <code>12</code> and rounds the result to the nearest whole number.</p>
-<hr />
-<h2 id="sum-and-average-calculation">SUM and Average Calculation<a class="headerlink" href="#sum-and-average-calculation" title="Permanent link">¶</a></h2>
-<h3 id="sum-function">SUM Function<a class="headerlink" href="#sum-function" title="Permanent link">¶</a></h3>
-<p>The <code>SUM</code> function is used to add up a range of numbers.</p>
-<p><strong>Syntax:</strong></p>
-<pre class="highlight"><code class="language-plaintext">=SUM(range)</code></pre>
-<p><strong>Example:</strong></p>
-<pre class="highlight"><code class="language-plaintext">=SUM(C19:C28)</code></pre>
-<p>This adds up all the values from cell <code>C19</code> to <code>C28</code>.</p>
-<h3 id="combining-sum-and-divide-with-round">Combining SUM and DIVIDE with ROUND<a class="headerlink" href="#combining-sum-and-divide-with-round" title="Permanent link">¶</a></h3>
-<p>You can combine <code>SUM</code>, <code>DIVIDE</code>, and <code>ROUND</code> to calculate an average and round it.</p>
-<p><strong>Syntax:</strong></p>
-<pre class="highlight"><code class="language-plaintext">=ROUND(SUM(range)/divisor, num_digits)</code></pre>
-<p><strong>Example:</strong></p>
-<pre class="highlight"><code class="language-plaintext">=ROUND(SUM(C19:C28)/12, 0)</code></pre>
-<p>This sums the values from <code>C19</code> to <code>C28</code>, divides by <code>12</code>, and rounds the result to the nearest whole number.</p>
-<hr />
-<h2 id="working-with-multiple-sheets">Working with Multiple Sheets<a class="headerlink" href="#working-with-multiple-sheets" title="Permanent link">¶</a></h2>
-<h3 id="referencing-data-from-another-sheet">Referencing Data from Another Sheet<a class="headerlink" href="#referencing-data-from-another-sheet" title="Permanent link">¶</a></h3>
-<p>To reference a cell from another sheet in the same workbook, use the sheet name followed by an exclamation mark.</p>
-<p><strong>Syntax:</strong></p>
-<pre class="highlight"><code class="language-plaintext">=SheetName!Cell</code></pre>
-<p><strong>Example:</strong></p>
-<pre class="highlight"><code class="language-plaintext">=January!A38</code></pre>
-<p>This references cell <code>A38</code> from the sheet named <code>January</code>.</p>
-<h3 id="dynamic-sheet-references">Dynamic Sheet References<a class="headerlink" href="#dynamic-sheet-references" title="Permanent link">¶</a></h3>
-<p>If you want the sheet name to be dynamic (e.g., coming from another cell), you can use the <code>INDIRECT</code> function.</p>
-<p><strong>Syntax:</strong></p>
-<pre class="highlight"><code class="language-plaintext">=INDIRECT("'" &amp; CellContainingSheetName &amp; "'!CellReference")</code></pre>
-<p><strong>Example:</strong></p>
-<pre class="highlight"><code class="language-plaintext">=INDIRECT("'" &amp; B4 &amp; "'!A38")</code></pre>
-<p>This formula uses the sheet name in cell <code>B4</code> and references <code>A38</code> in that sheet.</p>
-<hr />
-<h2 id="linking-data-between-google-sheets">Linking Data Between Google Sheets<a class="headerlink" href="#linking-data-between-google-sheets" title="Permanent link">¶</a></h2>
-<h3 id="importrange-function">IMPORTRANGE Function<a class="headerlink" href="#importrange-function" title="Permanent link">¶</a></h3>
-<p>The <code>IMPORTRANGE</code> function is used to import data from one Google Sheet to another.</p>
-<p><strong>Syntax:</strong></p>
-<pre class="highlight"><code class="language-plaintext">=IMPORTRANGE("spreadsheet_url", "range_string")</code></pre>
-<p><strong>Example:</strong></p>
-<pre class="highlight"><code class="language-plaintext">=IMPORTRANGE("1pCZ9dTPq0YfoT5oslhC0U_qsPLVF1Kc7ZiPC0TKkmlk", "2024!O19")</code></pre>
-<p>This imports the value from cell <code>O19</code> in the <code>2024</code> sheet from another Google Sheet with the specified URL.</p>
-<h3 id="using-importrange-with-dynamic-cell-references">Using IMPORTRANGE with Dynamic Cell References<a class="headerlink" href="#using-importrange-with-dynamic-cell-references" title="Permanent link">¶</a></h3>
-<p>To make the sheet name or range dynamic, use the <code>IMPORTRANGE</code> function with the <code>INDIRECT</code> function.</p>
-<p><strong>Syntax:</strong></p>
-<pre class="highlight"><code class="language-plaintext">=IMPORTRANGE("spreadsheet_url", INDIRECT("range_string"))</code></pre>
-<p><strong>Example:</strong></p>
-<pre class="highlight"><code class="language-plaintext">=IMPORTRANGE("1pCZ9dTPq0YfoT5oslhC0U_qsPLVF1Kc7ZiPC0TKkmlk", INDIRECT("'" &amp; B4 &amp; "'!O19"))</code></pre>
-<p>This dynamically references the sheet and cell specified in <code>B4</code>.</p>
-<hr /></div>
+<h1 id="excel">Excel<a class="headerlink" href="#excel" title="Permanent link">¶</a></h1>
+<h2 id="basic-formulas">Basic Formulas<a class="headerlink" href="#basic-formulas" title="Permanent link">¶</a></h2></div>
             </div>
         </div>
 
