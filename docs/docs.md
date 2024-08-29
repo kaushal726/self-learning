@@ -15,9 +15,3 @@ Welcome to the documentation portal. Here you'll find comprehensive guides and r
 
 - [GitHub Documentation](./tech/github.md)
 - [Effective Prompt Documentation](./tech/effective-prompts.md)
-<!-- - [React.js Documentation](react.md)
-- [JavaScript Documentation](javascript.md)
-- [Excel Formulas Documentation](excel.md)
-- [Java Documentation](java.md)
-- [Spring Boot Documentation](spring-boot.md)
-- [Node.js Documentation](nodejs.md) -->
