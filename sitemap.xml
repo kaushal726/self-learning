@@ -2,47 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://kaushal726.github.io/self-learning/</loc>
-         <lastmod>2024-08-29</lastmod>
+         <lastmod>2024-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://kaushal726.github.io/self-learning/docs/</loc>
-         <lastmod>2024-08-29</lastmod>
+         <lastmod>2024-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://kaushal726.github.io/self-learning/project-idea/</loc>
-         <lastmod>2024-08-29</lastmod>
+         <lastmod>2024-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://kaushal726.github.io/self-learning/blog/</loc>
-         <lastmod>2024-08-29</lastmod>
+         <lastmod>2024-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://kaushal726.github.io/self-learning/tech/effective-prompts/</loc>
-         <lastmod>2024-08-29</lastmod>
+         <lastmod>2024-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://kaushal726.github.io/self-learning/tech/excel/</loc>
-         <lastmod>2024-08-29</lastmod>
+         <lastmod>2024-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://kaushal726.github.io/self-learning/tech/github/</loc>
-         <lastmod>2024-08-29</lastmod>
+         <lastmod>2024-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://kaushal726.github.io/self-learning/tech/mkdocs-jekyll/</loc>
-         <lastmod>2024-08-29</lastmod>
+         <lastmod>2024-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://kaushal726.github.io/self-learning/tech/nodeJs/</loc>
-         <lastmod>2024-08-29</lastmod>
+         <lastmod>2024-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://kaushal726.github.io/self-learning/tech/reference-links/</loc>
+         <lastmod>2024-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
