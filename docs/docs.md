@@ -16,4 +16,4 @@ Welcome to the documentation portal. Here you'll find comprehensive guides and r
 - [GitHub Documentation](./tech/github.md)
 - [Effective Prompt Documentation](./tech/effective-prompts.md)
 - [Excel](./tech/excel.md)
-- [References](./tech/effective-prompts.md)
+- [References](./tech/reference-links.md)
