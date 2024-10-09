@@ -9,21 +9,6 @@ tags: Excel, Google Sheets, Formulas, Data Analysis
 
 # Excel & Google Sheets Formula Reference Guide
 
-## Table of Contents
-
-1. [Basic Arithmetic and Rounding](#basic-arithmetic-and-rounding)
-   - [DIVIDE Function](#divide-function)
-   - [ROUND Function](#round-function)
-2. [SUM and Average Calculation](#sum-and-average-calculation)
-   - [SUM Function](#sum-function)
-   - [Combining SUM and DIVIDE with ROUND](#combining-sum-and-divide-with-round)
-3. [Working with Multiple Sheets](#working-with-multiple-sheets)
-   - [Referencing Data from Another Sheet](#referencing-data-from-another-sheet)
-   - [Dynamic Sheet References](#dynamic-sheet-references)
-4. [Linking Data Between Google Sheets](#linking-data-between-google-sheets)
-   - [IMPORTRANGE Function](#importrange-function)
-   - [Using IMPORTRANGE with Dynamic Cell References](#using-importrange-with-dynamic-cell-references)
-
 ## Basic Arithmetic and Rounding
 
 ### DIVIDE Function
