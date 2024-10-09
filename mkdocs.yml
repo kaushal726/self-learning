@@ -69,6 +69,7 @@ plugins:
   - search
   - git-revision-date
   - autorefs
+  - git-authors
   - literate-nav:
       nav_file: README.md
       implicit_index: true
