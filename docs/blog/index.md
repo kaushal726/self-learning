@@ -1,3 +1,0 @@
-# Blog
-
-[Idea](../../idea.md)
