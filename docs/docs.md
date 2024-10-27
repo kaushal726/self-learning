@@ -21,4 +21,5 @@ Welcome to the documentation portal. Here you'll find comprehensive guides and r
 - [Database and its Evolutions](./tech/database.md)
 - [Big Data](./tech/big-data.md)
 - [Backend Design Pattern](./tech/design-pattern.md)
+- [Playwright](./tech/playwright.md)
 - [References](./tech/reference-links.md)
