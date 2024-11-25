@@ -7,8 +7,6 @@
 - Tags: Playwright, Testing, Automation
 ---
 
-
-
 # Playwright Documentation
 
 ---
@@ -26,15 +24,18 @@ Playwright offers flexible locators to identify and interact with elements in a 
 ### Element Interactions
 
 #### 1. Navigation and Clicks
+
 - **Navigate to URL:** `page.goto("http://localhost:3000/")`
-- **Click Element:** 
+- **Click Element:**
   ```javascript
-  page.click("locator");  
+  page.click("locator");
   page.click("id=loginId"); // example
   ```
 
 #### 2. Filling Inputs
+
 - **Fill Input:**
+
   ```javascript
   page.fill("locator", "value");
   page.fill("input=[id='loginId']", "value"); // example
@@ -50,6 +51,7 @@ Playwright offers flexible locators to identify and interact with elements in a 
 Playwright’s `locator` API provides enhanced flexibility and precision:
 
 - **Links/Buttons:**
+
   ```javascript
   page.click("locator");
   page.locator("locator").click();
@@ -75,7 +77,7 @@ Playwright has built-in locators that simplify accessibility and semantic elemen
 - `page.getByTitle()`: Locate by title attribute.
 - `page.getByTestId()`: Locate by `data-testid` attribute.
 
-*Tip:* Use **Selector Hub** extension to extract precise element selectors.
+_Tip:_ Use **Selector Hub** extension to extract precise element selectors.
 
 ---
 
@@ -83,7 +85,7 @@ Playwright has built-in locators that simplify accessibility and semantic elemen
 
 ### Run Commands
 
-- **Run a Specific File:** 
+- **Run a Specific File:**
   ```bash
   npx playwright test file-path/filename --project chromium --headed
   ```
@@ -99,3 +101,8 @@ You can adjust the project to specify other browsers or environments.
 
 ---
 
+- command to execute the code generator
+  - npx playwright codegen
+- to create a file and record the test cases.
+  - npx playwright codegen -o filePath/filename
+-
