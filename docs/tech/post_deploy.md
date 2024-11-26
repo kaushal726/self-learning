@@ -27,7 +27,14 @@
 
 ### Parts Of GTM
 
-1. Tags
-2. Trigger
-3. Variables
-4. Folder
+1. Tags - What GTM will do
+2. Trigger - When GTM will do
+3. Variables - What GTM needs to do
+4. Folder - Where GTM is organized
+
+- What does GTM Collects
+
+1. View
+2. Clicks
+3. Scroll
+4. Interaction
