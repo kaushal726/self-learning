@@ -100,3 +100,8 @@ You can adjust the project to specify other browsers or environments.
 - **Handling Multiple Roles and Flows:** Design your tests with reusable functions and page object models for consistency.
 
 npx playwright codegen -o .\tests\Admin\non-event.spec.ts
+- command to execute the code generator
+  - npx playwright codegen
+- to create a file and record the test cases.
+  - npx playwright codegen -o filePath/filename
+-
