@@ -12,7 +12,7 @@
         <meta name="author" content="Kaushal Raj">
       
       
-        <link rel="canonical" href="https://kaushal726.github.io/self-learning/tech/playwright.html">
+        <link rel="canonical" href="https://kaushal726.github.io/self-learning/tech/post_deploy.html">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>Playwright - Knowledge Bank</title>
+        <title>Post deploy - Knowledge Bank</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#playwright-documentation" class="md-skip">
+        <a href="#analytics" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Playwright
+              Post deploy
             
           </span>
         </div>
@@ -327,37 +327,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-introduction" class="md-nav__link">
+  <a href="#how-analytics-works" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Introduction
+      How Analytics Works
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-locators-and-selectors" class="md-nav__link">
+  <a href="#google-tag-manager" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Locators and Selectors
+      Google Tag Manager
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2. Locators and Selectors">
+    <nav class="md-nav" aria-label="Google Tag Manager">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#element-interactions" class="md-nav__link">
+  <a href="#hierarchy" class="md-nav__link">
     <span class="md-ellipsis">
-      Element Interactions
+      Hierarchy
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#locator-variants" class="md-nav__link">
+  <a href="#parts-of-gtm" class="md-nav__link">
     <span class="md-ellipsis">
-      Locator Variants
+      Parts Of GTM
     </span>
   </a>
   
@@ -365,48 +365,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-built-in-locators" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Built-in Locators
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-running-tests" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Running Tests
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. Running Tests">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#run-commands" class="md-nav__link">
-    <span class="md-ellipsis">
-      Run Commands
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-additional-notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Additional Notes
-    </span>
-  </a>
   
 </li>
       
@@ -438,76 +396,45 @@
 <li>Tags: Playwright, Testing, Automation</li>
 </ul>
 <hr />
-<h1 id="playwright-documentation">Playwright Documentation<a class="headerlink" href="#playwright-documentation" title="Permanent link">¶</a></h1>
-<hr />
-<h2 id="1-introduction">1. Introduction<a class="headerlink" href="#1-introduction" title="Permanent link">¶</a></h2>
-<p>Playwright is a powerful testing tool for end-to-end testing across web applications, supporting multiple browsers and platforms. This guide provides examples and best practices for locating elements, interacting with the UI, and running tests.</p>
-<hr />
-<h2 id="2-locators-and-selectors">2. Locators and Selectors<a class="headerlink" href="#2-locators-and-selectors" title="Permanent link">¶</a></h2>
-<p>Playwright offers flexible locators to identify and interact with elements in a browser.</p>
-<h3 id="element-interactions">Element Interactions<a class="headerlink" href="#element-interactions" title="Permanent link">¶</a></h3>
-<h4 id="1-navigation-and-clicks">1. Navigation and Clicks<a class="headerlink" href="#1-navigation-and-clicks" title="Permanent link">¶</a></h4>
+<h1 id="analytics">Analytics<a class="headerlink" href="#analytics" title="Permanent link">¶</a></h1>
+<h2 id="how-analytics-works">How Analytics Works<a class="headerlink" href="#how-analytics-works" title="Permanent link">¶</a></h2>
+<ol>
+<li>Collcection - Google Tag Manager</li>
+<li>Store - Google Analytics</li>
+<li>Report - Looker Studio</li>
+</ol>
+<h2 id="google-tag-manager">Google Tag Manager<a class="headerlink" href="#google-tag-manager" title="Permanent link">¶</a></h2>
+<h3 id="hierarchy">Hierarchy<a class="headerlink" href="#hierarchy" title="Permanent link">¶</a></h3>
 <ul>
-<li><strong>Navigate to URL:</strong> <code>page.goto("http://localhost:3000/")</code></li>
-<li><strong>Click Element:</strong>
-  <pre class="highlight"><code class="language-javascript">page.click("locator");
-page.click("id=loginId"); // example</code></pre></li>
+<li>
+<p>GTA is also called shell</p>
+</li>
+<li>
+<p>Account</p>
+</li>
+<li>Container<ul>
+<li>WorkSpace</li>
 </ul>
-<h4 id="2-filling-inputs">2. Filling Inputs<a class="headerlink" href="#2-filling-inputs" title="Permanent link">¶</a></h4>
-<ul>
-<li><strong>Fill Input:</strong></li>
+</li>
 </ul>
-<pre class="highlight"><code class="language-javascript">page.fill("locator", "value");
-page.fill("input=[id='loginId']", "value"); // example</code></pre>
-<ul>
-<li><strong>Type in Input:</strong>
-  <pre class="highlight"><code class="language-javascript">page.type("locator", "value");</code></pre></li>
-</ul>
-<h3 id="locator-variants">Locator Variants<a class="headerlink" href="#locator-variants" title="Permanent link">¶</a></h3>
-<p>Playwright’s <code>locator</code> API provides enhanced flexibility and precision:</p>
-<ul>
-<li><strong>Links/Buttons:</strong></li>
-</ul>
-<pre class="highlight"><code class="language-javascript">page.click("locator");
-page.locator("locator").click();</code></pre>
-<ul>
-<li><strong>Input Boxes:</strong>
-  <pre class="highlight"><code class="language-javascript">page.locator("locator").fill("value");
-page.locator("locator").type("value");</code></pre></li>
-</ul>
-<hr />
-<h2 id="3-built-in-locators">3. Built-in Locators<a class="headerlink" href="#3-built-in-locators" title="Permanent link">¶</a></h2>
-<p>Playwright has built-in locators that simplify accessibility and semantic element selection:</p>
-<ul>
-<li><code>page.getByRole()</code>: Locate by role attribute.</li>
-<li><code>page.getByText()</code>: Locate by text content.</li>
-<li><code>page.getByLabel()</code>: Locate by associated label’s text.</li>
-<li><code>page.getByPlaceholder()</code>: Locate by placeholder attribute.</li>
-<li><code>page.getByAltText()</code>: Locate by alt attribute.</li>
-<li><code>page.getByTitle()</code>: Locate by title attribute.</li>
-<li><code>page.getByTestId()</code>: Locate by <code>data-testid</code> attribute.</li>
-</ul>
-<p><em>Tip:</em> Use <strong>Selector Hub</strong> extension to extract precise element selectors.</p>
-<hr />
-<h2 id="4-running-tests">4. Running Tests<a class="headerlink" href="#4-running-tests" title="Permanent link">¶</a></h2>
-<h3 id="run-commands">Run Commands<a class="headerlink" href="#run-commands" title="Permanent link">¶</a></h3>
-<ul>
-<li><strong>Run a Specific File:</strong>
-  <pre class="highlight"><code class="language-bash">npx playwright test file-path/filename --project chromium --headed</code></pre></li>
-</ul>
-<p>You can adjust the project to specify other browsers or environments.</p>
-<hr />
-<h2 id="5-additional-notes">5. Additional Notes<a class="headerlink" href="#5-additional-notes" title="Permanent link">¶</a></h2>
-<ul>
-<li><strong>Playwright Inspector:</strong> Use this tool to debug tests by visually inspecting elements.</li>
-<li><strong>Handling Multiple Roles and Flows:</strong> Design your tests with reusable functions and page object models for consistency.</li>
-</ul>
-<p>npx playwright codegen -o .\tests\Admin\non-event.spec.ts
-- command to execute the code generator
-  - npx playwright codegen
-- to create a file and record the test cases.
-  - npx playwright codegen -o filePath/filename
--</p>
+<h3 id="parts-of-gtm">Parts Of GTM<a class="headerlink" href="#parts-of-gtm" title="Permanent link">¶</a></h3>
+<ol>
+<li>Tags - What GTM will do</li>
+<li>Trigger - When GTM will do</li>
+<li>Variables - What GTM needs to do</li>
+<li>
+<p>Folder - Where GTM is organized</p>
+</li>
+<li>
+<p>What does GTM Collects</p>
+</li>
+<li>
+<p>View</p>
+</li>
+<li>Clicks</li>
+<li>Scroll</li>
+<li>Interaction</li>
+</ol>
 
 
 
@@ -528,7 +455,7 @@ page.locator("locator").type("value");</code></pre></li>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    2025-01-19
+    2024-11-26
   </span>
 
     
