@@ -1421,6 +1421,84 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#new-features-of-react-19" class="md-nav__link">
+    <span class="md-ellipsis">
+      New Features of React 19
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="New Features of React 19">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-automatic-error-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Automatic Error Recovery
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-improved-streaming-with-server-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Improved Streaming with Server Components
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-react-cache-improved-data-fetching" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. React Cache (Improved Data Fetching)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-offscreen-rendering" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Offscreen Rendering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-optimized-transitions-for-smooth-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Optimized Transitions for Smooth UI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-enhanced-support-for-concurrent-rendering" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Enhanced Support for Concurrent Rendering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-developer-experience-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Developer Experience Improvements
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2832,6 +2910,74 @@ const App = () =&gt; {
 
   return &lt;div&gt;Timer&lt;/div&gt;;
 }</code></pre>
+<h2 id="new-features-of-react-19"><strong>New Features of React 19</strong><a class="headerlink" href="#new-features-of-react-19" title="Permanent link">¶</a></h2>
+<p>React 19 introduces some exciting features to make building applications even smoother and more efficient. Let’s break down these features in simple language with real-life examples.</p>
+<hr />
+<h3 id="1-automatic-error-recovery"><strong>1. Automatic Error Recovery</strong><a class="headerlink" href="#1-automatic-error-recovery" title="Permanent link">¶</a></h3>
+<p>React 19 improves error boundaries by <strong>automatically recovering from errors</strong> in certain situations without crashing the entire app.</p>
+<p><em>Real-Life Example</em>:<br />
+Imagine you're using a food delivery app, and the restaurant menu fails to load. Instead of crashing the entire app, React 19 will just show an error message for the menu and keep the rest of the app (like the search bar and cart) working.</p>
+<pre class="highlight"><code class="language-jsx">// No need to add manual error boundaries everywhere; React handles some recoveries automatically.</code></pre>
+<hr />
+<h3 id="2-improved-streaming-with-server-components"><strong>2. Improved Streaming with Server Components</strong><a class="headerlink" href="#2-improved-streaming-with-server-components" title="Permanent link">¶</a></h3>
+<p>React 19 enhances server-side rendering by supporting <strong>streaming data directly to the browser</strong>. This means users can see parts of the page as soon as they’re ready, rather than waiting for the entire page to load.</p>
+<p><em>Real-Life Example</em>:<br />
+When loading a news website, instead of waiting for all articles to load, you immediately see the header and breaking news while the rest of the page loads in the background.</p>
+<pre class="highlight"><code class="language-jsx">// Example using server components
+export default function Page() {
+  return (
+    &lt;&gt;
+      &lt;Header /&gt;
+      &lt;NewsSection /&gt;
+      &lt;Footer /&gt;
+    &lt;/&gt;
+  );
+}</code></pre>
+<hr />
+<h3 id="3-react-cache-improved-data-fetching"><strong>3. React Cache (Improved Data Fetching)</strong><a class="headerlink" href="#3-react-cache-improved-data-fetching" title="Permanent link">¶</a></h3>
+<p>React 19 introduces built-in <strong>caching for data fetching</strong>, making it easier to manage data that doesn’t change frequently.</p>
+<p><em>Real-Life Example</em>:<br />
+If your app displays the weather forecast, React can cache the data for a short time so that when users refresh the app, it doesn’t re-fetch the same weather data unnecessarily.</p>
+<pre class="highlight"><code class="language-jsx">import { use } from "react";
+
+function Weather() {
+  const weatherData = use(fetchWeatherData());
+  return &lt;div&gt;Current Weather: {weatherData.temp}°C&lt;/div&gt;;
+}</code></pre>
+<hr />
+<h3 id="4-offscreen-rendering"><strong>4. Offscreen Rendering</strong><a class="headerlink" href="#4-offscreen-rendering" title="Permanent link">¶</a></h3>
+<p>React 19 introduces <strong>Offscreen Rendering</strong>, where components can be pre-rendered but kept hidden until needed. This improves app performance and speeds up how quickly content becomes visible.</p>
+<p><em>Real-Life Example</em>:<br />
+A social media app pre-renders your profile page while you're browsing the home feed. When you click "Profile," it instantly shows the pre-rendered page instead of loading from scratch.</p>
+<pre class="highlight"><code class="language-jsx">function App() {
+  return (
+    &lt;div&gt;
+      &lt;Home /&gt;
+      &lt;Profile hidden={true} /&gt;
+    &lt;/div&gt;
+  );
+}</code></pre>
+<hr />
+<h3 id="5-optimized-transitions-for-smooth-ui"><strong>5. Optimized Transitions for Smooth UI</strong><a class="headerlink" href="#5-optimized-transitions-for-smooth-ui" title="Permanent link">¶</a></h3>
+<p>React 19 makes <strong>UI transitions smoother</strong> by giving developers more tools to prioritize user interactions over background updates.</p>
+<p><em>Real-Life Example</em>:<br />
+In a shopping app, while filtering products by price, React ensures the loading spinner doesn't block the user from scrolling or interacting with the page.</p>
+<pre class="highlight"><code class="language-jsx">import { startTransition } from "react";
+
+function handleFilterChange(newFilter) {
+  startTransition(() =&gt; {
+    setFilter(newFilter); // Background update
+  });
+}</code></pre>
+<hr />
+<h3 id="6-enhanced-support-for-concurrent-rendering"><strong>6. Enhanced Support for Concurrent Rendering</strong><a class="headerlink" href="#6-enhanced-support-for-concurrent-rendering" title="Permanent link">¶</a></h3>
+<p>React 19 brings further improvements to <strong>Concurrent Mode</strong>, allowing React to multitask better. This ensures that your app remains responsive, even with complex UI updates.</p>
+<p><em>Real-Life Example</em>:<br />
+In an e-commerce app, users can scroll through products while the app loads their search results in the background without any lag.</p>
+<hr />
+<h3 id="7-developer-experience-improvements"><strong>7. Developer Experience Improvements</strong><a class="headerlink" href="#7-developer-experience-improvements" title="Permanent link">¶</a></h3>
+<p>React 19 includes better error messages, warnings, and developer tools, making it easier to debug and build applications.</p>
+<hr />
 
 
 
@@ -2852,7 +2998,7 @@ const App = () =&gt; {
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    2025-01-27
+    2025-01-28
   </span>
 
     

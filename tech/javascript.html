@@ -1,0 +1,1749 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="React Learning and Documentation.">
+      
+      
+        <meta name="author" content="Kaushal Raj">
+      
+      
+        <link rel="canonical" href="https://kaushal726.github.io/self-learning/tech/javascript.html">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
+    
+    
+      
+        <title>React js Documentation - Knowledge Bank</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="https://unpkg.com/iframe-worker/shim"></script>
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#javascript-documentation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Knowledge Bank" class="md-header__button md-logo" aria-label="Knowledge Bank" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Knowledge Bank
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              React js Documentation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/kaushal726/self-learning" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Knowledge Bank" class="md-nav__button md-logo" aria-label="Knowledge Bank" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Knowledge Bank
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/kaushal726/self-learning" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-javascript-js" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is JavaScript (JS)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#javascript-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      JavaScript Engine
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#es-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      ES Versions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strict-mode-in-javascript" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strict Mode in JavaScript
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#call" class="md-nav__link">
+    <span class="md-ellipsis">
+      Call
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apply" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apply
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bind" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bind
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#higher-order-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Higher-Order Functions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-class-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      First-Class Functions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#let-var-const" class="md-nav__link">
+    <span class="md-ellipsis">
+      let, var, const
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#callback-hell" class="md-nav__link">
+    <span class="md-ellipsis">
+      Callback Hell
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#promises" class="md-nav__link">
+    <span class="md-ellipsis">
+      Promises
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implicit-type-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implicit Type Conversion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hoisting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hoisting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      == vs ===
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#this-keyword" class="md-nav__link">
+    <span class="md-ellipsis">
+      this Keyword
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#self-invoking-functionsiife" class="md-nav__link">
+    <span class="md-ellipsis">
+      Self-Invoking Functions/IIFE
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#currying" class="md-nav__link">
+    <span class="md-ellipsis">
+      Currying
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unary-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unary Functions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pure-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pure Functions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-bubbling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event Bubbling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-delegation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event Delegation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event Handling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Closure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-binding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Binding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nullish-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nullish Operator (??)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debouncing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Debouncing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#throttling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Throttling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spread-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spread Operator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rest-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rest Operator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-storage-in-javascript" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Storage in JavaScript
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Storage in JavaScript">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-local-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Local Storage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-session-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Session Storage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-indexeddb" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. IndexedDB
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-cookies" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Cookies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparison-of-storage-mechanisms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparison of Storage Mechanisms
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practices
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asynchronous-programming-in-javascript" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asynchronous Programming in JavaScript
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Asynchronous Programming in JavaScript">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#callbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Callbacks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memoization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memoization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#promises_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Promises
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrow-functions-vs-normal-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arrow Functions vs Normal Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generator-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generator Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temporal-dead-zone-tdz" class="md-nav__link">
+    <span class="md-ellipsis">
+      Temporal Dead Zone (TDZ)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callback-hell_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Callback Hell
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-practices-for-asynchronous-programming" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practices for Asynchronous Programming
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scope-and-environment-in-javascript" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scope and Environment in JavaScript
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scope and Environment in JavaScript">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lexical-scoping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lexical Scoping
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dom-and-bom" class="md-nav__link">
+    <span class="md-ellipsis">
+      DOM and BOM
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DOM and BOM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dom-document-object-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      DOM (Document Object Model)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bom-browser-object-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      BOM (Browser Object Model)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-types-and-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Types and Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Types and Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#javascript-data-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      JavaScript Data Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spread-operator_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spread Operator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-differences-dom-vs-bom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Differences: DOM vs BOM
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="javascript-documentation">JavaScript Documentation<a class="headerlink" href="#javascript-documentation" title="Permanent link">¶</a></h1>
+<h2 id="what-is-javascript-js"><strong>What is JavaScript (JS)</strong><a class="headerlink" href="#what-is-javascript-js" title="Permanent link">¶</a></h2>
+<p>JavaScript (JS) is a <strong>programming language</strong> used to make web pages dynamic and interactive. It runs in the browser and helps add functionalities like animations, event handling, and updating content dynamically. It is a lightweight, interpreted, or just-in-time compiled language.</p>
+<p><em>Real-Life Example</em>:<br />
+Imagine you are on an e-commerce site. When you click on "Add to Cart," the item is instantly added without reloading the page. JavaScript makes this possible.</p>
+<hr />
+<h2 id="javascript-engine"><strong>JavaScript Engine</strong><a class="headerlink" href="#javascript-engine" title="Permanent link">¶</a></h2>
+<p>A JavaScript engine is a <strong>program that executes JavaScript code</strong>. Every browser has its own JS engine. For example:</p>
+<ul>
+<li>Google Chrome uses <strong>V8</strong>.</li>
+<li>Firefox uses <strong>SpiderMonkey</strong>.</li>
+<li>Microsoft Edge uses <strong>Chakra</strong>.</li>
+</ul>
+<p><em>Real-Life Example</em>:<br />
+Think of the engine as the "brain" of the browser that understands and executes JavaScript instructions.</p>
+<hr />
+<h2 id="es-versions"><strong>ES Versions</strong><a class="headerlink" href="#es-versions" title="Permanent link">¶</a></h2>
+<p>ES (ECMAScript) is the <strong>standard of JavaScript</strong>. Major versions include:</p>
+<ul>
+<li><strong>ES5</strong>: Introduced <code>strict mode</code>, JSON, and <code>Array.prototype</code> methods like <code>forEach</code>.</li>
+<li><strong>ES6 (ES2015)</strong>: Brought features like <code>let</code>, <code>const</code>, arrow functions, classes, and promises.</li>
+<li><strong>ESNext</strong>: Refers to the latest features beyond ES6.</li>
+</ul>
+<p><em>Real-Life Example</em>:<br />
+ES6 added features like <code>const</code> and <code>let</code> to avoid the confusion of using <code>var</code>.</p>
+<hr />
+<h2 id="strict-mode-in-javascript"><strong>Strict Mode in JavaScript</strong><a class="headerlink" href="#strict-mode-in-javascript" title="Permanent link">¶</a></h2>
+<p>"Strict mode" is a way to write cleaner JavaScript by <strong>eliminating silent errors</strong>. It prevents using undeclared variables and certain bad practices.</p>
+<p><em>Real-Life Example</em>:</p>
+<pre class="highlight"><code class="language-javascript">"use strict";
+x = 10; // Error: 'x' is not defined.</code></pre>
+<hr />
+<h2 id="call"><strong>Call</strong><a class="headerlink" href="#call" title="Permanent link">¶</a></h2>
+<p>The <code>call()</code> method allows you to <strong>call a function with a specific <code>this</code> context</strong>.</p>
+<p><em>Real-Life Example</em>:</p>
+<pre class="highlight"><code class="language-javascript">const person = { name: "Kaushal" };
+function greet() {
+  console.log(`Hello, ${this.name}`);
+}
+greet.call(person); // Hello, Kaushal</code></pre>
+<hr />
+<h2 id="apply"><strong>Apply</strong><a class="headerlink" href="#apply" title="Permanent link">¶</a></h2>
+<p><code>apply()</code> is similar to <code>call()</code>, but it takes <strong>arguments as an array</strong>.</p>
+<p><em>Real-Life Example</em>:</p>
+<pre class="highlight"><code class="language-javascript">const person = { name: "Kaushal" };
+function greet(city, country) {
+  console.log(`Hello, ${this.name} from ${city}, ${country}`);
+}
+greet.apply(person, ["Delhi", "India"]); // Hello, Kaushal from Delhi, India</code></pre>
+<hr />
+<h2 id="bind"><strong>Bind</strong><a class="headerlink" href="#bind" title="Permanent link">¶</a></h2>
+<p><code>bind()</code> creates a <strong>new function with <code>this</code> context bound</strong> to a specific object.</p>
+<p><em>Real-Life Example</em>:</p>
+<pre class="highlight"><code class="language-javascript">const person = { name: "Kaushal" };
+function greet() {
+  console.log(`Hello, ${this.name}`);
+}
+const boundGreet = greet.bind(person);
+boundGreet(); // Hello, Kaushal</code></pre>
+<hr />
+<h2 id="higher-order-functions"><strong>Higher-Order Functions</strong><a class="headerlink" href="#higher-order-functions" title="Permanent link">¶</a></h2>
+<p>A function that <strong>takes another function as an argument or returns a function</strong> is called a higher-order function.</p>
+<p><em>Real-Life Example</em>:</p>
+<pre class="highlight"><code class="language-javascript">function greet(name) {
+  return `Hello, ${name}`;
+}
+function processUser(name, func) {
+  console.log(func(name));
+}
+processUser("Kaushal", greet); // Hello, Kaushal</code></pre>
+<hr />
+<h2 id="first-class-functions"><strong>First-Class Functions</strong><a class="headerlink" href="#first-class-functions" title="Permanent link">¶</a></h2>
+<p>JavaScript treats functions as <strong>first-class citizens</strong>, meaning they can be stored in variables, passed as arguments, or returned from other functions.</p>
+<p><em>Real-Life Example</em>:</p>
+<pre class="highlight"><code class="language-javascript">const greet = function (name) {
+  return `Hello, ${name}`;
+};
+console.log(greet("Kaushal")); // Hello, Kaushal</code></pre>
+<hr />
+<h2 id="let-var-const"><strong>let, var, const</strong><a class="headerlink" href="#let-var-const" title="Permanent link">¶</a></h2>
+<ul>
+<li><code>var</code>: Function-scoped.</li>
+<li><code>let</code>: Block-scoped.</li>
+<li><code>const</code>: Block-scoped and immutable (cannot be reassigned).</li>
+</ul>
+<p><em>Real-Life Example</em>:</p>
+<pre class="highlight"><code class="language-javascript">{
+  var x = 10; // Accessible outside
+  let y = 20; // Block-scoped
+  const z = 30; // Block-scoped and immutable
+}
+console.log(x); // 10
+// console.log(y); // Error
+// console.log(z); // Error</code></pre>
+<hr />
+<h2 id="callback-hell"><strong>Callback Hell</strong><a class="headerlink" href="#callback-hell" title="Permanent link">¶</a></h2>
+<p>Callback hell occurs when <strong>nested callbacks make the code unreadable</strong>.</p>
+<p><em>Real-Life Example</em>:</p>
+<pre class="highlight"><code class="language-javascript">setTimeout(() =&gt; {
+  console.log("Step 1");
+  setTimeout(() =&gt; {
+    console.log("Step 2");
+    setTimeout(() =&gt; {
+      console.log("Step 3");
+    }, 1000);
+  }, 1000);
+}, 1000);</code></pre>
+<hr />
+<h2 id="promises"><strong>Promises</strong><a class="headerlink" href="#promises" title="Permanent link">¶</a></h2>
+<p>Promises help handle asynchronous tasks by providing <code>.then()</code> and <code>.catch()</code> methods to avoid callback hell.</p>
+<p><em>Real-Life Example</em>:</p>
+<pre class="highlight"><code class="language-javascript">const fetchData = new Promise((resolve, reject) =&gt; {
+  setTimeout(() =&gt; resolve("Data fetched!"), 1000);
+});
+fetchData.then((data) =&gt; console.log(data)); // Data fetched!</code></pre>
+<hr />
+<h2 id="implicit-type-conversion"><strong>Implicit Type Conversion</strong><a class="headerlink" href="#implicit-type-conversion" title="Permanent link">¶</a></h2>
+<p>JavaScript <strong>converts types automatically</strong> in some situations.</p>
+<p><em>Real-Life Example</em>:</p>
+<pre class="highlight"><code class="language-javascript">console.log("5" + 1); // "51" (string)
+console.log("5" - 1); // 4 (number)</code></pre>
+<h2 id="hoisting"><strong>Hoisting</strong><a class="headerlink" href="#hoisting" title="Permanent link">¶</a></h2>
+<p>Hoisting is a behavior in JavaScript where <strong>variables and functions are moved to the top of their scope</strong> during the compilation phase.</p>
+<p><em>Real-Life Example</em>:</p>
+<pre class="highlight"><code class="language-javascript">console.log(x); // undefined (hoisted, but not initialized)
+var x = 10;</code></pre>
+<p><em>With <code>let</code> and <code>const</code>:</em></p>
+<pre class="highlight"><code class="language-javascript">console.log(y); // ReferenceError: Cannot access 'y' before initialization
+let y = 20;</code></pre>
+<hr />
+<h2 id="vs"><strong>== vs ===</strong><a class="headerlink" href="#vs" title="Permanent link">¶</a></h2>
+<ul>
+<li><code>==</code> checks for <strong>value equality</strong>, performing type conversion if needed.</li>
+<li><code>===</code> checks for <strong>strict equality</strong> (value and type must match).</li>
+</ul>
+<p><em>Real-Life Example</em>:</p>
+<pre class="highlight"><code class="language-javascript">console.log(5 == "5"); // true (type conversion happens)
+console.log(5 === "5"); // false (type mismatch)</code></pre>
+<hr />
+<h2 id="this-keyword"><strong><code>this</code> Keyword</strong><a class="headerlink" href="#this-keyword" title="Permanent link">¶</a></h2>
+<p><code>this</code> refers to the <strong>object that is executing the function</strong>. It can vary depending on how the function is called.</p>
+<p><em>Real-Life Example</em>:</p>
+<pre class="highlight"><code class="language-javascript">const person = {
+  name: "Kaushal",
+  greet() {
+    console.log(this.name);
+  },
+};
+person.greet(); // Kaushal</code></pre>
+<hr />
+<h2 id="self-invoking-functionsiife"><strong>Self-Invoking Functions/IIFE</strong><a class="headerlink" href="#self-invoking-functionsiife" title="Permanent link">¶</a></h2>
+<p>An Immediately Invoked Function Expression (IIFE) is a function that runs as soon as it is defined.</p>
+<p><em>Real-Life Example</em>:</p>
+<pre class="highlight"><code class="language-javascript">(function () {
+  console.log("I run immediately!");
+})(); // I run immediately!</code></pre>
+<hr />
+<h2 id="currying"><strong>Currying</strong><a class="headerlink" href="#currying" title="Permanent link">¶</a></h2>
+<p>Currying is the process of <strong>transforming a function with multiple arguments into a series of functions</strong> that each take a single argument.</p>
+<p><em>Real-Life Example</em>:</p>
+<pre class="highlight"><code class="language-javascript">function add(a) {
+  return function (b) {
+    return a + b;
+  };
+}
+console.log(add(5)(10)); // 15</code></pre>
+<hr />
+<h2 id="unary-functions"><strong>Unary Functions</strong><a class="headerlink" href="#unary-functions" title="Permanent link">¶</a></h2>
+<p>A unary function is a function that <strong>takes only one argument</strong>.</p>
+<p><em>Real-Life Example</em>:</p>
+<pre class="highlight"><code class="language-javascript">const square = (x) =&gt; x * x;
+console.log(square(5)); // 25</code></pre>
+<hr />
+<h2 id="pure-functions"><strong>Pure Functions</strong><a class="headerlink" href="#pure-functions" title="Permanent link">¶</a></h2>
+<p>A pure function is one that <strong>does not modify external variables or states</strong> and always produces the same output for the same input.</p>
+<p><em>Real-Life Example</em>:</p>
+<pre class="highlight"><code class="language-javascript">function add(a, b) {
+  return a + b;
+}
+console.log(add(2, 3)); // 5</code></pre>
+<hr />
+<h2 id="event-bubbling"><strong>Event Bubbling</strong><a class="headerlink" href="#event-bubbling" title="Permanent link">¶</a></h2>
+<p>Event bubbling is when an event <strong>propagates from the child element to its parent</strong>.</p>
+<p><em>Real-Life Example</em>:</p>
+<pre class="highlight"><code class="language-javascript">&lt;div onclick="console.log('Parent clicked')"&gt;
+  &lt;button onclick="console.log('Button clicked')"&gt;Click Me&lt;/button&gt;
+&lt;/div&gt;
+// Clicking the button will trigger both logs.</code></pre>
+<hr />
+<h2 id="event-delegation"><strong>Event Delegation</strong><a class="headerlink" href="#event-delegation" title="Permanent link">¶</a></h2>
+<p>Event delegation involves <strong>attaching a single event listener to a parent element</strong> to handle events for its child elements.</p>
+<p><em>Real-Life Example</em>:</p>
+<pre class="highlight"><code class="language-javascript">document.getElementById("parent").addEventListener("click", (e) =&gt; {
+  if (e.target.tagName === "BUTTON") {
+    console.log("Button clicked");
+  }
+});</code></pre>
+<hr />
+<h2 id="event-handling"><strong>Event Handling</strong><a class="headerlink" href="#event-handling" title="Permanent link">¶</a></h2>
+<p>Event handling involves adding listeners to elements to perform actions when an event occurs (like <code>click</code>, <code>hover</code>, etc.).</p>
+<p><em>Real-Life Example</em>:</p>
+<pre class="highlight"><code class="language-javascript">document.getElementById("myButton").addEventListener("click", () =&gt; {
+  alert("Button clicked!");
+});</code></pre>
+<hr />
+<h2 id="closure"><strong>Closure</strong><a class="headerlink" href="#closure" title="Permanent link">¶</a></h2>
+<p>A closure is created when a function <strong>remembers variables from its outer scope</strong> even after the outer function has finished execution.</p>
+<p><em>Real-Life Example</em>:</p>
+<pre class="highlight"><code class="language-javascript">function outer() {
+  let count = 0;
+  return function () {
+    count++;
+    console.log(count);
+  };
+}
+const increment = outer();
+increment(); // 1
+increment(); // 2</code></pre>
+<hr />
+<h2 id="data-binding"><strong>Data Binding</strong><a class="headerlink" href="#data-binding" title="Permanent link">¶</a></h2>
+<p>Data binding is the process of <strong>connecting UI elements to application data</strong> so they update automatically when the data changes.</p>
+<p><em>Real-Life Example</em>: In frameworks like React, <code>state</code> binds data to components, and when the state changes, the UI updates.</p>
+<hr />
+<h2 id="nullish-operator"><strong>Nullish Operator (<code>??</code>)</strong><a class="headerlink" href="#nullish-operator" title="Permanent link">¶</a></h2>
+<p>The nullish operator returns the <strong>right-hand value only if the left-hand value is <code>null</code> or <code>undefined</code></strong>.</p>
+<p><em>Real-Life Example</em>:</p>
+<pre class="highlight"><code class="language-javascript">let value = null;
+let defaultValue = value ?? "Default";
+console.log(defaultValue); // Default</code></pre>
+<hr />
+<h2 id="debouncing"><strong>Debouncing</strong><a class="headerlink" href="#debouncing" title="Permanent link">¶</a></h2>
+<p>Debouncing ensures a function is <strong>only executed after a specified time has passed since the last invocation</strong>.</p>
+<p><em>Real-Life Example</em>:<br />
+Typing in a search bar delays API calls until the user stops typing.</p>
+<pre class="highlight"><code class="language-javascript">function debounce(func, delay) {
+  let timer;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() =&gt; func.apply(this, args), delay);
+  };
+}</code></pre>
+<hr />
+<h2 id="throttling"><strong>Throttling</strong><a class="headerlink" href="#throttling" title="Permanent link">¶</a></h2>
+<p>Throttling ensures a function <strong>executes at regular intervals</strong>, even if triggered continuously.</p>
+<p><em>Real-Life Example</em>:<br />
+Scrolling events trigger updates at fixed intervals.</p>
+<pre class="highlight"><code class="language-javascript">function throttle(func, delay) {
+  let lastCall = 0;
+  return function (...args) {
+    const now = Date.now();
+    if (now - lastCall &gt;= delay) {
+      lastCall = now;
+      func.apply(this, args);
+    }
+  };
+}</code></pre>
+<hr />
+<h2 id="spread-operator"><strong>Spread Operator</strong><a class="headerlink" href="#spread-operator" title="Permanent link">¶</a></h2>
+<p>The spread operator (<code>...</code>) expands <strong>iterable elements</strong> into individual elements.</p>
+<p><em>Real-Life Example</em>:</p>
+<pre class="highlight"><code class="language-javascript">const arr = [1, 2, 3];
+const newArr = [...arr, 4, 5];
+console.log(newArr); // [1, 2, 3, 4, 5]</code></pre>
+<hr />
+<h2 id="rest-operator"><strong>Rest Operator</strong><a class="headerlink" href="#rest-operator" title="Permanent link">¶</a></h2>
+<p>The rest operator (<code>...</code>) combines <strong>multiple elements into a single array</strong>.</p>
+<p><em>Real-Life Example</em>:</p>
+<pre class="highlight"><code class="language-javascript">function sum(...numbers) {
+  return numbers.reduce((acc, num) =&gt; acc + num, 0);
+}
+console.log(sum(1, 2, 3, 4)); // 10</code></pre>
+<h2 id="data-storage-in-javascript"><strong>Data Storage in JavaScript</strong><a class="headerlink" href="#data-storage-in-javascript" title="Permanent link">¶</a></h2>
+<p>Web applications often require ways to store data on the client side. Let's dive into the most commonly used storage mechanisms: <strong>Local Storage</strong>, <strong>Session Storage</strong>, <strong>IndexedDB</strong>, and <strong>Cookies</strong>. We'll explore what they are, how they work, their differences, and real-life examples.</p>
+<hr />
+<h3 id="1-local-storage"><strong>1. Local Storage</strong><a class="headerlink" href="#1-local-storage" title="Permanent link">¶</a></h3>
+<p><strong>Local Storage</strong> is a key-value pair-based storage mechanism that allows you to store data in the browser <strong>without an expiration date</strong>. The data persists even after the browser is closed and reopened.</p>
+<h4 id="key-characteristics"><strong>Key Characteristics:</strong><a class="headerlink" href="#key-characteristics" title="Permanent link">¶</a></h4>
+<ul>
+<li>Stores data <strong>permanently</strong> (until explicitly removed).</li>
+<li>Maximum storage capacity: ~5MB per domain (varies by browser).</li>
+<li>Data is stored as <strong>strings</strong>.</li>
+<li>Accessible only within the same domain.</li>
+</ul>
+<h4 id="apis-and-methods"><strong>APIs and Methods:</strong><a class="headerlink" href="#apis-and-methods" title="Permanent link">¶</a></h4>
+<ul>
+<li><code>localStorage.setItem(key, value)</code> – Store a key-value pair.</li>
+<li><code>localStorage.getItem(key)</code> – Retrieve a value using its key.</li>
+<li><code>localStorage.removeItem(key)</code> – Remove a key-value pair.</li>
+<li><code>localStorage.clear()</code> – Clear all stored data.</li>
+</ul>
+<h4 id="real-life-example"><strong>Real-Life Example:</strong><a class="headerlink" href="#real-life-example" title="Permanent link">¶</a></h4>
+<p>Saving user preferences:</p>
+<pre class="highlight"><code class="language-javascript">// Storing a user's theme preference
+localStorage.setItem("theme", "dark");
+
+// Retrieving the stored theme
+const theme = localStorage.getItem("theme");
+console.log(theme); // Output: dark
+
+// Removing the stored theme
+localStorage.removeItem("theme");</code></pre>
+<hr />
+<h3 id="2-session-storage"><strong>2. Session Storage</strong><a class="headerlink" href="#2-session-storage" title="Permanent link">¶</a></h3>
+<p><strong>Session Storage</strong> is similar to Local Storage but with one key difference: the data is cleared when the <strong>browser tab is closed</strong>.</p>
+<h4 id="key-characteristics_1"><strong>Key Characteristics:</strong><a class="headerlink" href="#key-characteristics_1" title="Permanent link">¶</a></h4>
+<ul>
+<li>Data persists <strong>only for the session</strong> (browser tab).</li>
+<li>Maximum storage capacity: ~5MB per domain (same as Local Storage).</li>
+<li>Data is stored as <strong>strings</strong>.</li>
+<li>Only accessible within the same tab and domain.</li>
+</ul>
+<h4 id="apis-and-methods_1"><strong>APIs and Methods:</strong><a class="headerlink" href="#apis-and-methods_1" title="Permanent link">¶</a></h4>
+<ul>
+<li>Same as Local Storage (<code>setItem</code>, <code>getItem</code>, <code>removeItem</code>, <code>clear</code>).</li>
+</ul>
+<h4 id="real-life-example_1"><strong>Real-Life Example:</strong><a class="headerlink" href="#real-life-example_1" title="Permanent link">¶</a></h4>
+<p>Storing temporary data like form inputs:</p>
+<pre class="highlight"><code class="language-javascript">// Saving form input
+sessionStorage.setItem("username", "Kaushal");
+
+// Retrieving the input
+const username = sessionStorage.getItem("username");
+console.log(username); // Output: Kaushal
+
+// Data will be cleared once the tab is closed.</code></pre>
+<hr />
+<h3 id="3-indexeddb"><strong>3. IndexedDB</strong><a class="headerlink" href="#3-indexeddb" title="Permanent link">¶</a></h3>
+<p><strong>IndexedDB</strong> is a <strong>low-level API</strong> for client-side storage of large amounts of structured data, including files and blobs. It is asynchronous and transactional, designed for more complex applications.</p>
+<h4 id="key-characteristics_2"><strong>Key Characteristics:</strong><a class="headerlink" href="#key-characteristics_2" title="Permanent link">¶</a></h4>
+<ul>
+<li>Stores data in the form of <strong>key-value pairs</strong> or objects.</li>
+<li>Can store <strong>structured data</strong> (e.g., arrays, objects, blobs).</li>
+<li>Allows queries using indexes and cursors.</li>
+<li>Storage size can be much larger (hundreds of MBs).</li>
+<li>Data persists even after the browser is closed.</li>
+</ul>
+<h4 id="apis-and-methods_2"><strong>APIs and Methods:</strong><a class="headerlink" href="#apis-and-methods_2" title="Permanent link">¶</a></h4>
+<p>IndexedDB uses an event-based API, so it’s slightly more complex than Local or Session Storage.</p>
+<h4 id="real-life-example_2"><strong>Real-Life Example:</strong><a class="headerlink" href="#real-life-example_2" title="Permanent link">¶</a></h4>
+<p>Storing offline application data:</p>
+<pre class="highlight"><code class="language-javascript">// Open a database
+const request = indexedDB.open("MyDatabase", 1);
+
+request.onupgradeneeded = function (event) {
+  const db = event.target.result;
+  // Create an object store
+  const objectStore = db.createObjectStore("Users", { keyPath: "id" });
+  objectStore.createIndex("name", "name", { unique: false });
+};
+
+request.onsuccess = function (event) {
+  const db = event.target.result;
+  const transaction = db.transaction("Users", "readwrite");
+  const store = transaction.objectStore("Users");
+
+  // Add data
+  store.add({ id: 1, name: "Kaushal", age: 25 });
+};</code></pre>
+<hr />
+<h3 id="4-cookies"><strong>4. Cookies</strong><a class="headerlink" href="#4-cookies" title="Permanent link">¶</a></h3>
+<p>Cookies are small pieces of data stored in the browser, mainly used for <strong>session tracking</strong> and <strong>authentication</strong>. Cookies can be sent back and forth between the client and server with every HTTP request.</p>
+<h4 id="key-characteristics_3"><strong>Key Characteristics:</strong><a class="headerlink" href="#key-characteristics_3" title="Permanent link">¶</a></h4>
+<ul>
+<li>Data is stored as <strong>key-value pairs</strong>.</li>
+<li>Cookies are sent to the server with each HTTP request.</li>
+<li>Can be set to expire after a certain time (<code>Expires</code> or <code>Max-Age</code> attributes).</li>
+<li>Limited storage capacity: ~4KB per cookie.</li>
+<li>Can be made secure using the <code>Secure</code> and <code>HttpOnly</code> flags.</li>
+</ul>
+<h4 id="apis-and-methods_3"><strong>APIs and Methods:</strong><a class="headerlink" href="#apis-and-methods_3" title="Permanent link">¶</a></h4>
+<ul>
+<li>Setting a cookie:
+  <pre class="highlight"><code class="language-javascript">document.cookie =
+  "name=Kaushal; expires=Fri, 31 Dec 2025 23:59:59 GMT; path=/";</code></pre></li>
+<li>Reading cookies:
+  <pre class="highlight"><code class="language-javascript">console.log(document.cookie); // Output: name=Kaushal</code></pre></li>
+<li>Deleting cookies:
+  <pre class="highlight"><code class="language-javascript">document.cookie = "name=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";</code></pre></li>
+</ul>
+<h4 id="real-life-example_3"><strong>Real-Life Example:</strong><a class="headerlink" href="#real-life-example_3" title="Permanent link">¶</a></h4>
+<p>Storing login tokens:</p>
+<pre class="highlight"><code class="language-javascript">// Setting a cookie with an expiration time
+document.cookie = "token=abc123; expires=Fri, 31 Dec 2025 23:59:59 GMT; path=/";
+
+// Reading the token cookie
+const cookies = document.cookie;
+console.log(cookies); // Output: token=abc123</code></pre>
+<hr />
+<h3 id="comparison-of-storage-mechanisms"><strong>Comparison of Storage Mechanisms</strong><a class="headerlink" href="#comparison-of-storage-mechanisms" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Local Storage</th>
+<th>Session Storage</th>
+<th>IndexedDB</th>
+<th>Cookies</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Data Persistence</strong></td>
+<td>Permanent</td>
+<td>Session-only</td>
+<td>Permanent</td>
+<td>Depends on expiration</td>
+</tr>
+<tr>
+<td><strong>Capacity</strong></td>
+<td>~5MB</td>
+<td>~5MB</td>
+<td>Hundreds of MBs</td>
+<td>~4KB per cookie</td>
+</tr>
+<tr>
+<td><strong>Data Type</strong></td>
+<td>Strings</td>
+<td>Strings</td>
+<td>Key-value/object</td>
+<td>Strings</td>
+</tr>
+<tr>
+<td><strong>Server Communication</strong></td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>Use Case</strong></td>
+<td>Preferences, settings</td>
+<td>Temporary data</td>
+<td>Complex structured data</td>
+<td>Authentication, tracking</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="best-practices"><strong>Best Practices</strong><a class="headerlink" href="#best-practices" title="Permanent link">¶</a></h3>
+<ul>
+<li>Use <strong>Local Storage</strong> for simple, permanent client-side storage.</li>
+<li>Use <strong>Session Storage</strong> for temporary data like unsaved form inputs.</li>
+<li>Use <strong>IndexedDB</strong> for large, complex data like offline applications.</li>
+<li>Use <strong>Cookies</strong> for server-side communication, session tracking, and authentication tokens.</li>
+</ul>
+<h2 id="asynchronous-programming-in-javascript"><strong>Asynchronous Programming in JavaScript</strong><a class="headerlink" href="#asynchronous-programming-in-javascript" title="Permanent link">¶</a></h2>
+<p>JavaScript is single-threaded, meaning it executes one task at a time. To handle long-running operations (e.g., API calls, timers), asynchronous programming is used to avoid blocking the main thread. Here’s a deep dive into the key concepts related to asynchronous programming.</p>
+<hr />
+<h3 id="callbacks"><strong>Callbacks</strong><a class="headerlink" href="#callbacks" title="Permanent link">¶</a></h3>
+<p>A <strong>callback</strong> is a function passed as an argument to another function, which is then invoked after the completion of an asynchronous operation.</p>
+<h4 id="how-it-works"><strong>How It Works:</strong><a class="headerlink" href="#how-it-works" title="Permanent link">¶</a></h4>
+<ul>
+<li>A callback function is executed only when the task it is associated with is completed.</li>
+<li>Commonly used in APIs, event handling, or asynchronous tasks like reading files or fetching data.</li>
+</ul>
+<h4 id="real-life-example_4"><strong>Real-Life Example:</strong><a class="headerlink" href="#real-life-example_4" title="Permanent link">¶</a></h4>
+<p>Imagine you order food online. The callback is like a notification sent to you when the delivery is complete.</p>
+<h4 id="code-example"><strong>Code Example:</strong><a class="headerlink" href="#code-example" title="Permanent link">¶</a></h4>
+<pre class="highlight"><code class="language-javascript">function fetchData(callback) {
+  console.log("Fetching data...");
+  setTimeout(() =&gt; {
+    console.log("Data fetched!");
+    callback("Here's your data!");
+  }, 2000);
+}
+
+function handleData(data) {
+  console.log(data);
+}
+
+// Using a callback
+fetchData(handleData);</code></pre>
+<hr />
+<h3 id="memoization"><strong>Memoization</strong><a class="headerlink" href="#memoization" title="Permanent link">¶</a></h3>
+<p><strong>Memoization</strong> is an optimization technique where the result of a function call is cached so that future calls with the same inputs can return the cached result, avoiding redundant computations.</p>
+<h4 id="key-features"><strong>Key Features:</strong><a class="headerlink" href="#key-features" title="Permanent link">¶</a></h4>
+<ul>
+<li>Improves performance for expensive calculations.</li>
+<li>Commonly used in recursive algorithms like Fibonacci.</li>
+</ul>
+<h4 id="real-life-example_5"><strong>Real-Life Example:</strong><a class="headerlink" href="#real-life-example_5" title="Permanent link">¶</a></h4>
+<p>You look up a phone number once and save it in your contacts. Next time, instead of looking it up again, you retrieve it from your contacts.</p>
+<h4 id="code-example_1"><strong>Code Example:</strong><a class="headerlink" href="#code-example_1" title="Permanent link">¶</a></h4>
+<pre class="highlight"><code class="language-javascript">function memoizedFactorial() {
+  const cache = {};
+  return function factorial(n) {
+    if (n in cache) return cache[n];
+    if (n === 0 || n === 1) return 1;
+    cache[n] = n * factorial(n - 1);
+    return cache[n];
+  };
+}
+
+const factorial = memoizedFactorial();
+console.log(factorial(5)); // Calculates and caches
+console.log(factorial(5)); // Returns cached result</code></pre>
+<hr />
+<h3 id="promises_1"><strong>Promises</strong><a class="headerlink" href="#promises_1" title="Permanent link">¶</a></h3>
+<p>A <strong>Promise</strong> represents a value that will be resolved in the future. It is used to handle asynchronous operations more effectively, avoiding callback nesting (callback hell).</p>
+<h4 id="states-of-a-promise"><strong>States of a Promise:</strong><a class="headerlink" href="#states-of-a-promise" title="Permanent link">¶</a></h4>
+<ol>
+<li><strong>Pending</strong>: Initial state, operation not yet completed.</li>
+<li><strong>Resolved</strong>: Operation completed successfully.</li>
+<li><strong>Rejected</strong>: Operation failed.</li>
+</ol>
+<h4 id="real-life-example_6"><strong>Real-Life Example:</strong><a class="headerlink" href="#real-life-example_6" title="Permanent link">¶</a></h4>
+<p>Ordering a package online:</p>
+<ul>
+<li>Pending: Order is placed.</li>
+<li>Resolved: Package is delivered.</li>
+<li>Rejected: Package is lost.</li>
+</ul>
+<h4 id="code-example_2"><strong>Code Example:</strong><a class="headerlink" href="#code-example_2" title="Permanent link">¶</a></h4>
+<pre class="highlight"><code class="language-javascript">const fetchData = new Promise((resolve, reject) =&gt; {
+  setTimeout(() =&gt; {
+    const success = true; // Simulate success/failure
+    success
+      ? resolve("Data fetched successfully!")
+      : reject("Error fetching data.");
+  }, 2000);
+});
+
+fetchData
+  .then((data) =&gt; console.log(data)) // Handles success
+  .catch((error) =&gt; console.error(error)); // Handles failure</code></pre>
+<hr />
+<h3 id="arrow-functions-vs-normal-functions"><strong>Arrow Functions vs Normal Functions</strong><a class="headerlink" href="#arrow-functions-vs-normal-functions" title="Permanent link">¶</a></h3>
+<p>Arrow functions (<code>=&gt;</code>) provide a concise way to define functions and do not bind their own <code>this</code>. They are suited for simple callbacks but lack features like <code>arguments</code>.</p>
+<h4 id="key-differences"><strong>Key Differences:</strong><a class="headerlink" href="#key-differences" title="Permanent link">¶</a></h4>
+<ol>
+<li><strong>Syntax</strong>: Arrow functions have a shorter syntax.</li>
+<li><strong><code>this</code> Binding</strong>: Arrow functions inherit <code>this</code> from the surrounding context; normal functions have their own <code>this</code>.</li>
+<li><strong>Arguments</strong>: Arrow functions do not have an <code>arguments</code> object.</li>
+</ol>
+<h4 id="real-life-example_7"><strong>Real-Life Example:</strong><a class="headerlink" href="#real-life-example_7" title="Permanent link">¶</a></h4>
+<p>Using an arrow function for concise callbacks:</p>
+<pre class="highlight"><code class="language-javascript">// Arrow Function
+const add = (a, b) =&gt; a + b;
+console.log(add(2, 3)); // 5
+
+// Normal Function
+function multiply(a, b) {
+  return a * b;
+}
+console.log(multiply(2, 3)); // 6</code></pre>
+<hr />
+<h3 id="generator-functions"><strong>Generator Functions</strong><a class="headerlink" href="#generator-functions" title="Permanent link">¶</a></h3>
+<p><strong>Generator functions</strong> allow you to pause and resume function execution using the <code>yield</code> keyword.</p>
+<h4 id="how-it-works_1"><strong>How It Works:</strong><a class="headerlink" href="#how-it-works_1" title="Permanent link">¶</a></h4>
+<ul>
+<li>Defined using <code>function*</code>.</li>
+<li>Return an iterator object.</li>
+<li>Useful for producing values on demand (lazy evaluation).</li>
+</ul>
+<h4 id="real-life-example_8"><strong>Real-Life Example:</strong><a class="headerlink" href="#real-life-example_8" title="Permanent link">¶</a></h4>
+<p>Distributing tasks to workers, one at a time.</p>
+<h4 id="code-example_3"><strong>Code Example:</strong><a class="headerlink" href="#code-example_3" title="Permanent link">¶</a></h4>
+<pre class="highlight"><code class="language-javascript">function* generateNumbers() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+const iterator = generateNumbers();
+console.log(iterator.next()); // { value: 1, done: false }
+console.log(iterator.next()); // { value: 2, done: false }
+console.log(iterator.next()); // { value: 3, done: false }
+console.log(iterator.next()); // { value: undefined, done: true }</code></pre>
+<hr />
+<h3 id="temporal-dead-zone-tdz"><strong>Temporal Dead Zone (TDZ)</strong><a class="headerlink" href="#temporal-dead-zone-tdz" title="Permanent link">¶</a></h3>
+<p>The <strong>Temporal Dead Zone</strong> refers to the time between entering the scope of a variable declared with <code>let</code> or <code>const</code> and its declaration. Accessing the variable in this period throws a <code>ReferenceError</code>.</p>
+<h4 id="real-life-example_9"><strong>Real-Life Example:</strong><a class="headerlink" href="#real-life-example_9" title="Permanent link">¶</a></h4>
+<p>You try to open a shop before it officially opens.</p>
+<h4 id="code-example_4"><strong>Code Example:</strong><a class="headerlink" href="#code-example_4" title="Permanent link">¶</a></h4>
+<pre class="highlight"><code class="language-javascript">console.log(a); // ReferenceError: Cannot access 'a' before initialization
+let a = 10;</code></pre>
+<hr />
+<h3 id="callback-hell_1"><strong>Callback Hell</strong><a class="headerlink" href="#callback-hell_1" title="Permanent link">¶</a></h3>
+<p><strong>Callback Hell</strong> occurs when multiple nested callbacks make code difficult to read and maintain.</p>
+<h4 id="real-life-example_10"><strong>Real-Life Example:</strong><a class="headerlink" href="#real-life-example_10" title="Permanent link">¶</a></h4>
+<p>Imagine giving instructions through a chain of middlemen, each depending on the previous one.</p>
+<h4 id="code-example-callback-hell"><strong>Code Example (Callback Hell):</strong><a class="headerlink" href="#code-example-callback-hell" title="Permanent link">¶</a></h4>
+<pre class="highlight"><code class="language-javascript">function firstTask(callback) {
+  setTimeout(() =&gt; {
+    console.log("First task done.");
+    callback();
+  }, 1000);
+}
+
+function secondTask(callback) {
+  setTimeout(() =&gt; {
+    console.log("Second task done.");
+    callback();
+  }, 1000);
+}
+
+firstTask(() =&gt; {
+  secondTask(() =&gt; {
+    console.log("All tasks done.");
+  });
+});</code></pre>
+<hr />
+<h3 id="best-practices-for-asynchronous-programming"><strong>Best Practices for Asynchronous Programming</strong><a class="headerlink" href="#best-practices-for-asynchronous-programming" title="Permanent link">¶</a></h3>
+<ol>
+<li>Use <strong>Promises</strong> or <strong>async/await</strong> to avoid callback hell.</li>
+<li>Use <strong>Memoization</strong> to optimize expensive computations.</li>
+<li>Use <strong>Generator Functions</strong> for on-demand data processing.</li>
+<li>Understand <strong>this</strong> in arrow functions to avoid bugs.</li>
+</ol>
+<h2 id="scope-and-environment-in-javascript"><strong>Scope and Environment in JavaScript</strong><a class="headerlink" href="#scope-and-environment-in-javascript" title="Permanent link">¶</a></h2>
+<p>JavaScript's scope defines where a variable or function is accessible in the code. The environment refers to the surrounding context or state in which the code executes.</p>
+<hr />
+<h3 id="lexical-scoping"><strong>Lexical Scoping</strong><a class="headerlink" href="#lexical-scoping" title="Permanent link">¶</a></h3>
+<p>Lexical scoping means that a variable's scope is determined by its position in the code at the time of writing, not at runtime. Inner functions can access variables from their outer functions, forming a <strong>scope chain</strong>.</p>
+<h4 id="key-points"><strong>Key Points:</strong><a class="headerlink" href="#key-points" title="Permanent link">¶</a></h4>
+<ul>
+<li>Functions can access variables declared in their outer scope.</li>
+<li>The scope chain determines the hierarchy of variable access.</li>
+</ul>
+<h4 id="real-life-example_11"><strong>Real-Life Example:</strong><a class="headerlink" href="#real-life-example_11" title="Permanent link">¶</a></h4>
+<p>Imagine a house with rooms. Each room has its own items (local variables), but you can access items in the house's living room (outer scope).</p>
+<h4 id="code-example_5"><strong>Code Example:</strong><a class="headerlink" href="#code-example_5" title="Permanent link">¶</a></h4>
+<pre class="highlight"><code class="language-javascript">function outer() {
+  const outerVar = "I am from outer scope";
+
+  function inner() {
+    console.log(outerVar); // Accesses variable from the outer scope
+  }
+
+  inner();
+}
+
+outer();</code></pre>
+<hr />
+<h2 id="dom-and-bom"><strong>DOM and BOM</strong><a class="headerlink" href="#dom-and-bom" title="Permanent link">¶</a></h2>
+<h3 id="dom-document-object-model"><strong>DOM (Document Object Model)</strong><a class="headerlink" href="#dom-document-object-model" title="Permanent link">¶</a></h3>
+<p>The DOM represents the structure of an HTML document as a tree, where elements are nodes. Using the DOM, you can interact with and manipulate HTML and CSS programmatically.</p>
+<h4 id="key-points_1"><strong>Key Points:</strong><a class="headerlink" href="#key-points_1" title="Permanent link">¶</a></h4>
+<ul>
+<li>Access and modify HTML elements (<code>document.getElementById</code>, <code>querySelector</code>, etc.).</li>
+<li>Add, delete, or update elements dynamically.</li>
+<li>Change styles and attributes.</li>
+</ul>
+<h4 id="real-life-example_12"><strong>Real-Life Example:</strong><a class="headerlink" href="#real-life-example_12" title="Permanent link">¶</a></h4>
+<p>When you click a button on a webpage, the DOM handles what happens to the button (e.g., changing its color or text).</p>
+<h4 id="code-example_6"><strong>Code Example:</strong><a class="headerlink" href="#code-example_6" title="Permanent link">¶</a></h4>
+<pre class="highlight"><code class="language-javascript">// Changing the text of an element with ID 'myButton'
+document.getElementById("myButton").innerText = "Clicked!";</code></pre>
+<hr />
+<h3 id="bom-browser-object-model"><strong>BOM (Browser Object Model)</strong><a class="headerlink" href="#bom-browser-object-model" title="Permanent link">¶</a></h3>
+<p>The BOM represents everything provided by the browser outside the DOM, including browser-specific objects like <code>window</code>, <code>navigator</code>, and <code>history</code>.</p>
+<h4 id="key-features_1"><strong>Key Features:</strong><a class="headerlink" href="#key-features_1" title="Permanent link">¶</a></h4>
+<ul>
+<li>Control browser actions (e.g., open new tabs with <code>window.open()</code>).</li>
+<li>Access browser details (e.g., <code>navigator.userAgent</code> for the browser name).</li>
+<li>Interact with browser history (<code>history.back()</code>, <code>history.forward()</code>).</li>
+</ul>
+<h4 id="real-life-example_13"><strong>Real-Life Example:</strong><a class="headerlink" href="#real-life-example_13" title="Permanent link">¶</a></h4>
+<p>When you navigate back to a previous page using the browser's "back" button, you interact with the BOM.</p>
+<h4 id="code-example_7"><strong>Code Example:</strong><a class="headerlink" href="#code-example_7" title="Permanent link">¶</a></h4>
+<pre class="highlight"><code class="language-javascript">// Alerting the browser's user agent
+console.log(window.navigator.userAgent);</code></pre>
+<hr />
+<h2 id="data-types-and-operations"><strong>Data Types and Operations</strong><a class="headerlink" href="#data-types-and-operations" title="Permanent link">¶</a></h2>
+<h3 id="javascript-data-types"><strong>JavaScript Data Types</strong><a class="headerlink" href="#javascript-data-types" title="Permanent link">¶</a></h3>
+<p>JavaScript has two categories of data types:</p>
+<ol>
+<li>
+<p><strong>Primitive Types:</strong></p>
+</li>
+<li>
+<p>String (<code>"Hello"</code>)</p>
+</li>
+<li>Number (<code>42</code>)</li>
+<li>Boolean (<code>true</code> or <code>false</code>)</li>
+<li>Null (<code>null</code>)</li>
+<li>Undefined (<code>undefined</code>)</li>
+<li>Symbol (<code>Symbol('id')</code>)</li>
+<li>
+<p>BigInt (<code>123n</code>)</p>
+</li>
+<li>
+<p><strong>Non-Primitive (Objects):</strong></p>
+</li>
+<li>Objects</li>
+<li>Arrays</li>
+<li>Functions</li>
+</ol>
+<h4 id="real-life-example_14"><strong>Real-Life Example:</strong><a class="headerlink" href="#real-life-example_14" title="Permanent link">¶</a></h4>
+<p>Think of data types as different containers:</p>
+<ul>
+<li>Numbers are like calculators.</li>
+<li>Strings are like diaries that hold text.</li>
+<li>Arrays are like baskets holding multiple items.</li>
+</ul>
+<h4 id="code-example_8"><strong>Code Example:</strong><a class="headerlink" href="#code-example_8" title="Permanent link">¶</a></h4>
+<pre class="highlight"><code class="language-javascript">const name = "Kaushal"; // String
+const age = 25; // Number
+const isStudent = true; // Boolean
+const skills = ["React", "Node.js"]; // Array</code></pre>
+<hr />
+<h3 id="spread-operator_1"><strong>Spread Operator</strong><a class="headerlink" href="#spread-operator_1" title="Permanent link">¶</a></h3>
+<p>The <strong>spread operator (<code>...</code>)</strong> allows you to expand or copy elements of arrays, objects, or strings into new ones.</p>
+<h4 id="key-uses"><strong>Key Uses:</strong><a class="headerlink" href="#key-uses" title="Permanent link">¶</a></h4>
+<ol>
+<li>Combine or clone arrays and objects.</li>
+<li>Pass array elements as arguments to functions.</li>
+</ol>
+<h4 id="real-life-example_15"><strong>Real-Life Example:</strong><a class="headerlink" href="#real-life-example_15" title="Permanent link">¶</a></h4>
+<p>Imagine unpacking a box of chocolates and spreading them on a tray. Each piece is now separate and easy to access.</p>
+<h4 id="code-example-1-cloning-and-merging-arrays"><strong>Code Example 1: Cloning and Merging Arrays</strong><a class="headerlink" href="#code-example-1-cloning-and-merging-arrays" title="Permanent link">¶</a></h4>
+<pre class="highlight"><code class="language-javascript">const arr1 = [1, 2, 3];
+const arr2 = [...arr1, 4, 5]; // [1, 2, 3, 4, 5]
+console.log(arr2);</code></pre>
+<h4 id="code-example-2-cloning-an-object"><strong>Code Example 2: Cloning an Object</strong><a class="headerlink" href="#code-example-2-cloning-an-object" title="Permanent link">¶</a></h4>
+<pre class="highlight"><code class="language-javascript">const person = { name: "Kaushal", age: 25 };
+const clonedPerson = { ...person, city: "Delhi" };
+console.log(clonedPerson); // { name: 'Kaushal', age: 25, city: 'Delhi' }</code></pre>
+<hr />
+<h3 id="key-differences-dom-vs-bom"><strong>Key Differences: DOM vs BOM</strong><a class="headerlink" href="#key-differences-dom-vs-bom" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Feature</strong></th>
+<th><strong>DOM</strong></th>
+<th><strong>BOM</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Definition</strong></td>
+<td>Represents HTML document structure.</td>
+<td>Represents browser-specific objects.</td>
+</tr>
+<tr>
+<td><strong>Focus</strong></td>
+<td>Handles web page content.</td>
+<td>Handles browser environment.</td>
+</tr>
+<tr>
+<td><strong>Examples</strong></td>
+<td><code>document.querySelector</code>, <code>innerHTML</code>.</td>
+<td><code>window.open</code>, <code>navigator</code>.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    2025-01-28
+  </span>
+
+    
+    
+    
+      
+  
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Contributors">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4Z"/></svg>
+      
+    </span>
+    <nav>
+      
+        <a href="mailto:kausraj11@gmail.com">kaushal</a>
+    </nav>
+  </span>
+
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 <a href="https://github.com/kaushal726">Kaushal Raj</a>.
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/kaushal726" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://fosstodon.org/@squidfunk" target="_blank" rel="noopener" title="fosstodon.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9L389.2 48zm-24.8 373.8h39.1L151.1 88h-42l255.3 333.8z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/kaushal-raj-074673213?utm_source=share&utm_campaign=share_via&utm_content=profile" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+    
+  </body>
+</html>
