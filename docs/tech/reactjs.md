@@ -1864,3 +1864,116 @@ function Timer() {
   return <div>Timer</div>;
 }
 ```
+
+## **New Features of React 19**
+
+React 19 introduces some exciting features to make building applications even smoother and more efficient. Let’s break down these features in simple language with real-life examples.
+
+---
+
+### **1. Automatic Error Recovery**
+
+React 19 improves error boundaries by **automatically recovering from errors** in certain situations without crashing the entire app.
+
+_Real-Life Example_:  
+Imagine you're using a food delivery app, and the restaurant menu fails to load. Instead of crashing the entire app, React 19 will just show an error message for the menu and keep the rest of the app (like the search bar and cart) working.
+
+```jsx
+// No need to add manual error boundaries everywhere; React handles some recoveries automatically.
+```
+
+---
+
+### **2. Improved Streaming with Server Components**
+
+React 19 enhances server-side rendering by supporting **streaming data directly to the browser**. This means users can see parts of the page as soon as they’re ready, rather than waiting for the entire page to load.
+
+_Real-Life Example_:  
+When loading a news website, instead of waiting for all articles to load, you immediately see the header and breaking news while the rest of the page loads in the background.
+
+```jsx
+// Example using server components
+export default function Page() {
+  return (
+    <>
+      <Header />
+      <NewsSection />
+      <Footer />
+    </>
+  );
+}
+```
+
+---
+
+### **3. React Cache (Improved Data Fetching)**
+
+React 19 introduces built-in **caching for data fetching**, making it easier to manage data that doesn’t change frequently.
+
+_Real-Life Example_:  
+If your app displays the weather forecast, React can cache the data for a short time so that when users refresh the app, it doesn’t re-fetch the same weather data unnecessarily.
+
+```jsx
+import { use } from "react";
+
+function Weather() {
+  const weatherData = use(fetchWeatherData());
+  return <div>Current Weather: {weatherData.temp}°C</div>;
+}
+```
+
+---
+
+### **4. Offscreen Rendering**
+
+React 19 introduces **Offscreen Rendering**, where components can be pre-rendered but kept hidden until needed. This improves app performance and speeds up how quickly content becomes visible.
+
+_Real-Life Example_:  
+A social media app pre-renders your profile page while you're browsing the home feed. When you click "Profile," it instantly shows the pre-rendered page instead of loading from scratch.
+
+```jsx
+function App() {
+  return (
+    <div>
+      <Home />
+      <Profile hidden={true} />
+    </div>
+  );
+}
+```
+
+---
+
+### **5. Optimized Transitions for Smooth UI**
+
+React 19 makes **UI transitions smoother** by giving developers more tools to prioritize user interactions over background updates.
+
+_Real-Life Example_:  
+In a shopping app, while filtering products by price, React ensures the loading spinner doesn't block the user from scrolling or interacting with the page.
+
+```jsx
+import { startTransition } from "react";
+
+function handleFilterChange(newFilter) {
+  startTransition(() => {
+    setFilter(newFilter); // Background update
+  });
+}
+```
+
+---
+
+### **6. Enhanced Support for Concurrent Rendering**
+
+React 19 brings further improvements to **Concurrent Mode**, allowing React to multitask better. This ensures that your app remains responsive, even with complex UI updates.
+
+_Real-Life Example_:  
+In an e-commerce app, users can scroll through products while the app loads their search results in the background without any lag.
+
+---
+
+### **7. Developer Experience Improvements**
+
+React 19 includes better error messages, warnings, and developer tools, making it easier to debug and build applications.
+
+---
