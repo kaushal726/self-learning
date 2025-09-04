@@ -1,0 +1,1552 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Explains what the documentation covers">
+      
+      
+        <meta name="author" content="Kaushal Raj">
+      
+      
+        <link rel="canonical" href="https://kaushal726.github.io/self-learning/tech/offline-system.html">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Reflects the actual project - Knowledge Bank</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="https://unpkg.com/iframe-worker/shim"></script>
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#offline-first-multi-user-sync-system" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Knowledge Bank" class="md-header__button md-logo" aria-label="Knowledge Bank" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Knowledge Bank
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Reflects the actual project
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/kaushal726/self-learning" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Knowledge Bank" class="md-nav__button md-logo" aria-label="Knowledge Bank" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Knowledge Bank
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/kaushal726/self-learning" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Docs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#complete-technical-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complete Technical Documentation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Purpose
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#business-problem-solved" class="md-nav__link">
+    <span class="md-ellipsis">
+      Business Problem Solved
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture-design-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architecture &amp; Design Patterns
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architecture &amp; Design Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Architecture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-patterns-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design Patterns Used
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-technologies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Technologies
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Technologies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frontend-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frontend Stack
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Storage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network Communication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#progressive-web-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      Progressive Web App
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional Libraries
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-phases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation Phases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Phases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-foundation-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 1: Foundation (2 weeks)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-user-network-management-1-week" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 2: User &amp; Network Management (1 week)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-webrtc-foundation-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 3: WebRTC Foundation (2 weeks)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-data-synchronization-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 4: Data Synchronization (2 weeks)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-5-api-integration-1-week" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 5: API Integration (1 week)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-6-network-discovery-1-week" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 6: Network Discovery (1 week)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-7-pwa-polish-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 7: PWA &amp; Polish (2 weeks)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-flow-synchronization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Flow &amp; Synchronization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Flow &amp; Synchronization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-structure-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Structure Design
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synchronization-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Synchronization Strategies
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-communication_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network Communication
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Network Communication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#webrtc-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      WebRTC Implementation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connection-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connection Management
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Considerations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Protection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network Security
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#privacy-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Privacy Considerations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing Strategy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing Strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unit-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unit Testing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integration Testing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#end-to-end-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      End-to-End Testing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual-testing-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manual Testing Scenarios
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployment &amp; Distribution
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment &amp; Distribution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#progressive-web-app-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Progressive Web App Distribution
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#device-setup-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Device Setup Process
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maintenance-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maintenance Considerations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting Guide
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-connection-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Connection Issues
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Issues
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Issues
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recovery-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recovery Procedures
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices-recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practices &amp; Recommendations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practices &amp; Recommendations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#development-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Development Guidelines
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operational-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operational Guidelines
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scaling-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scaling Considerations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="offline-first-multi-user-sync-system">Offline-First Multi-User Sync System<a class="headerlink" href="#offline-first-multi-user-sync-system" title="Permanent link">¶</a></h1>
+<h2 id="complete-technical-documentation">Complete Technical Documentation<a class="headerlink" href="#complete-technical-documentation" title="Permanent link">¶</a></h2>
+<hr />
+<h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">¶</a></h2>
+<ol>
+<li><a href="#system-overview">System Overview</a></li>
+<li><a href="#architecture--design-patterns">Architecture &amp; Design Patterns</a></li>
+<li><a href="#core-technologies">Core Technologies</a></li>
+<li><a href="#implementation-phases">Implementation Phases</a></li>
+<li><a href="#data-flow--synchronization">Data Flow &amp; Synchronization</a></li>
+<li><a href="#network-communication">Network Communication</a></li>
+<li><a href="#security-considerations">Security Considerations</a></li>
+<li><a href="#testing-strategy">Testing Strategy</a></li>
+<li><a href="#deployment--distribution">Deployment &amp; Distribution</a></li>
+<li><a href="#troubleshooting-guide">Troubleshooting Guide</a></li>
+</ol>
+<hr />
+<h2 id="system-overview">System Overview<a class="headerlink" href="#system-overview" title="Permanent link">¶</a></h2>
+<h3 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">¶</a></h3>
+<p>Build a resilient offline-first form submission system that works across multiple users connected to the same WiFi network, with one master device handling internet synchronization.</p>
+<h3 id="key-features">Key Features<a class="headerlink" href="#key-features" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Offline-First</strong>: All functionality works without internet connection</li>
+<li><strong>Multi-User Support</strong>: 4-5 client users + 1 master user</li>
+<li><strong>Local Network Sync</strong>: Peer-to-peer communication over WiFi</li>
+<li><strong>Master Sync</strong>: Centralized API synchronization when online</li>
+<li><strong>Progressive Web App</strong>: Installable, app-like experience</li>
+<li><strong>Real-Time Updates</strong>: Live data synchronization between devices</li>
+</ul>
+<h3 id="business-problem-solved">Business Problem Solved<a class="headerlink" href="#business-problem-solved" title="Permanent link">¶</a></h3>
+<ul>
+<li>Field operations where internet is unreliable</li>
+<li>Data collection in remote locations</li>
+<li>Collaborative work environments</li>
+<li>Backup and redundancy for critical data entry</li>
+</ul>
+<hr />
+<h2 id="architecture-design-patterns">Architecture &amp; Design Patterns<a class="headerlink" href="#architecture-design-patterns" title="Permanent link">¶</a></h2>
+<h3 id="system-architecture">System Architecture<a class="headerlink" href="#system-architecture" title="Permanent link">¶</a></h3>
+<pre class="highlight"><code>Internet API
+    ↕ (HTTP/HTTPS)
+Master Device (IndexedDB + WebRTC Hub)
+    ↕ (WebRTC DataChannels)
+Client Devices (IndexedDB + WebRTC)</code></pre>
+<h3 id="design-patterns-used">Design Patterns Used<a class="headerlink" href="#design-patterns-used" title="Permanent link">¶</a></h3>
+<h4 id="1-offline-first-pattern">1. <strong>Offline-First Pattern</strong><a class="headerlink" href="#1-offline-first-pattern" title="Permanent link">¶</a></h4>
+<ul>
+<li>All data operations work locally first</li>
+<li>Network sync is enhancement, not requirement</li>
+<li>Graceful degradation when connectivity fails</li>
+</ul>
+<h4 id="2-event-driven-architecture">2. <strong>Event-Driven Architecture</strong><a class="headerlink" href="#2-event-driven-architecture" title="Permanent link">¶</a></h4>
+<ul>
+<li>Network state changes trigger sync operations</li>
+<li>Form submissions emit events for processing</li>
+<li>Connection status drives UI state updates</li>
+</ul>
+<h4 id="3-master-slave-replication">3. <strong>Master-Slave Replication</strong><a class="headerlink" href="#3-master-slave-replication" title="Permanent link">¶</a></h4>
+<ul>
+<li>Master device aggregates all user data</li>
+<li>Clients push data to master</li>
+<li>Master handles all external API communication</li>
+</ul>
+<h4 id="4-eventual-consistency">4. <strong>Eventual Consistency</strong><a class="headerlink" href="#4-eventual-consistency" title="Permanent link">¶</a></h4>
+<ul>
+<li>Data will eventually be consistent across all devices</li>
+<li>Conflict resolution strategies handle data disputes</li>
+<li>Timestamps and versioning manage data integrity</li>
+</ul>
+<h4 id="5-progressive-enhancement">5. <strong>Progressive Enhancement</strong><a class="headerlink" href="#5-progressive-enhancement" title="Permanent link">¶</a></h4>
+<ul>
+<li>Base functionality works offline</li>
+<li>Enhanced features activate with connectivity</li>
+<li>Real-time features enhance the experience</li>
+</ul>
+<hr />
+<h2 id="core-technologies">Core Technologies<a class="headerlink" href="#core-technologies" title="Permanent link">¶</a></h2>
+<h3 id="frontend-stack">Frontend Stack<a class="headerlink" href="#frontend-stack" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>React 18+</strong>: Component-based UI framework</li>
+<li><strong>TypeScript</strong>: Type safety and developer experience</li>
+<li><strong>Chakra UI</strong>: Component library and design system</li>
+<li><strong>React Hook Form</strong>: Form state management and validation</li>
+</ul>
+<h3 id="data-storage">Data Storage<a class="headerlink" href="#data-storage" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>IndexedDB</strong>: Browser-native NoSQL database</li>
+<li><strong>Dexie.js</strong>: IndexedDB wrapper with React hooks</li>
+<li><strong>Local Storage</strong>: Configuration and preferences</li>
+</ul>
+<h3 id="network-communication">Network Communication<a class="headerlink" href="#network-communication" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>WebRTC</strong>: Peer-to-peer data channels</li>
+<li><strong>Simple-peer.js</strong>: WebRTC wrapper library</li>
+<li><strong>Fetch API</strong>: HTTP requests to external APIs</li>
+</ul>
+<h3 id="progressive-web-app">Progressive Web App<a class="headerlink" href="#progressive-web-app" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Service Workers</strong>: Background sync and caching</li>
+<li><strong>Workbox</strong>: PWA toolkit and optimization</li>
+<li><strong>Web App Manifest</strong>: Installation and app behavior</li>
+</ul>
+<h3 id="additional-libraries">Additional Libraries<a class="headerlink" href="#additional-libraries" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>React Query</strong>: Server state management</li>
+<li><strong>Zustand</strong>: Client state management</li>
+<li><strong>QR Code Libraries</strong>: Device pairing</li>
+<li><strong>UUID</strong>: Unique identifier generation</li>
+</ul>
+<hr />
+<h2 id="implementation-phases">Implementation Phases<a class="headerlink" href="#implementation-phases" title="Permanent link">¶</a></h2>
+<h3 id="phase-1-foundation-2-weeks">Phase 1: Foundation (2 weeks)<a class="headerlink" href="#phase-1-foundation-2-weeks" title="Permanent link">¶</a></h3>
+<p><strong>Goal</strong>: Establish basic offline form functionality</p>
+<p><strong>Learning Focus</strong>:</p>
+<ul>
+<li>IndexedDB operations with Dexie</li>
+<li>React + TypeScript + Chakra UI integration</li>
+<li>Form handling and validation</li>
+<li>Local data persistence patterns</li>
+</ul>
+<p><strong>Deliverables</strong>:</p>
+<ul>
+<li>Working offline form with local storage</li>
+<li>Basic CRUD operations on form data</li>
+<li>Sync status tracking system</li>
+<li>UI components for data visualization</li>
+</ul>
+<p><strong>Success Criteria</strong>:</p>
+<ul>
+<li>Forms work without internet connection</li>
+<li>Data persists across browser sessions</li>
+<li>Basic sync status indicators function</li>
+</ul>
+<h3 id="phase-2-user-network-management-1-week">Phase 2: User &amp; Network Management (1 week)<a class="headerlink" href="#phase-2-user-network-management-1-week" title="Permanent link">¶</a></h3>
+<p><strong>Goal</strong>: Implement user roles and network detection</p>
+<p><strong>Learning Focus</strong>:</p>
+<ul>
+<li>Browser network APIs</li>
+<li>React Context patterns</li>
+<li>Online/offline state management</li>
+<li>User role authorization</li>
+</ul>
+<p><strong>Deliverables</strong>:</p>
+<ul>
+<li>User role management (master/client)</li>
+<li>Network status detection and UI</li>
+<li>Global state management setup</li>
+<li>Connection status indicators</li>
+</ul>
+<p><strong>Success Criteria</strong>:</p>
+<ul>
+<li>System differentiates between master and client roles</li>
+<li>Network status changes are detected and displayed</li>
+<li>User sessions persist across page refreshes</li>
+</ul>
+<h3 id="phase-3-webrtc-foundation-2-weeks">Phase 3: WebRTC Foundation (2 weeks)<a class="headerlink" href="#phase-3-webrtc-foundation-2-weeks" title="Permanent link">¶</a></h3>
+<p><strong>Goal</strong>: Establish peer-to-peer communication</p>
+<p><strong>Learning Focus</strong>:</p>
+<ul>
+<li>WebRTC fundamentals (DataChannels focus)</li>
+<li>Signaling process and ICE candidates</li>
+<li>Simple-peer.js library usage</li>
+<li>Connection lifecycle management</li>
+</ul>
+<p><strong>Deliverables</strong>:</p>
+<ul>
+<li>Basic WebRTC connection between two devices</li>
+<li>Data channel communication working</li>
+<li>Manual signaling process (copy-paste offers/answers)</li>
+<li>Connection status monitoring</li>
+</ul>
+<p><strong>Success Criteria</strong>:</p>
+<ul>
+<li>Two devices can establish WebRTC connection</li>
+<li>JSON data transfers successfully between peers</li>
+<li>Connection failures are handled gracefully</li>
+<li>Users can manually exchange connection information</li>
+</ul>
+<h3 id="phase-4-data-synchronization-2-weeks">Phase 4: Data Synchronization (2 weeks)<a class="headerlink" href="#phase-4-data-synchronization-2-weeks" title="Permanent link">¶</a></h3>
+<p><strong>Goal</strong>: Implement bidirectional data sync</p>
+<p><strong>Learning Focus</strong>:</p>
+<ul>
+<li>Data serialization strategies</li>
+<li>Conflict resolution algorithms</li>
+<li>Batch data transfer optimization</li>
+<li>Sync state management patterns</li>
+</ul>
+<p><strong>Deliverables</strong>:</p>
+<ul>
+<li>Bidirectional data synchronization</li>
+<li>Conflict resolution strategy</li>
+<li>Batch data transfer system</li>
+<li>Comprehensive sync status tracking</li>
+</ul>
+<p><strong>Success Criteria</strong>:</p>
+<ul>
+<li>Form data syncs automatically between devices</li>
+<li>Conflicts are resolved using predefined rules</li>
+<li>Large datasets transfer efficiently</li>
+<li>Sync status is accurate and real-time</li>
+</ul>
+<h3 id="phase-5-api-integration-1-week">Phase 5: API Integration (1 week)<a class="headerlink" href="#phase-5-api-integration-1-week" title="Permanent link">¶</a></h3>
+<p><strong>Goal</strong>: Master device syncs with external APIs</p>
+<p><strong>Learning Focus</strong>:</p>
+<ul>
+<li>HTTP API integration patterns</li>
+<li>Background sync strategies</li>
+<li>Error handling and retry logic</li>
+<li>Rate limiting and throttling</li>
+</ul>
+<p><strong>Deliverables</strong>:</p>
+<ul>
+<li>Master device API synchronization</li>
+<li>Background sync when connectivity returns</li>
+<li>Retry logic for failed API requests</li>
+<li>Complete offline-to-online data flow</li>
+</ul>
+<p><strong>Success Criteria</strong>:</p>
+<ul>
+<li>Master device successfully syncs all data to API</li>
+<li>Background sync works automatically</li>
+<li>Failed requests retry with exponential backoff</li>
+<li>Data integrity maintained throughout sync process</li>
+</ul>
+<h3 id="phase-6-network-discovery-1-week">Phase 6: Network Discovery (1 week)<a class="headerlink" href="#phase-6-network-discovery-1-week" title="Permanent link">¶</a></h3>
+<p><strong>Goal</strong>: Automate device discovery and connection</p>
+<p><strong>Learning Focus</strong>:</p>
+<ul>
+<li>Local network discovery techniques</li>
+<li>QR code generation and scanning</li>
+<li>Auto-reconnection strategies</li>
+<li>Connection persistence</li>
+</ul>
+<p><strong>Deliverables</strong>:</p>
+<ul>
+<li>QR code-based device pairing</li>
+<li>Local IP detection</li>
+<li>Automated connection establishment</li>
+<li>Connection persistence across sessions</li>
+</ul>
+<p><strong>Success Criteria</strong>:</p>
+<ul>
+<li>Users can easily connect devices via QR codes</li>
+<li>System automatically detects local network peers</li>
+<li>Connections restore automatically after interruption</li>
+<li>Device pairing process is user-friendly</li>
+</ul>
+<h3 id="phase-7-pwa-polish-2-weeks">Phase 7: PWA &amp; Polish (2 weeks)<a class="headerlink" href="#phase-7-pwa-polish-2-weeks" title="Permanent link">¶</a></h3>
+<p><strong>Goal</strong>: Production-ready PWA with full offline capabilities</p>
+<p><strong>Learning Focus</strong>:</p>
+<ul>
+<li>Service Worker implementation</li>
+<li>PWA manifest configuration</li>
+<li>Background sync APIs</li>
+<li>App installation flows</li>
+</ul>
+<p><strong>Deliverables</strong>:</p>
+<ul>
+<li>Installable Progressive Web App</li>
+<li>Offline page caching</li>
+<li>Background sync capabilities</li>
+<li>Production optimization</li>
+</ul>
+<p><strong>Success Criteria</strong>:</p>
+<ul>
+<li>App can be installed on devices</li>
+<li>Full functionality available offline</li>
+<li>Background sync works when app is closed</li>
+<li>Performance meets production standards</li>
+</ul>
+<hr />
+<h2 id="data-flow-synchronization">Data Flow &amp; Synchronization<a class="headerlink" href="#data-flow-synchronization" title="Permanent link">¶</a></h2>
+<h3 id="data-structure-design">Data Structure Design<a class="headerlink" href="#data-structure-design" title="Permanent link">¶</a></h3>
+<h4 id="form-entry-model">Form Entry Model<a class="headerlink" href="#form-entry-model" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>Unique Identifier</strong>: UUID for each form submission</li>
+<li><strong>User Attribution</strong>: Link to submitting user</li>
+<li><strong>Timestamp Information</strong>: Creation and modification times</li>
+<li><strong>Sync Status</strong>: Pending, syncing, synced, failed states</li>
+<li><strong>Version Control</strong>: Handle concurrent modifications</li>
+<li><strong>Form Data</strong>: Actual user input (flexible schema)</li>
+</ul>
+<h4 id="user-model">User Model<a class="headerlink" href="#user-model" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>User Identification</strong>: Unique user ID and display name</li>
+<li><strong>Role Definition</strong>: Master or client designation</li>
+<li><strong>Connection Status</strong>: Online/offline state tracking</li>
+<li><strong>Last Activity</strong>: Timestamp for connection management</li>
+</ul>
+<h3 id="synchronization-strategies">Synchronization Strategies<a class="headerlink" href="#synchronization-strategies" title="Permanent link">¶</a></h3>
+<h4 id="client-to-master-sync">Client to Master Sync<a class="headerlink" href="#client-to-master-sync" title="Permanent link">¶</a></h4>
+<ol>
+<li><strong>Automatic Push</strong>: New form data immediately sent to master</li>
+<li><strong>Batch Processing</strong>: Multiple forms bundled for efficiency</li>
+<li><strong>Acknowledgment System</strong>: Master confirms data receipt</li>
+<li><strong>Retry Logic</strong>: Failed transfers automatically retry</li>
+<li><strong>Conflict Resolution</strong>: Timestamp-based conflict handling</li>
+</ol>
+<h4 id="master-to-api-sync">Master to API Sync<a class="headerlink" href="#master-to-api-sync" title="Permanent link">¶</a></h4>
+<ol>
+<li><strong>Aggregation</strong>: Master collects all client data</li>
+<li><strong>Batch Upload</strong>: Efficient API communication</li>
+<li><strong>Status Tracking</strong>: Monitor sync progress per entry</li>
+<li><strong>Error Handling</strong>: Graceful failure and retry logic</li>
+<li><strong>Consistency Maintenance</strong>: Ensure data integrity</li>
+</ol>
+<h4 id="conflict-resolution-rules">Conflict Resolution Rules<a class="headerlink" href="#conflict-resolution-rules" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>Last Write Wins</strong>: Most recent timestamp takes precedence</li>
+<li><strong>User Priority</strong>: Master user changes override clients</li>
+<li><strong>Field-Level Merging</strong>: Combine non-conflicting changes</li>
+<li><strong>Manual Resolution</strong>: Flag complex conflicts for human review</li>
+</ul>
+<hr />
+<h2 id="network-communication_1">Network Communication<a class="headerlink" href="#network-communication_1" title="Permanent link">¶</a></h2>
+<h3 id="webrtc-implementation">WebRTC Implementation<a class="headerlink" href="#webrtc-implementation" title="Permanent link">¶</a></h3>
+<h4 id="connection-establishment">Connection Establishment<a class="headerlink" href="#connection-establishment" title="Permanent link">¶</a></h4>
+<ol>
+<li><strong>Signaling Phase</strong>: Exchange connection offers and answers</li>
+<li><strong>ICE Negotiation</strong>: Establish optimal network path</li>
+<li><strong>DataChannel Creation</strong>: Set up reliable data transfer</li>
+<li><strong>Connection Monitoring</strong>: Track connection health</li>
+<li><strong>Reconnection Logic</strong>: Automatic recovery from failures</li>
+</ol>
+<h4 id="data-transfer-protocol">Data Transfer Protocol<a class="headerlink" href="#data-transfer-protocol" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>Message Types</strong>: Standardized command structure</li>
+<li><strong>Serialization</strong>: JSON-based data encoding</li>
+<li><strong>Compression</strong>: Optional data compression for efficiency</li>
+<li><strong>Ordering</strong>: Ensure messages arrive in correct sequence</li>
+<li><strong>Acknowledgment</strong>: Confirm successful data receipt</li>
+</ul>
+<h4 id="network-discovery-methods">Network Discovery Methods<a class="headerlink" href="#network-discovery-methods" title="Permanent link">¶</a></h4>
+<ol>
+<li><strong>QR Code Sharing</strong>: Visual connection establishment</li>
+<li><strong>Manual IP Entry</strong>: Direct network address input</li>
+<li><strong>Local Network Scanning</strong>: Automatic peer discovery</li>
+<li><strong>Persistent Connections</strong>: Remember known devices</li>
+</ol>
+<h3 id="connection-management">Connection Management<a class="headerlink" href="#connection-management" title="Permanent link">¶</a></h3>
+<h4 id="master-device-responsibilities">Master Device Responsibilities<a class="headerlink" href="#master-device-responsibilities" title="Permanent link">¶</a></h4>
+<ul>
+<li>Act as central hub for all client connections</li>
+<li>Maintain connection pool for multiple clients</li>
+<li>Handle simultaneous data transfers</li>
+<li>Coordinate sync operations across clients</li>
+<li>Serve as single point for API communication</li>
+</ul>
+<h4 id="client-device-responsibilities">Client Device Responsibilities<a class="headerlink" href="#client-device-responsibilities" title="Permanent link">¶</a></h4>
+<ul>
+<li>Maintain single connection to master device</li>
+<li>Push local data changes immediately</li>
+<li>Listen for sync requests from master</li>
+<li>Handle connection failures gracefully</li>
+<li>Provide user feedback on connection status</li>
+</ul>
+<hr />
+<h2 id="security-considerations">Security Considerations<a class="headerlink" href="#security-considerations" title="Permanent link">¶</a></h2>
+<h3 id="data-protection">Data Protection<a class="headerlink" href="#data-protection" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Local Encryption</strong>: Sensitive data encrypted in IndexedDB</li>
+<li><strong>Transport Security</strong>: WebRTC provides built-in encryption</li>
+<li><strong>API Communication</strong>: HTTPS for all external requests</li>
+<li><strong>Access Control</strong>: Role-based permissions system</li>
+</ul>
+<h3 id="network-security">Network Security<a class="headerlink" href="#network-security" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Local Network Only</strong>: Restrict to same WiFi network</li>
+<li><strong>Connection Authentication</strong>: Verify legitimate devices</li>
+<li><strong>Data Validation</strong>: Sanitize all incoming data</li>
+<li><strong>Rate Limiting</strong>: Prevent spam and abuse</li>
+</ul>
+<h3 id="privacy-considerations">Privacy Considerations<a class="headerlink" href="#privacy-considerations" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Data Minimization</strong>: Store only necessary information</li>
+<li><strong>User Consent</strong>: Clear permissions for data sharing</li>
+<li><strong>Data Retention</strong>: Automatic cleanup of old data</li>
+<li><strong>Audit Logging</strong>: Track data access and modifications</li>
+</ul>
+<hr />
+<h2 id="testing-strategy">Testing Strategy<a class="headerlink" href="#testing-strategy" title="Permanent link">¶</a></h2>
+<h3 id="unit-testing">Unit Testing<a class="headerlink" href="#unit-testing" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Database Operations</strong>: Test IndexedDB CRUD operations</li>
+<li><strong>Network Functions</strong>: Mock WebRTC connections</li>
+<li><strong>Data Validation</strong>: Verify form input processing</li>
+<li><strong>Sync Logic</strong>: Test synchronization algorithms</li>
+</ul>
+<h3 id="integration-testing">Integration Testing<a class="headerlink" href="#integration-testing" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Multi-Device Scenarios</strong>: Test with multiple clients</li>
+<li><strong>Network Failure Cases</strong>: Simulate connection drops</li>
+<li><strong>API Integration</strong>: Test external service communication</li>
+<li><strong>Data Consistency</strong>: Verify sync accuracy across devices</li>
+</ul>
+<h3 id="end-to-end-testing">End-to-End Testing<a class="headerlink" href="#end-to-end-testing" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Complete User Workflows</strong>: Full form submission process</li>
+<li><strong>Offline Scenarios</strong>: Test without internet connection</li>
+<li><strong>Recovery Testing</strong>: System behavior after failures</li>
+<li><strong>Performance Testing</strong>: Load testing with multiple users</li>
+</ul>
+<h3 id="manual-testing-scenarios">Manual Testing Scenarios<a class="headerlink" href="#manual-testing-scenarios" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Device Pairing</strong>: QR code and manual connection flows</li>
+<li><strong>Offline Operation</strong>: Full functionality without internet</li>
+<li><strong>Network Transitions</strong>: Moving between online/offline states</li>
+<li><strong>Multi-User Collaboration</strong>: Simultaneous form submissions</li>
+</ul>
+<hr />
+<h2 id="deployment-distribution">Deployment &amp; Distribution<a class="headerlink" href="#deployment-distribution" title="Permanent link">¶</a></h2>
+<h3 id="progressive-web-app-distribution">Progressive Web App Distribution<a class="headerlink" href="#progressive-web-app-distribution" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Web Hosting</strong>: Deploy to static hosting service</li>
+<li><strong>HTTPS Requirement</strong>: Essential for PWA features</li>
+<li><strong>App Installation</strong>: Guide users through installation process</li>
+<li><strong>Update Management</strong>: Handle app updates gracefully</li>
+</ul>
+<h3 id="device-setup-process">Device Setup Process<a class="headerlink" href="#device-setup-process" title="Permanent link">¶</a></h3>
+<ol>
+<li><strong>Master Device Setup</strong>: Configure as central hub</li>
+<li><strong>Client Device Onboarding</strong>: Connect to master</li>
+<li><strong>Network Configuration</strong>: Verify WiFi connectivity</li>
+<li><strong>User Training</strong>: Educate on offline capabilities</li>
+<li><strong>Testing Phase</strong>: Verify all connections work</li>
+</ol>
+<h3 id="maintenance-considerations">Maintenance Considerations<a class="headerlink" href="#maintenance-considerations" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Data Backup</strong>: Regular export of critical data</li>
+<li><strong>System Updates</strong>: Plan for technology updates</li>
+<li><strong>Performance Monitoring</strong>: Track system health</li>
+<li><strong>User Support</strong>: Handle technical issues</li>
+<li><strong>Capacity Planning</strong>: Scale for additional users</li>
+</ul>
+<hr />
+<h2 id="troubleshooting-guide">Troubleshooting Guide<a class="headerlink" href="#troubleshooting-guide" title="Permanent link">¶</a></h2>
+<h3 id="common-connection-issues">Common Connection Issues<a class="headerlink" href="#common-connection-issues" title="Permanent link">¶</a></h3>
+<h4 id="webrtc-connection-failures">WebRTC Connection Failures<a class="headerlink" href="#webrtc-connection-failures" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>Symptoms</strong>: Devices cannot establish connection</li>
+<li><strong>Causes</strong>: Network firewalls, incompatible browsers</li>
+<li><strong>Solutions</strong>: Check network settings, try different browsers</li>
+<li><strong>Prevention</strong>: Use STUN servers, test network compatibility</li>
+</ul>
+<h4 id="data-sync-problems">Data Sync Problems<a class="headerlink" href="#data-sync-problems" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>Symptoms</strong>: Forms not appearing on other devices</li>
+<li><strong>Causes</strong>: Connection drops, data corruption</li>
+<li><strong>Solutions</strong>: Restart connections, verify data integrity</li>
+<li><strong>Prevention</strong>: Implement robust error handling</li>
+</ul>
+<h3 id="performance-issues">Performance Issues<a class="headerlink" href="#performance-issues" title="Permanent link">¶</a></h3>
+<h4 id="slow-sync-operations">Slow Sync Operations<a class="headerlink" href="#slow-sync-operations" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>Symptoms</strong>: Long delays in data transfer</li>
+<li><strong>Causes</strong>: Large datasets, network congestion</li>
+<li><strong>Solutions</strong>: Implement data compression, optimize batch sizes</li>
+<li><strong>Prevention</strong>: Regular data cleanup, efficient algorithms</li>
+</ul>
+<h4 id="browser-compatibility">Browser Compatibility<a class="headerlink" href="#browser-compatibility" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>Symptoms</strong>: Features not working on certain browsers</li>
+<li><strong>Causes</strong>: Missing API support, browser bugs</li>
+<li><strong>Solutions</strong>: Implement polyfills, test across browsers</li>
+<li><strong>Prevention</strong>: Use progressive enhancement patterns</li>
+</ul>
+<h3 id="data-issues">Data Issues<a class="headerlink" href="#data-issues" title="Permanent link">¶</a></h3>
+<h4 id="lost-form-data">Lost Form Data<a class="headerlink" href="#lost-form-data" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>Symptoms</strong>: Submitted forms disappear</li>
+<li><strong>Causes</strong>: Database corruption, sync failures</li>
+<li><strong>Solutions</strong>: Implement data recovery procedures</li>
+<li><strong>Prevention</strong>: Regular backups, data validation</li>
+</ul>
+<h4 id="sync-conflicts">Sync Conflicts<a class="headerlink" href="#sync-conflicts" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>Symptoms</strong>: Inconsistent data across devices</li>
+<li><strong>Causes</strong>: Simultaneous edits, network timing issues</li>
+<li><strong>Solutions</strong>: Apply conflict resolution rules</li>
+<li><strong>Prevention</strong>: Clear user guidelines, better UX design</li>
+</ul>
+<h3 id="recovery-procedures">Recovery Procedures<a class="headerlink" href="#recovery-procedures" title="Permanent link">¶</a></h3>
+<h4 id="system-recovery-steps">System Recovery Steps<a class="headerlink" href="#system-recovery-steps" title="Permanent link">¶</a></h4>
+<ol>
+<li><strong>Identify Problem</strong>: Use diagnostic tools</li>
+<li><strong>Isolate Cause</strong>: Determine root cause</li>
+<li><strong>Implement Fix</strong>: Apply appropriate solution</li>
+<li><strong>Verify Resolution</strong>: Test system functionality</li>
+<li><strong>Document Issues</strong>: Update troubleshooting guides</li>
+</ol>
+<h4 id="data-recovery-options">Data Recovery Options<a class="headerlink" href="#data-recovery-options" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>Local Backup</strong>: Restore from IndexedDB export</li>
+<li><strong>Master Device Recovery</strong>: Use master as source of truth</li>
+<li><strong>API Sync</strong>: Re-download data from server</li>
+<li><strong>Manual Recreation</strong>: Last resort data entry</li>
+</ul>
+<hr />
+<h2 id="best-practices-recommendations">Best Practices &amp; Recommendations<a class="headerlink" href="#best-practices-recommendations" title="Permanent link">¶</a></h2>
+<h3 id="development-guidelines">Development Guidelines<a class="headerlink" href="#development-guidelines" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Modular Architecture</strong>: Keep components loosely coupled</li>
+<li><strong>Error Handling</strong>: Implement comprehensive error management</li>
+<li><strong>User Experience</strong>: Prioritize clear feedback and status updates</li>
+<li><strong>Performance</strong>: Optimize for low-power devices</li>
+<li><strong>Accessibility</strong>: Ensure system works for all users</li>
+</ul>
+<h3 id="operational-guidelines">Operational Guidelines<a class="headerlink" href="#operational-guidelines" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Regular Testing</strong>: Continuously verify system functionality</li>
+<li><strong>User Training</strong>: Educate users on proper system usage</li>
+<li><strong>Monitoring</strong>: Track system performance and errors</li>
+<li><strong>Documentation</strong>: Keep technical documentation current</li>
+<li><strong>Feedback Loop</strong>: Collect and act on user feedback</li>
+</ul>
+<h3 id="scaling-considerations">Scaling Considerations<a class="headerlink" href="#scaling-considerations" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>User Limits</strong>: Plan for maximum concurrent users</li>
+<li><strong>Data Volume</strong>: Handle increasing form submissions</li>
+<li><strong>Network Capacity</strong>: Ensure adequate bandwidth</li>
+<li><strong>Storage Management</strong>: Plan for data growth</li>
+<li><strong>Performance Optimization</strong>: Maintain responsive experience</li>
+</ul>
+<hr />
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">¶</a></h2>
+<p>This offline-first multi-user sync system provides a robust solution for data collection in environments with unreliable internet connectivity. The phased implementation approach ensures steady progress while maintaining system stability and user confidence.</p>
+<p>The architecture balances simplicity with functionality, using proven technologies and patterns to create a maintainable and scalable solution. The comprehensive testing strategy and troubleshooting guides ensure reliable operation in production environments.</p>
+<p>Success depends on careful attention to user experience, robust error handling, and thorough testing across all supported devices and network conditions. The system's offline-first design ensures maximum reliability and user productivity regardless of connectivity status.</p>
+<hr />
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 4, 2025 07:22:17 UTC">September 4, 2025</span>
+  </span>
+
+    
+    
+    
+      
+  
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Contributors">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4"/></svg>
+      
+    </span>
+    <nav>
+      
+        <a href="mailto:kausraj11@gmail.com">kaushal</a>
+    </nav>
+  </span>
+
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 <a href="https://github.com/kaushal726">Kaushal Raj</a>.
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/kaushal726" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://fosstodon.org/@squidfunk" target="_blank" rel="noopener" title="fosstodon.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M357.2 48h70.6L273.6 224.2 455 464H313L201.7 318.6 74.5 464H3.8l164.9-188.5L-5.2 48h145.6l100.5 132.9zm-24.8 373.8h39.1L119.1 88h-42z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/kaushal-raj-074673213?utm_source=share&utm_campaign=share_via&utm_content=profile" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>
