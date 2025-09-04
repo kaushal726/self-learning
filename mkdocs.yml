@@ -67,7 +67,7 @@ copyright: |
 plugins:
   - offline
   - search
-  - git-revision-date
+  - git-revision-date-localized
   - autorefs
   - git-authors
   - literate-nav:

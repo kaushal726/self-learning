@@ -24,4 +24,5 @@ Welcome to the documentation portal. Here you'll find comprehensive guides and r
 - [Backend Design Pattern](./tech/design-pattern.md)
 - [Playwright](./tech/playwright.md)
 - [Google Tag Manager](./tech/post_deploy.md)
+- [Offline System](./tech/offline-system.md)
 - [References](./tech/reference-links.md)
