@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="NodeJs Learning and Documentation.">
+        <meta name="description" content="Node.js notes — V8, architecture, modules, libuv, event loop, servers, databases, Express APIs, and Mongoose.">
       
       
         <meta name="author" content="Kaushal Raj">
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#nodejs-documentation" class="md-skip">
+        <a href="#nodejs" class="md-skip">
           Skip to content
         </a>
       
@@ -345,6 +345,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -353,22 +355,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#nodejs-documentation" class="md-nav__link">
+  <a href="#table-of-contents" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Node.js Documentation
+        Table of Contents
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Node.js Documentation">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-1-nodejs-fundamentals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter 1 — Node.js Fundamentals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 1 — Node.js Fundamentals">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#nodejs-and-v8-engine" class="md-nav__link">
+  <a href="#what-is-nodejs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Node.js and V8 Engine
+        What is Node.js
       
     </span>
   </a>
@@ -376,10 +389,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ecma-script" class="md-nav__link">
+  <a href="#js-engine-and-v8" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ECMA Script
+        JS Engine and V8
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ecmascript" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ECMAScript
       
     </span>
   </a>
@@ -398,10 +422,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#how-humans-and-computers-read-code" class="md-nav__link">
+  <a href="#code-hierarchy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How Humans and Computers Read Code
+        Code Hierarchy
       
     </span>
   </a>
@@ -409,10 +433,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#global-variables-in-nodejs" class="md-nav__link">
+  <a href="#global-this-globalthis" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Global Variables in Node.js
+        global, this, globalThis
       
     </span>
   </a>
@@ -420,10 +444,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#modules-in-nodejs" class="md-nav__link">
+  <a href="#web-workers-vs-worker-threads" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Modules in Node.js
+        Web Workers vs Worker Threads
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modules-protect-your-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modules Protect Your Code
       
     </span>
   </a>
@@ -432,6 +467,444 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-2-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter 2 — Modules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 2 — Modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#import-and-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Import and Export
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commonjs-vs-es-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CommonJS vs ES Modules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-modules-are-wrapped-iife" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Modules Are Wrapped — IIFE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#require-step-by-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        require — Step by Step
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-3-how-node-runs-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter 3 — How Node Runs Code
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 3 — How Node Runs Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#js-is-sync-node-makes-it-async" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JS is Sync, Node Makes it Async
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inside-v8-heap-call-stack-gc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inside V8 — Heap, Call Stack, GC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#libuv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        libuv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#garbage-collector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Garbage Collector
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fs-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        fs Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-code-is-executed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Code is Executed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interpreter-vs-compiler-vs-jit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interpreter vs Compiler vs JIT
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-4-event-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter 4 — Event Loop
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 4 — Event Loop">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#event-loop-in-nodejs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event Loop in Node.js
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process-of-the-event-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Process of the Event Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#priority-queue-vs-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Priority Queue vs Phase
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thread-pool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thread Pool
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-5-server-and-networking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter 5 — Server and Networking
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 5 — Server and Networking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Server
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-6-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter 6 — Databases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 6 — Databases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Databases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rdbms-vs-nosql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RDBMS vs NoSQL
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-7-building-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter 7 — Building APIs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 7 — Building APIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#planning-before-building" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Planning Before Building
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monolith-vs-microservices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monolith vs Microservices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#taking-input-through-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Taking Input Through APIs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#middleware-and-routes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Middleware and Routes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-8-mongoose-and-mongodb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter 8 — Mongoose and MongoDB
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 8 — Mongoose and MongoDB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mongoose-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mongoose Basics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schema-and-crud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schema and CRUD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#useful-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Useful Libraries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select-populate-skip-and-limit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        select, populate, skip and limit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query-operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Query Operators
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-revision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Revision
+      
+    </span>
+  </a>
   
 </li>
       
@@ -455,80 +928,1205 @@
   
 
 
-  <h1>NodeJs Documentation</h1>
-
-<h2 id="nodejs-documentation">Node.js Documentation<a class="headerlink" href="#nodejs-documentation" title="Permanent link">¶</a></h2>
-<h3 id="nodejs-and-v8-engine"><strong>Node.js and V8 Engine</strong><a class="headerlink" href="#nodejs-and-v8-engine" title="Permanent link">¶</a></h3>
-<p>Node.js is a runtime environment that allows JavaScript to run outside the browser. It is built on the <strong>V8 engine</strong>, which is Google's open-source JavaScript engine used in Google Chrome.</p>
-<h4 id="what-is-the-v8-engine"><strong>What is the V8 Engine?</strong><a class="headerlink" href="#what-is-the-v8-engine" title="Permanent link">¶</a></h4>
-<p>V8 is a high-performance JavaScript engine developed by Google. It converts JavaScript code into machine code for faster execution.</p>
-<h4 id="real-life-example"><strong>Real-Life Example:</strong><a class="headerlink" href="#real-life-example" title="Permanent link">¶</a></h4>
-<p>Imagine V8 as a translator who converts English (JavaScript) into a language that a computer (processor) understands (machine code). The faster the translator, the quicker the response.</p>
+<h1 id="nodejs">Node.js<a class="headerlink" href="#nodejs" title="Permanent link">¶</a></h1>
+<p>Notes on how Node.js actually works — from the V8 engine underneath it, through modules and the event loop, up to building APIs and talking to a database.</p>
 <hr />
-<h3 id="ecma-script"><strong>ECMA Script</strong><a class="headerlink" href="#ecma-script" title="Permanent link">¶</a></h3>
-<p>ECMAScript (ES) is a standardized scripting language that JavaScript follows. It defines the rules and syntax of JavaScript.</p>
-<h4 id="why-is-ecma-script-important"><strong>Why is ECMA Script Important?</strong><a class="headerlink" href="#why-is-ecma-script-important" title="Permanent link">¶</a></h4>
+<h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">¶</a></h2>
+<p><strong>Chapter 1 — <a href="#chapter-1-nodejs-fundamentals">Node.js Fundamentals</a></strong></p>
+<ol>
+<li><a href="#what-is-nodejs">What is Node.js</a></li>
+<li><a href="#js-engine-and-v8">JS Engine and V8</a></li>
+<li><a href="#ecmascript">ECMAScript</a></li>
+<li><a href="#nodejs-architecture">Node.js Architecture</a></li>
+<li><a href="#code-hierarchy">Code Hierarchy</a></li>
+<li><a href="#global-this-globalthis">global, this, globalThis</a></li>
+<li><a href="#web-workers-vs-worker-threads">Web Workers vs Worker Threads</a></li>
+</ol>
+<p><strong>Chapter 2 — <a href="#chapter-2-modules">Modules</a></strong></p>
+<ol>
+<li><a href="#import-and-export">Import and Export</a></li>
+<li><a href="#commonjs-vs-es-modules">CommonJS vs ES Modules</a></li>
+<li><a href="#how-modules-are-wrapped-iife">How Modules Are Wrapped — IIFE</a></li>
+<li><a href="#require-step-by-step">require — Step by Step</a></li>
+</ol>
+<p><strong>Chapter 3 — <a href="#chapter-3-how-node-runs-code">How Node Runs Code</a></strong></p>
+<ol>
+<li><a href="#js-is-sync-node-makes-it-async">JS is Sync, Node Makes it Async</a></li>
+<li><a href="#inside-v8-heap-call-stack-gc">Inside V8 — Heap, Call Stack, GC</a></li>
+<li><a href="#libuv">libuv</a></li>
+<li><a href="#garbage-collector">Garbage Collector</a></li>
+<li><a href="#fs-module">fs Module</a></li>
+<li><a href="#how-code-is-executed">How Code is Executed</a></li>
+<li><a href="#interpreter-vs-compiler-vs-jit">Interpreter vs Compiler vs JIT</a></li>
+</ol>
+<p><strong>Chapter 4 — <a href="#chapter-4-event-loop">Event Loop</a></strong></p>
+<ol>
+<li><a href="#event-loop-in-nodejs">Event Loop in Node.js</a></li>
+<li><a href="#process-of-the-event-loop">Process of the Event Loop</a></li>
+<li><a href="#priority-queue-vs-phase">Priority Queue vs Phase</a></li>
+<li><a href="#thread-pool">Thread Pool</a></li>
+</ol>
+<p><strong>Chapter 5 — <a href="#chapter-5-server-and-networking">Server and Networking</a></strong></p>
+<ol>
+<li><a href="#server">Server</a></li>
+</ol>
+<p><strong>Chapter 6 — <a href="#chapter-6-databases">Databases</a></strong></p>
+<ol>
+<li><a href="#databases">Databases</a></li>
+<li><a href="#rdbms-vs-nosql">RDBMS vs NoSQL</a></li>
+</ol>
+<p><strong>Chapter 7 — <a href="#chapter-7-building-apis">Building APIs</a></strong></p>
+<ol>
+<li><a href="#planning-before-building">Planning Before Building</a></li>
+<li><a href="#monolith-vs-microservices">Monolith vs Microservices</a></li>
+<li><a href="#taking-input-through-apis">Taking Input Through APIs</a></li>
+<li><a href="#middleware-and-routes">Middleware and Routes</a></li>
+</ol>
+<p><strong>Chapter 8 — <a href="#chapter-8-mongoose-and-mongodb">Mongoose and MongoDB</a></strong></p>
+<ol>
+<li><a href="#mongoose-basics">Mongoose Basics</a></li>
+<li><a href="#schema-and-crud">Schema and CRUD</a></li>
+<li><a href="#validation">Validation</a></li>
+<li><a href="#useful-libraries">Useful Libraries</a></li>
+<li><a href="#select-populate-skip-and-limit">select, populate, skip and limit</a></li>
+<li><a href="#query-operators">Query Operators</a></li>
+</ol>
+<p><strong><a href="#quick-revision">Quick Revision</a></strong></p>
+<hr />
+<h2 id="chapter-1-nodejs-fundamentals">Chapter 1 — Node.js Fundamentals<a class="headerlink" href="#chapter-1-nodejs-fundamentals" title="Permanent link">¶</a></h2>
+<h3 id="what-is-nodejs">What is Node.js<a class="headerlink" href="#what-is-nodejs" title="Permanent link">¶</a></h3>
+<p>A client talks to a server over the network using an IP address. The server runs JavaScript — that is Node.js.</p>
+<pre class="mermaid"><code>flowchart LR
+    C["Client&lt;br/&gt;browser / app"] &lt;--&gt;|"10.10.21.126"| S["Server&lt;br/&gt;running JS"]
+    S --&gt; N["Node.js"]</code></pre>
+<p>Node.js is a runtime environment that allows JavaScript to run <strong>outside the browser</strong>. It is built on the <strong>V8 engine</strong>, Google's open-source JavaScript engine used in Chrome.</p>
+<h3 id="js-engine-and-v8">JS Engine and V8<a class="headerlink" href="#js-engine-and-v8" title="Permanent link">¶</a></h3>
 <ul>
-<li>It ensures consistency in JavaScript across different environments.</li>
-<li>New features like <code>let</code>, <code>const</code>, arrow functions, and async/await are introduced in newer versions (ES6, ES7, etc.).</li>
+<li>The JS engine is the <strong>V8 engine</strong>.</li>
+<li>It is written mostly in <strong>C++</strong>.</li>
+<li><strong>V8 can be embedded into any C++ program.</strong></li>
+<li><strong>Node.js is an application of C++</strong> — it embeds V8 and adds its own powers on top.</li>
 </ul>
-<h4 id="real-life-example_1"><strong>Real-Life Example:</strong><a class="headerlink" href="#real-life-example_1" title="Permanent link">¶</a></h4>
-<p>Think of ECMAScript as a rulebook for a game. Different versions introduce new rules to improve gameplay, just like ES6 and ES7 introduced better features for JavaScript.</p>
-<hr />
-<h3 id="nodejs-architecture"><strong>Node.js Architecture</strong><a class="headerlink" href="#nodejs-architecture" title="Permanent link">¶</a></h3>
-<p>Node.js follows an <strong>event-driven, non-blocking I/O</strong> model. This makes it highly scalable and efficient for handling multiple requests simultaneously.</p>
-<h4 id="how-it-works"><strong>How It Works?</strong><a class="headerlink" href="#how-it-works" title="Permanent link">¶</a></h4>
+<pre class="mermaid"><code>flowchart LR
+    JS["JS code"] --&gt; V8["V8&lt;br/&gt;written in C++"] --&gt; M["Machine code"]</code></pre>
+<p><strong>Real-life example:</strong> V8 is a translator who converts English (JavaScript) into a language the computer (processor) understands (machine code). The faster the translator, the quicker the response.</p>
+<p>That one fact — <em>V8 can be embedded in any C++ program</em> — is the whole reason Node.js exists. Someone took the browser's JS engine, wrapped it in a C++ program, and gave it file access and networking.</p>
+<h3 id="ecmascript">ECMAScript<a class="headerlink" href="#ecmascript" title="Permanent link">¶</a></h3>
+<p><strong>ECMAScript = the rules or script which a programming language (JS) should follow.</strong></p>
+<ul>
+<li>Rules to write code — for example <code>===</code></li>
+<li>The rules come from JS, and are used by ECMAScript</li>
+</ul>
+<p><strong>Why it matters:</strong></p>
+<ul>
+<li>It keeps JavaScript consistent across different environments.</li>
+<li>New features like <code>let</code>, <code>const</code>, arrow functions, and <code>async/await</code> arrive in newer versions (ES6, ES7, …).</li>
+</ul>
+<p><strong>Real-life example:</strong> ECMAScript is a rulebook for a game. Different versions introduce new rules to improve gameplay, just like ES6 and ES7 introduced better features for JavaScript.</p>
+<h3 id="nodejs-architecture">Node.js Architecture<a class="headerlink" href="#nodejs-architecture" title="Permanent link">¶</a></h3>
+<p>Node.js = <strong>V8 engine (C++) + super power (C++)</strong>. That combination is what serves your API.</p>
+<pre class="mermaid"><code>flowchart LR
+    subgraph SERVER["Server"]
+        direction LR
+        V["V8 Engine&lt;br/&gt;C++"] --- P["Super power&lt;br/&gt;C++ — libuv, fs, http, crypto"]
+    end
+    SERVER --&gt; A["API / Server"]
+    A --&gt; C["Client"]</code></pre>
+<p>Node.js follows an <strong>event-driven, non-blocking I/O</strong> model, which makes it scalable for many simultaneous requests:</p>
 <ul>
 <li>A request is received by Node.js.</li>
 <li>The event loop processes the request asynchronously.</li>
-<li>If the request requires I/O (e.g., database query), Node.js delegates it to worker threads.</li>
-<li>Once completed, the response is sent back.</li>
+<li>If the request needs I/O (a database query, a file read), Node.js hands it off.</li>
+<li>Once complete, the response is sent back.</li>
 </ul>
-<h4 id="real-life-example_2"><strong>Real-Life Example:</strong><a class="headerlink" href="#real-life-example_2" title="Permanent link">¶</a></h4>
-<p>Think of a restaurant where a waiter takes multiple orders without waiting for one to be completed. The chef prepares food (I/O operation), and once ready, the waiter serves it to the customer. This is how Node.js handles multiple requests efficiently.</p>
-<hr />
-<h3 id="how-humans-and-computers-read-code"><strong>How Humans and Computers Read Code</strong><a class="headerlink" href="#how-humans-and-computers-read-code" title="Permanent link">¶</a></h3>
+<p><strong>Real-life example:</strong> A restaurant where the waiter takes many orders without waiting for one to finish. The chef prepares the food (I/O), and the waiter serves it when ready.</p>
+<h3 id="code-hierarchy">Code Hierarchy<a class="headerlink" href="#code-hierarchy" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Who reads it</th>
+<th>Looks like</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>High level code</strong></td>
+<td>Human</td>
+<td><code>const a = 10</code></td>
+</tr>
+<tr>
+<td><strong>Assembly code</strong></td>
+<td>Between the two</td>
+<td><code>001F02C2184</code></td>
+</tr>
+<tr>
+<td><strong>Machine code</strong></td>
+<td>—</td>
+<td>bits and bytes</td>
+</tr>
+<tr>
+<td><strong>Binary code</strong></td>
+<td>Computer</td>
+<td><code>0</code> and <code>1</code></td>
+</tr>
+</tbody>
+</table>
+<pre class="mermaid"><code>flowchart LR
+    A["High level code&lt;br/&gt;human readable"] --&gt; B["Assembly code"] --&gt; C["Machine code&lt;br/&gt;bits, bytes"] --&gt; D["Binary&lt;br/&gt;0 / 1 — computer"]</code></pre>
+<p><strong>Real-life example:</strong> A human reads a recipe as a whole, understanding ingredients and steps. A computer, like a robotic chef, follows each step precisely, one at a time.</p>
+<h3 id="global-this-globalthis">global, this, globalThis<a class="headerlink" href="#global-this-globalthis" title="Permanent link">¶</a></h3>
+<p><strong>1. <code>global</code></strong> — it is a part of Node (extra power). Like in the browser we have <code>window</code>.</p>
 <ul>
-<li>Humans read code logically, understanding the purpose and flow.</li>
-<li>Computers read code <strong>line by line</strong> in a structured way and execute commands as instructed.</li>
+<li>It is <strong>similar to <code>window</code></strong> in Node.js, and it contains <code>console.log</code>, <code>setTimeout</code>, <code>setInterval</code>.</li>
+<li>If any variable is declared <strong>without</strong> <code>let</code>, <code>var</code>, <code>const</code>, it is considered a <strong>global variable</strong>.</li>
+<li>It is available throughout the Node.js environment.</li>
 </ul>
-<h4 id="real-life-example_3"><strong>Real-Life Example:</strong><a class="headerlink" href="#real-life-example_3" title="Permanent link">¶</a></h4>
-<p>A human reads a recipe as a whole, understanding ingredients and steps. A computer, like a robotic chef, follows each step precisely, executing one at a time unless programmed to multitask.</p>
-<hr />
-<h3 id="global-variables-in-nodejs"><strong>Global Variables in Node.js</strong><a class="headerlink" href="#global-variables-in-nodejs" title="Permanent link">¶</a></h3>
-<p>Global variables in Node.js are variables that can be accessed anywhere in the application.</p>
-<h4 id="common-global-variables-in-nodejs"><strong>Common Global Variables in Node.js:</strong><a class="headerlink" href="#common-global-variables-in-nodejs" title="Permanent link">¶</a></h4>
+<p>Other globals worth knowing:</p>
+<pre class="highlight"><code class="language-javascript">console.log(__dirname);  // directory of the current script
+console.log(__filename); // full path of the current file
+console.log(process.argv); // info about the Node.js process</code></pre>
+<p><strong>2. <code>this</code></strong> — it is an empty object at module level, and it behaves differently in different circumstances:</p>
+<table>
+<thead>
+<tr>
+<th>Where</th>
+<th>What <code>this</code> is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Module top level — <code>console.log(this)</code></td>
+<td><code>{}</code> — empty object</td>
+</tr>
+<tr>
+<td>Inside a function</td>
+<td>global object</td>
+</tr>
+<tr>
+<td>Inside an object method — <code>obj.show()</code></td>
+<td>the object → <code>Kaushal</code></td>
+</tr>
+<tr>
+<td>Inside a class</td>
+<td>same as object method</td>
+</tr>
+<tr>
+<td>Inside an arrow function</td>
+<td><code>undefined</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>3. <code>globalThis</code></strong> — the common global variable. It is <strong>free from any environment</strong> and can be used anywhere in the application.</p>
+<table>
+<thead>
+<tr>
+<th>Environment</th>
+<th>Global keyword</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Browser</td>
+<td><code>window</code></td>
+</tr>
+<tr>
+<td>Node.js</td>
+<td><code>global</code></td>
+</tr>
+<tr>
+<td>Web worker</td>
+<td><code>self</code></td>
+</tr>
+<tr>
+<td><strong><code>globalThis</code></strong></td>
+<td><strong>all environments</strong></td>
+</tr>
+</tbody>
+</table>
+<pre class="mermaid"><code>flowchart LR
+    B["Browser → window"] --&gt; G["globalThis&lt;br/&gt;works everywhere"]
+    N["Node.js → global"] --&gt; G
+    W["Web worker → self"] --&gt; G</code></pre>
+<p><strong>Real-life example:</strong> <code>global</code> is a school notice board where common information (like holidays) is visible to all students (scripts).</p>
+<h3 id="web-workers-vs-worker-threads">Web Workers vs Worker Threads<a class="headerlink" href="#web-workers-vs-worker-threads" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Web Workers</th>
+<th>Worker Threads</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Where</td>
+<td><strong>Browser</strong></td>
+<td><strong>Node.js</strong></td>
+</tr>
+<tr>
+<td>Purpose</td>
+<td>Separate the UI thread logic into a different thread, for better CPU optimisation</td>
+<td>Separate the JS logic into another thread</td>
+</tr>
+<tr>
+<td>Used for</td>
+<td>Keeping the UI responsive</td>
+<td>Heavy operations like cryptography or image processing</td>
+</tr>
+</tbody>
+</table>
+<pre class="mermaid"><code>flowchart LR
+    M["Main thread&lt;br/&gt;UI / JS logic"] --&gt;|"heavy work"| W["Worker&lt;br/&gt;separate thread"]
+    W --&gt;|"result back"| M</code></pre>
+<h3 id="modules-protect-your-code">Modules Protect Your Code<a class="headerlink" href="#modules-protect-your-code" title="Permanent link">¶</a></h3>
+<p><strong>Modules protect the variables and functions from leaking.</strong> Anything you declare in a file stays inside that file until you explicitly export it.</p>
+<p>Types of modules:</p>
 <ul>
-<li><code>__dirname</code> - The directory of the current script.</li>
-<li><code>__filename</code> - The name of the current script.</li>
-<li><code>process</code> - Provides information about the Node.js process.</li>
-<li><code>global</code> - Stores global variables.</li>
+<li><strong>Built-in modules</strong> — shipped with Node.js (<code>fs</code>, <code>http</code>, <code>path</code>)</li>
+<li><strong>Custom modules</strong> — your own files</li>
+<li><strong>Third-party modules</strong> — installed via npm (Express, Lodash)</li>
 </ul>
-<h4 id="example"><strong>Example:</strong><a class="headerlink" href="#example" title="Permanent link">¶</a></h4>
-<pre class="highlight"><code class="language-javascript">console.log(__dirname); // Prints the directory path
-console.log(__filename); // Prints the file name</code></pre>
-<h4 id="real-life-example_4"><strong>Real-Life Example:</strong><a class="headerlink" href="#real-life-example_4" title="Permanent link">¶</a></h4>
-<p>Think of <code>global</code> as a school's notice board where common information (like holidays) is available to all students (scripts).</p>
+<p><strong>Real-life example:</strong> Modules are like subjects in school. Instead of one giant book, the content is split into separate books (files) for better understanding.</p>
 <hr />
-<h3 id="modules-in-nodejs"><strong>Modules in Node.js</strong><a class="headerlink" href="#modules-in-nodejs" title="Permanent link">¶</a></h3>
-<p>Modules help in organizing code into separate files, making the code more manageable and reusable.</p>
-<h4 id="types-of-modules"><strong>Types of Modules:</strong><a class="headerlink" href="#types-of-modules" title="Permanent link">¶</a></h4>
+<h2 id="chapter-2-modules">Chapter 2 — Modules<a class="headerlink" href="#chapter-2-modules" title="Permanent link">¶</a></h2>
+<h3 id="import-and-export">Import and Export<a class="headerlink" href="#import-and-export" title="Permanent link">¶</a></h3>
+<pre class="highlight"><code class="language-javascript">// sum.js
+const sum = (a, b) =&gt; a + b;
+module.exports = { sum };
+
+// app.js
+const { sum } = require("./sum.js");</code></pre>
+<p><strong>All our variables and methods are protected inside the module — we just need to export what we want to share.</strong></p>
+<pre class="mermaid"><code>flowchart LR
+    subgraph F["sum.js"]
+        A["const secret = 1&lt;br/&gt;stays private"]
+        B["module.exports = { sum }"]
+    end
+    B --&gt;|require| C["app.js&lt;br/&gt;gets only sum"]</code></pre>
+<h3 id="commonjs-vs-es-modules">CommonJS vs ES Modules<a class="headerlink" href="#commonjs-vs-es-modules" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>CommonJS (CJS)</strong></th>
+<th><strong>ES Modules (ESM)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Export</td>
+<td><code>module.exports</code></td>
+<td><code>export</code></td>
+</tr>
+<tr>
+<td>Import</td>
+<td><code>require()</code></td>
+<td><code>import</code></td>
+</tr>
+<tr>
+<td>Default in</td>
+<td><strong>Node.js</strong></td>
+<td><strong>Angular, React</strong></td>
+</tr>
+<tr>
+<td>Age</td>
+<td>Older way</td>
+<td>Newer way</td>
+</tr>
+<tr>
+<td><code>package.json</code></td>
+<td><code>"type": "commonjs"</code></td>
+<td><code>"type": "module"</code></td>
+</tr>
+<tr>
+<td>Calls</td>
+<td><strong>Sync</strong> call</td>
+<td><strong>Async</strong> option available</td>
+</tr>
+<tr>
+<td>Mode</td>
+<td>Non-strict mode</td>
+<td><strong>Strict mode</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Both do the same job; ESM is the direction the language is heading, CJS is what most existing Node code is written in.</p>
+<p><strong>Two more points:</strong></p>
 <ul>
-<li><strong>Built-in Modules</strong> - Predefined in Node.js (e.g., <code>fs</code>, <code>http</code>, <code>path</code>).</li>
-<li><strong>Custom Modules</strong> - User-defined modules for specific functionalities.</li>
-<li><strong>Third-party Modules</strong> - Installed via npm (e.g., Express.js, Lodash).</li>
+<li><code>module.exports</code> starts life as an <strong>empty object</strong> — you are filling it in.</li>
+<li><strong>Import a JSON file the same as a JS file.</strong> Node parses it and hands you the object.</li>
 </ul>
-<h4 id="example_1"><strong>Example:</strong><a class="headerlink" href="#example_1" title="Permanent link">¶</a></h4>
-<p>Creating and using a custom module:</p>
-<p><strong>math.js</strong> (Custom module)</p>
-<pre class="highlight"><code class="language-javascript">exports.add = (a, b) =&gt; a + b;
-exports.subtract = (a, b) =&gt; a - b;</code></pre>
-<p><strong>app.js</strong> (Importing module)</p>
-<pre class="highlight"><code class="language-javascript">const math = require("./math");
-console.log(math.add(5, 3)); // Outputs: 8</code></pre>
-<h4 id="real-life-example_5"><strong>Real-Life Example:</strong><a class="headerlink" href="#real-life-example_5" title="Permanent link">¶</a></h4>
-<p>Think of modules as different subjects in school. Instead of learning everything in one book, subjects (modules) are divided into separate books (files) for better understanding.</p>
+<pre class="highlight"><code class="language-javascript">const data = require("./config.json"); // straight to an object</code></pre>
+<h3 id="how-modules-are-wrapped-iife">How Modules Are Wrapped — IIFE<a class="headerlink" href="#how-modules-are-wrapped-iife" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>All the code of a module is wrapped inside a function.</strong></li>
+<li><strong>IIFE = Immediately Invoked Function Expression.</strong></li>
+<li>That wrapping is what keeps your variables private.</li>
+</ul>
+<p><strong>In Node.js, modules are wrapped inside a function, and when you call <code>require</code> it calls that function and stores the function's code as a cache.</strong></p>
+<pre class="mermaid"><code>flowchart LR
+    A["xyz.js"] --&gt; B["(function (exports, require, module, __filename, __dirname) {&lt;br/&gt;  ...your code...&lt;br/&gt;})();"]
+    B --&gt; C["module.exports&lt;br/&gt;returned to require()"]
+    C --&gt; D["V8 engine executes"]</code></pre>
+<p>This is why <code>module</code>, <code>require</code>, <code>__dirname</code> and <code>__filename</code> are available in every file without importing them — they are the wrapper function's parameters.</p>
+<h3 id="require-step-by-step">require — Step by Step<a class="headerlink" href="#require-step-by-step" title="Permanent link">¶</a></h3>
+<pre class="mermaid"><code>flowchart TB
+    S1["Step 1 — Resolving the module&lt;br/&gt;local path / node:util / json"] --&gt; S2["Loading the module&lt;br/&gt;(i) file content is loaded&lt;br/&gt;(ii) according to file type"]
+    S2 --&gt; S3["Wraps inside IIFE"]
+    S3 --&gt; S4["Evaluation&lt;br/&gt;module.exports returned"]
+    S4 --&gt; S5["Caching&lt;br/&gt;code of the file runs once"]
+    S5 --&gt; S6["Next require returns&lt;br/&gt;the cached file"]</code></pre>
+<ol>
+<li><strong>Resolving the module</strong> — is it a local path, a core module like <code>node:util</code>, or a JSON file?</li>
+<li><strong>Loading the module</strong> — the file content is loaded, according to its file type.</li>
+<li><strong>Wraps inside the IIFE.</strong></li>
+<li><strong>Evaluation</strong> — <code>module.exports</code> is returned.</li>
+<li><strong>Caching</strong> — the code of the file runs <strong>once</strong>; every later <code>require</code> gets the cached copy.</li>
+</ol>
+<p>The caching step has a practical consequence: a module's top-level code runs exactly once per process, no matter how many files require it. Handy for a database connection, surprising if you expected fresh state.</p>
 <hr />
+<h2 id="chapter-3-how-node-runs-code">Chapter 3 — How Node Runs Code<a class="headerlink" href="#chapter-3-how-node-runs-code" title="Permanent link">¶</a></h2>
+<h3 id="js-is-sync-node-makes-it-async">JS is Sync, Node Makes it Async<a class="headerlink" href="#js-is-sync-node-makes-it-async" title="Permanent link">¶</a></h3>
+<p><strong>JS is sync + Node (extra features) = it becomes async.</strong></p>
+<p>JavaScript by itself runs one line at a time on a single thread. Node adds the extra machinery — libuv, the thread pool, the event loop — that lets slow work happen elsewhere while the main thread keeps going.</p>
+<h3 id="inside-v8-heap-call-stack-gc">Inside V8 — Heap, Call Stack, GC<a class="headerlink" href="#inside-v8-heap-call-stack-gc" title="Permanent link">¶</a></h3>
+<pre class="mermaid"><code>flowchart TB
+    subgraph V8["V8 Engine"]
+        direction LR
+        CS["Call Stack&lt;br/&gt;what's running now"]
+        MH["Memory Heap&lt;br/&gt;where objects live"]
+        GC["Garbage Collection"]
+    end
+    MH --&gt; GC
+    GC --&gt;|frees unused memory| MH</code></pre>
+<pre class="highlight"><code class="language-javascript">var a = 1000;
+var multiply = () =&gt; a * a;
+var product = multiply(a);</code></pre>
+<ul>
+<li><strong>Call stack</strong> — the function currently executing sits on top.</li>
+<li><strong>Memory heap</strong> — variables and objects are stored here.</li>
+<li><strong>GC</strong> — cleans the heap once values are no longer reachable.</li>
+</ul>
+<h3 id="libuv">libuv<a class="headerlink" href="#libuv" title="Permanent link">¶</a></h3>
+<pre class="mermaid"><code>flowchart LR
+    V8["V8 JS Engine"] &lt;--&gt; L["libuv&lt;br/&gt;written in C"]
+    L &lt;--&gt;|"offloads task"| OS["OS&lt;br/&gt;File · DB · timer · network · &amp; more"]</code></pre>
+<ul>
+<li><strong>libuv is written in C.</strong> It is the <strong>middle layer that acts as a medium between the V8 engine and the OS.</strong></li>
+<li><strong>Node.js is async because of libuv.</strong></li>
+<li>libuv handles: files, <code>setTimeout</code>, API calls, <code>fs</code>.</li>
+</ul>
+<p>V8 alone can only run JavaScript — it has no idea what a file or a socket is. Everything Node can do that a browser cannot comes through libuv.</p>
+<h3 id="garbage-collector">Garbage Collector<a class="headerlink" href="#garbage-collector" title="Permanent link">¶</a></h3>
+<p><strong>It stores the unused variables, or any data which is of no use.</strong> Once the code has executed, the garbage collector is free to release it.</p>
+<pre class="mermaid"><code>flowchart LR
+    A["Code runs&lt;br/&gt;variables created"] --&gt; B["Code finishes"]
+    B --&gt; C["Values no longer reachable"]
+    C --&gt; D["Garbage collector frees memory"]</code></pre>
+<h3 id="fs-module">fs Module<a class="headerlink" href="#fs-module" title="Permanent link">¶</a></h3>
+<p><strong><code>fs</code> is a Node.js core module which is used to read/write on the file.</strong> It has various operations:</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Behaviour</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fs.readFileSync</code></td>
+<td>It reads the file in <strong>sync</strong> fashion</td>
+</tr>
+<tr>
+<td><code>fs.readFile</code></td>
+<td>It reads the file <strong>normally (async way)</strong></td>
+</tr>
+</tbody>
+</table>
+<p>…and so on.</p>
+<pre class="highlight"><code class="language-javascript">// blocks everything until the file is read
+const data = fs.readFileSync("./file.txt", "utf-8");
+
+// hands off to libuv, keeps going
+fs.readFile("./file.txt", "utf-8", (err, data) =&gt; {
+  console.log(data);
+});</code></pre>
+<p><strong>We should never use sync code</strong> — reason being, <strong>it blocks our main thread</strong>.</p>
+<p><strong>A sync function doesn't have a callback.</strong> That is the quickest way to spot one.</p>
+<div class="admonition warning">
+<p class="admonition-title">The rule that ties it together</p>
+<p><strong>If the global execution context is not free, nothing from libuv will be executed.</strong></p>
+<p>Your synchronous code has to finish completely before a single callback is allowed to run. One blocking <code>readFileSync</code> freezes every other request the server is handling.</p>
+</div>
+<h3 id="how-code-is-executed">How Code is Executed<a class="headerlink" href="#how-code-is-executed" title="Permanent link">¶</a></h3>
+<pre class="mermaid"><code>flowchart TB
+    C["Code"] --&gt; P["a. Parsing phase&lt;br/&gt;all code converted into tokens"]
+    P --&gt; AST["b. Abstract Syntax Tree"]
+    AST --&gt; IG["Ignition&lt;br/&gt;Interpreter"]
+    IG --&gt; BC["Byte code"]
+    BC --&gt; EX["Execution"]
+    IG --&gt;|hot code| TF["TurboFan&lt;br/&gt;Compiler"]
+    TF --&gt; OP["Optimised code"]
+    OP --&gt; EX
+    TF -.-&gt;|assumption broke| DE["Deoptimised code"]
+    DE --&gt; IG
+    GC["Garbage collection&lt;br/&gt;Orinoco, Oilpan"] -.-&gt; EX</code></pre>
+<p><strong>a. Parsing phase</strong> — all code is converted into <strong>tokens</strong>.</p>
+<p><strong>b. Abstract Syntax Tree</strong> — the tokens become a tree, which then goes through:</p>
+<ul>
+<li><strong>Ignition interpreter</strong> → <strong>byte code</strong> → <strong>execution</strong></li>
+<li><strong>TurboFan compiler</strong> → <strong>optimised code</strong> → <strong>execution</strong></li>
+<li>If an optimisation assumption turns out wrong, the code is <strong>deoptimised</strong> and sent back to the interpreter.</li>
+</ul>
+<p>This is the <strong>V8 engine architecture</strong>. TurboFan only optimises code that runs often ("hot" code) — optimising something that runs once would cost more than it saves.</p>
+<h3 id="interpreter-vs-compiler-vs-jit">Interpreter vs Compiler vs JIT<a class="headerlink" href="#interpreter-vs-compiler-vs-jit" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>Interpreter</strong></th>
+<th><strong>Compiler</strong></th>
+<th><strong>JIT</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>How</td>
+<td>Line by line code execution</td>
+<td>Compiled into machine code</td>
+<td><strong>It has both</strong></td>
+</tr>
+<tr>
+<td>Speed</td>
+<td>Fast initial</td>
+<td>Initial heavy, but executes fast</td>
+<td>Just-in-time compiler</td>
+</tr>
+</tbody>
+</table>
+<p>V8 is a JIT: Ignition gets things running immediately, TurboFan compiles the hot paths in the background.</p>
+<p><strong>Syntax error</strong> → the V8 engine is not able to generate the AST. That is why a syntax error stops the file before a single line runs, while a runtime error only appears when execution reaches it.</p>
+<hr />
+<h2 id="chapter-4-event-loop">Chapter 4 — Event Loop<a class="headerlink" href="#chapter-4-event-loop" title="Permanent link">¶</a></h2>
+<h3 id="event-loop-in-nodejs">Event Loop in Node.js<a class="headerlink" href="#event-loop-in-nodejs" title="Permanent link">¶</a></h3>
+<pre class="mermaid"><code>flowchart TB
+    subgraph NODE["Node.js"]
+        direction LR
+        V["V8"] --- EL["Event Loop"]
+        EL --- CQ["Callback Queue"]
+        CQ --- LU["libuv"]
+        LU --- TP["Thread pool"]
+    end
+    NODE &lt;--&gt; OS["OS&lt;br/&gt;file · http"]</code></pre>
+<p>The loop runs through fixed <strong>phases</strong>, and between them it drains the <strong>priority queue</strong>:</p>
+<pre class="mermaid"><code>flowchart LR
+    T["timer&lt;br/&gt;setTimeout"] --&gt; PN["process.nextTick&lt;br/&gt;+ promise callbacks"]
+    PN --&gt; P["poll&lt;br/&gt;fs, http"]
+    P --&gt; CH["check&lt;br/&gt;setImmediate"]
+    CH --&gt; CL["close&lt;br/&gt;close operations"]
+    CL --&gt; T</code></pre>
+<p><strong>Callback I/O covers:</strong></p>
+<ol>
+<li>Incoming connections</li>
+<li>Data</li>
+<li><code>fs</code>, crypto, http</li>
+</ol>
+<h3 id="process-of-the-event-loop">Process of the Event Loop<a class="headerlink" href="#process-of-the-event-loop" title="Permanent link">¶</a></h3>
+<ol>
+<li>First the code is loaded to the <strong>callback queue</strong>.</li>
+<li><strong>If GEC (global execution context) is empty, then only</strong> the code from the callback queue is loaded to the event loop for execution.</li>
+<li>All the <strong>async code</strong> is loaded for execution.</li>
+<li>If there are multiple operations, then their respective callbacks will have <strong>separate queues</strong> inside the callback queue.</li>
+<li>
+<p>If GEC is empty, then the first code will go to the event loop.</p>
+<ul>
+<li><strong>First the priority cycle</strong> will be executed, before every phase.</li>
+<li><strong>Then after that the phase</strong> will be executed.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Priority cycle</th>
+<th>Phase</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. <code>process.nextTick</code></td>
+<td>1. timer</td>
+</tr>
+<tr>
+<td>2. priority / promise</td>
+<td>2. poll</td>
+</tr>
+<tr>
+<td>(based on priority)</td>
+<td>3. change</td>
+</tr>
+<tr>
+<td></td>
+<td>4. close</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><strong>It will always execute in order.</strong> If poll is executed and we have timer and change waiting, it will execute the <strong>change</strong> first.</p>
+<ul>
+<li><strong>It follows cycle order over priority.</strong></li>
+</ul>
+</li>
+<li><strong>If the event loop is idle it will wait on poll</strong>, and wait for any poll operation to execute.<ul>
+<li>Since <code>fs</code> is a heavy operation, it is always executed at last, because it will take time to read the file.</li>
+</ul>
+</li>
+<li>
+<p>If there are two phase / priority cycles, the <strong>order of execution</strong> depends on the order they were queued:</p>
+<table>
+<thead>
+<tr>
+<th>Case A</th>
+<th>Case B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Promise ①</td>
+<td>Promise ②</td>
+</tr>
+<tr>
+<td><code>process.nextTick</code> ②</td>
+<td><code>process.nextTick</code> ①</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><strong>All the priority queue will be executed first, and then all phases will be executed.</strong></p>
+</li>
+<li>If inside the priority queue any of the phases are there, then <strong>phases will be on hold</strong>, and when the time of that phase comes it will be executed then.</li>
+</ol>
+<pre class="mermaid"><code>flowchart TB
+    A["Code loaded to callback queue"] --&gt; B{"Is GEC empty?"}
+    B --&gt;|No| C["Wait — sync code still running"]
+    C --&gt; B
+    B --&gt;|Yes| D["Priority cycle&lt;br/&gt;process.nextTick → promises"]
+    D --&gt; E["Phase runs&lt;br/&gt;timer / poll / check / close"]
+    E --&gt; D</code></pre>
+<h3 id="priority-queue-vs-phase">Priority Queue vs Phase<a class="headerlink" href="#priority-queue-vs-phase" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Priority queue</strong></td>
+<td><strong>Microtask</strong></td>
+</tr>
+<tr>
+<td><strong>Phase</strong></td>
+<td><strong>Macrotask</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>One cycle of the event loop is called a Tick.</strong></li>
+</ul>
+<h3 id="thread-pool">Thread Pool<a class="headerlink" href="#thread-pool" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>By default the event loop has 4 threads.</strong></li>
+<li><strong>It can have multiple threads, but by default it has 4</strong> — and we can exceed that limit.</li>
+</ul>
+<pre class="mermaid"><code>flowchart LR
+    Q["Queued heavy tasks"] --&gt; TP["Thread pool&lt;br/&gt;4 threads by default"]
+    TP --&gt; OS["OS"]</code></pre>
+<p><strong>Node.js — if we give sync code, it will behave sync. If we give async code, it will behave in an async way.</strong></p>
+<p>Command to increase the thread pool:</p>
+<pre class="highlight"><code class="language-javascript">process.env.UV_THREADPOOL_SIZE = 8;</code></pre>
+<hr />
+<h2 id="chapter-5-server-and-networking">Chapter 5 — Server and Networking<a class="headerlink" href="#chapter-5-server-and-networking" title="Permanent link">¶</a></h2>
+<h3 id="server">Server<a class="headerlink" href="#server" title="Permanent link">¶</a></h3>
+<p><strong>There are two types of server:</strong></p>
+<ol>
+<li><strong>Hardware</strong> — AWS</li>
+<li><strong>Software</strong> — Node.js</li>
+</ol>
+<p><strong>1. Every client has a unique IP address.</strong></p>
+<p><strong>2. Socket connection</strong> — the user and server hold a connection open. One socket connection is complete (on/off).</p>
+<pre class="mermaid"><code>flowchart LR
+    U["User"] &lt;--&gt;|"socket connection"| S["Server"]</code></pre>
+<p><strong>3. Protocols</strong></p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Used for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>HTTP</strong></td>
+<td>API / request</td>
+</tr>
+<tr>
+<td><strong>FTP</strong></td>
+<td>File transfer</td>
+</tr>
+<tr>
+<td><strong>SMTP</strong></td>
+<td>Mail transfer</td>
+</tr>
+</tbody>
+</table>
+<p><strong>4. Web server → HTTP.</strong> Data comes in <strong>chunks</strong> — socket, then packets.</p>
+<pre class="mermaid"><code>flowchart LR
+    C["Client"] --&gt;|socket| P["Packets&lt;br/&gt;data comes in chunks"] --&gt; S["Server"]</code></pre>
+<p><strong>5. DNS → Domain Name + IP.</strong> It maps the name you type to the address the network needs.</p>
+<p><strong>6. Videos come in buffering</strong> — the same chunking idea, which is why a video can start before it has fully downloaded.</p>
+<p><strong>7. Web socket connection</strong> — <strong>two-way communication</strong> between client and server.</p>
+<pre class="mermaid"><code>flowchart LR
+    C["Client"] &lt;--&gt;|"two way communication"| S["Server"]</code></pre>
+<p>HTTP is request–response: the client has to ask. A web socket stays open so the server can push too — which is what chat and live notifications need.</p>
+<hr />
+<h2 id="chapter-6-databases">Chapter 6 — Databases<a class="headerlink" href="#chapter-6-databases" title="Permanent link">¶</a></h2>
+<h3 id="databases">Databases<a class="headerlink" href="#databases" title="Permanent link">¶</a></h3>
+<p><strong>A database is an organised collection of data.</strong> Data is stored based on the use of a <strong>Database Management System (DBMS)</strong>, which interacts with users.</p>
+<p><strong>Types of Database:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>NoSQL</strong></td>
+<td>MongoDB</td>
+</tr>
+<tr>
+<td><strong>Relational DB</strong></td>
+<td>MySQL, Postgres</td>
+</tr>
+<tr>
+<td><strong>In-memory DB</strong></td>
+<td>Redis</td>
+</tr>
+<tr>
+<td><strong>Cloud</strong></td>
+<td>Amazon RDS</td>
+</tr>
+</tbody>
+</table>
+<p><strong>RDBMS = Relational Database Management System.</strong></p>
+<pre class="mermaid"><code>flowchart LR
+    U["User"] &lt;--&gt; R["RDBMS"] &lt;--&gt; D[("Database")]</code></pre>
+<p><strong>Types of NoSQL DB:</strong></p>
+<ol>
+<li><strong>Document DB</strong> → MongoDB</li>
+<li><strong>Key-Value DB</strong></li>
+<li><strong>Graph DB</strong></li>
+<li><strong>Wide-column DB</strong></li>
+<li><strong>Multimodel DB</strong></li>
+</ol>
+<h3 id="rdbms-vs-nosql">RDBMS vs NoSQL<a class="headerlink" href="#rdbms-vs-nosql" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>RDBMS</strong></th>
+<th><strong>NoSQL</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Table, Rows, Column</td>
+<td>Document, Collection</td>
+</tr>
+<tr>
+<td>Structured data</td>
+<td>Unstructured data</td>
+</tr>
+<tr>
+<td>Fixed schema</td>
+<td>Flexible schema</td>
+</tr>
+<tr>
+<td>SQL</td>
+<td>NoSQL</td>
+</tr>
+<tr>
+<td>Tough scaling</td>
+<td>Easy to scale</td>
+</tr>
+<tr>
+<td>Relationship (foreign keys, joins)</td>
+<td>Nested</td>
+</tr>
+<tr>
+<td>Read-heavy apps, transactions</td>
+<td>Realtime data, Big data</td>
+</tr>
+<tr>
+<td><strong>eg → Banking App</strong></td>
+<td><strong>eg → Social Media</strong></td>
+</tr>
+</tbody>
+</table>
+<pre class="mermaid"><code>flowchart TB
+    subgraph SQL["RDBMS"]
+        direction LR
+        T["Table"] --&gt; R["Rows"] --&gt; C["Columns"]
+    end
+    subgraph NO["NoSQL"]
+        direction LR
+        D["Collection"] --&gt; DOC["Documents"] --&gt; F["Fields — nested"]
+    end</code></pre>
+<hr />
+<h2 id="chapter-7-building-apis">Chapter 7 — Building APIs<a class="headerlink" href="#chapter-7-building-apis" title="Permanent link">¶</a></h2>
+<h3 id="planning-before-building">Planning Before Building<a class="headerlink" href="#planning-before-building" title="Permanent link">¶</a></h3>
+<pre class="mermaid"><code>flowchart LR
+    A["Requirements"] --&gt; B["Design"] --&gt; C["Development"] --&gt; D["Testing"] --&gt; E["Deployment"] --&gt; F["Maintenance"]</code></pre>
+<p>This is the <strong>Waterfall model</strong> — each stage finishes before the next begins.</p>
+<h3 id="monolith-vs-microservices">Monolith vs Microservices<a class="headerlink" href="#monolith-vs-microservices" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Monolith</strong></th>
+<th><strong>Microservices</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Single repo</td>
+<td>Multi repo</td>
+</tr>
+<tr>
+<td>Large codebase</td>
+<td>Small-small codebases</td>
+</tr>
+<tr>
+<td>Difficult to manage</td>
+<td>Easy to manage</td>
+</tr>
+<tr>
+<td>Work is hard</td>
+<td>Working is easy</td>
+</tr>
+</tbody>
+</table>
+<pre class="mermaid"><code>flowchart TB
+    subgraph M["Monolith"]
+        MO["One codebase&lt;br/&gt;auth + payment + orders"] --&gt; MDB[("One DB")]
+    end
+    subgraph MS["Microservices"]
+        direction LR
+        S1["Auth"] --&gt; D1[("DB")]
+        S2["Payment"] --&gt; D2[("DB")]
+        S3["Orders"] --&gt; D3[("DB")]
+    end</code></pre>
+<h3 id="taking-input-through-apis">Taking Input Through APIs<a class="headerlink" href="#taking-input-through-apis" title="Permanent link">¶</a></h3>
+<p><strong>1. Path Parameters</strong></p>
+<pre class="highlight"><code class="language-javascript">app.get("/items/:id", (req, res) =&gt; {
+  const id = req.params.id;
+});</code></pre>
+<p>Use it when we have to deal with an <strong>id</strong>.</p>
+<p><strong>2. Query Parameters</strong></p>
+<pre class="highlight"><code class="language-javascript">app.get("/items", (req, res) =&gt; {
+  const page = req.query.page;
+});</code></pre>
+<p>Use case: <strong>searching, filtering, ordering data.</strong></p>
+<p><strong>3. Headers</strong></p>
+<pre class="highlight"><code class="language-javascript">app.get("/items", (req, res) =&gt; {
+  const token = req.headers["authorization"];
+});</code></pre>
+<p>Use case: <strong>authentication, set content headers.</strong></p>
+<p><strong>4. Request Body</strong></p>
+<pre class="highlight"><code class="language-javascript">app.post("/items", (req, res) =&gt; {
+  const price = req.body.price;
+});</code></pre>
+<p>Use case: <strong>creating or updating resources.</strong></p>
+<p><strong>5. Cookies</strong></p>
+<pre class="highlight"><code class="language-javascript">app.get("/items", (req, res) =&gt; {
+  const session = req.cookies.sessionId;
+});</code></pre>
+<p>Use case: <strong>maintain user session.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Read with</th>
+<th>Use case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Path parameter</td>
+<td><code>req.params.id</code></td>
+<td>Dealing with an id</td>
+</tr>
+<tr>
+<td>Query parameter</td>
+<td><code>req.query.page</code></td>
+<td>Searching, filtering, ordering</td>
+</tr>
+<tr>
+<td>Header</td>
+<td><code>req.headers['authorization']</code></td>
+<td>Authentication, content headers</td>
+</tr>
+<tr>
+<td>Body</td>
+<td><code>req.body.price</code></td>
+<td>Creating or updating resources</td>
+</tr>
+<tr>
+<td>Cookie</td>
+<td><code>req.cookies.sessionId</code></td>
+<td>Maintaining a user session</td>
+</tr>
+</tbody>
+</table>
+<h3 id="middleware-and-routes">Middleware and Routes<a class="headerlink" href="#middleware-and-routes" title="Permanent link">¶</a></h3>
+<p><strong>Middleware are the routing methods which protect our routes</strong>, and also maintain the user route according to their token. <strong>It acts as a middle person who prevents the use of routes under certain conditions.</strong></p>
+<pre class="mermaid"><code>flowchart LR
+    R["Request"] --&gt; M1["Middleware 1&lt;br/&gt;auth check"] --&gt; M2["Middleware 2&lt;br/&gt;validation"] --&gt; H["Route handler"] --&gt; RES["res.send()"]
+    M1 -.-&gt;|"fails"| E["Error handler"]</code></pre>
+<p><strong>The four parameters:</strong></p>
+<pre class="highlight"><code class="language-javascript">app.use((err, req, res, next) =&gt; { });</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>What it is for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>err</code></td>
+<td>To get the error, if there is one in any code</td>
+</tr>
+<tr>
+<td><code>req</code></td>
+<td>To get the data from the frontend</td>
+</tr>
+<tr>
+<td><code>res</code></td>
+<td>To send the data back in various forms</td>
+</tr>
+<tr>
+<td><code>next</code></td>
+<td>To move to the next callback</td>
+</tr>
+</tbody>
+</table>
+<p><strong>It can have <code>n</code> number of callbacks:</strong></p>
+<pre class="highlight"><code class="language-javascript">app.use("/", (req, res, next) =&gt; {}, (req, res, next) =&gt; {}, (req, res) =&gt; {});</code></pre>
+<p><strong>Each request can have only one <code>res.send</code>.</strong> Sending twice throws — the response is already on its way.</p>
+<p><strong>For global error handling:</strong></p>
+<pre class="highlight"><code class="language-javascript">app.use("/", (err, req, res, next) =&gt; {
+  res.json({ err: "err" });
+});</code></pre>
+<hr />
+<h2 id="chapter-8-mongoose-and-mongodb">Chapter 8 — Mongoose and MongoDB<a class="headerlink" href="#chapter-8-mongoose-and-mongodb" title="Permanent link">¶</a></h2>
+<h3 id="mongoose-basics">Mongoose Basics<a class="headerlink" href="#mongoose-basics" title="Permanent link">¶</a></h3>
+<ol>
+<li><strong>Connect to a DB.</strong></li>
+<li>In MongoDB the hierarchy is:</li>
+</ol>
+<pre class="mermaid"><code>flowchart LR
+    C["Cluster"] --&gt; D["Databases"] --&gt; CO["Collections"] --&gt; DOC["Documents"] --&gt; F["Fields"]</code></pre>
+<h3 id="schema-and-crud">Schema and CRUD<a class="headerlink" href="#schema-and-crud" title="Permanent link">¶</a></h3>
+<ol>
+<li><strong>Define a schema</strong></li>
+<li><strong>Create a model</strong></li>
+<li>Refer to the documentation</li>
+</ol>
+<pre class="highlight"><code class="language-javascript">const userSchema = new mongoose.Schema({
+  firstName: { type: String, required: true },
+  emailId: { type: String, unique: true },
+});
+
+const User = mongoose.model("User", userSchema);</code></pre>
+<p><strong>CRUD in Mongoose:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>find</code></td>
+<td>To get all the data of a model</td>
+</tr>
+<tr>
+<td><code>findOneAndDelete</code></td>
+<td>To find one and delete</td>
+</tr>
+<tr>
+<td><code>findOneAndUpdate</code></td>
+<td>To find one and update</td>
+</tr>
+<tr>
+<td><code>save</code></td>
+<td>To create an instance of a model and insert a document</td>
+</tr>
+</tbody>
+</table>
+<p><strong>PATCH vs PUT:</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Used for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PATCH</strong></td>
+<td>To update <strong>some part</strong> of the data</td>
+</tr>
+<tr>
+<td><strong>PUT</strong></td>
+<td>To update the <strong>complete</strong> data</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Options field in Mongoose</strong> — it is the <strong>last parameter</strong>, used to add extra power to the built-in function.</p>
+<pre class="highlight"><code class="language-javascript">await User.findOneAndUpdate({ _id: id }, data, {
+  returnDocument: "after",
+  runValidators: true, // options field
+});</code></pre>
+<h3 id="validation">Validation<a class="headerlink" href="#validation" title="Permanent link">¶</a></h3>
+<p><strong>(a) Schema level</strong></p>
+<table>
+<thead>
+<tr>
+<th>String</th>
+<th>Number</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>required: true</code></td>
+<td><code>min: 5</code></td>
+</tr>
+<tr>
+<td><code>unique: true</code></td>
+<td><code>max: 6</code></td>
+</tr>
+<tr>
+<td><code>minLength: 7</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>trim: true</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>lowercase: true</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>uppercase: true</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>(b) <code>validate()</code></strong> — a custom function for anything the built-in rules can't express.</p>
+<p><strong>To validate at the time of update — use the option key value:</strong></p>
+<pre class="highlight"><code class="language-javascript">{ runValidators: true }</code></pre>
+<p>Schema validation does <strong>not</strong> run on updates by default. That flag is what turns it on.</p>
+<p><strong>Validation of API:</strong></p>
+<ul>
+<li>Check all the fields, and also <strong>never trust the user</strong>.</li>
+<li>Put the validation on <strong>every field</strong>.</li>
+<li>Always use a <strong>try/catch block</strong>.</li>
+</ul>
+<pre class="mermaid"><code>flowchart LR
+    R["Request"] --&gt; A["API level validation&lt;br/&gt;check every field"] --&gt; B["Schema level validation&lt;br/&gt;required, minLength, min/max"] --&gt; C["custom validate()"] --&gt; D[("Save to DB")]</code></pre>
+<h3 id="useful-libraries">Useful Libraries<a class="headerlink" href="#useful-libraries" title="Permanent link">¶</a></h3>
+<p><strong>(a) Validator</strong> — to validate:</p>
+<ul>
+<li>password</li>
+<li>email</li>
+<li>mobile number</li>
+<li>URL</li>
+<li>etc.</li>
+</ul>
+<p>A very useful library to validate the user data.</p>
+<p><strong>(b) bcrypt</strong> — hash the password.</p>
+<ul>
+<li><strong>Once a password is hashed it can never be converted back to a string.</strong></li>
+<li>We can only <strong>compare</strong> the password by using a built-in method.</li>
+</ul>
+<pre class="highlight"><code class="language-javascript">const hash = await bcrypt.hash(password, 10);
+const isValid = await bcrypt.compare(inputPassword, hash);</code></pre>
+<div class="admonition warning">
+<p class="admonition-title">Never trust user data</p>
+<p>Always put checks. At the time of updating or adding to the DB, be very careful — put all the necessary checks and validation. <strong>Data sanitisation is very crucial.</strong></p>
+</div>
+<h3 id="select-populate-skip-and-limit">select, populate, skip and limit<a class="headerlink" href="#select-populate-skip-and-limit" title="Permanent link">¶</a></h3>
+<p><strong><code>select</code></strong> — it is used to include or exclude fields from the queried document.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Meaning</th>
+<th>Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>include</strong></td>
+<td>Only these fields come back in the search query</td>
+<td><code>.select("A B")</code> or <code>.select(['A','B'])</code></td>
+</tr>
+<tr>
+<td><strong>exclude</strong></td>
+<td>The selected fields are excluded from the query</td>
+<td><code>.select("-c -d")</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>populate</code></strong> — it is used to give the result and <strong>add the details of another model</strong> in the required field.</p>
+<pre class="highlight"><code class="language-javascript">// in some other model
+fromUserId: {
+  type: mongoose.Schema.Types.ObjectId,
+  required: true,
+  ref: "User",          //  important
+}
+
+// then
+.populate("fromUserId", "firstName lastName");</code></pre>
+<p>From the collection having <code>fromUserId</code>, it will get the userId from there and return the id of the user <strong>and all its data from the User model</strong>.</p>
+<pre class="mermaid"><code>flowchart LR
+    A["Request document&lt;br/&gt;fromUserId: 64ab…"] --&gt;|"ref: User"| B["User collection"]
+    B --&gt;|populate| C["fromUserId: { firstName, lastName }"]</code></pre>
+<p>The <code>ref</code> is what makes it work — without it Mongoose has no idea which collection that id belongs to.</p>
+<p><strong><code>skip</code> / <code>limit</code></strong></p>
+<pre class="highlight"><code class="language-javascript">query.skip(100).limit(10);</code></pre>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>skip</code></td>
+<td>How many documents to skip</td>
+</tr>
+<tr>
+<td><code>limit</code></td>
+<td>The number of documents to show</td>
+</tr>
+</tbody>
+</table>
+<p>This pair is how pagination is built — page 11 of 10-per-page is <code>skip(100).limit(10)</code>.</p>
+<h3 id="query-operators">Query Operators<a class="headerlink" href="#query-operators" title="Permanent link">¶</a></h3>
+<p><strong>1. Comparison Query</strong></p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$eq</code></td>
+<td>equal to</td>
+</tr>
+<tr>
+<td><code>$gt</code></td>
+<td>greater than</td>
+</tr>
+<tr>
+<td><code>$gte</code></td>
+<td>greater than or equal to</td>
+</tr>
+<tr>
+<td><code>$lt</code></td>
+<td>less than</td>
+</tr>
+<tr>
+<td><code>$lte</code></td>
+<td>less than or equal to</td>
+</tr>
+<tr>
+<td><code>$in</code></td>
+<td>in array</td>
+</tr>
+<tr>
+<td><code>$nin</code></td>
+<td>not in array</td>
+</tr>
+<tr>
+<td><code>$ne</code></td>
+<td>not equal to</td>
+</tr>
+</tbody>
+</table>
+<p><strong>2. Logical Query</strong></p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$or</code></td>
+<td>or</td>
+</tr>
+<tr>
+<td><code>$and</code></td>
+<td>and</td>
+</tr>
+<tr>
+<td><code>$not</code></td>
+<td>not</td>
+</tr>
+<tr>
+<td><code>$nor</code></td>
+<td>not or</td>
+</tr>
+</tbody>
+</table>
+<pre class="highlight"><code class="language-javascript">User.find({ age: { $gte: 18, $lt: 60 } });
+User.find({ $or: [{ city: "Delhi" }, { city: "Mumbai" }] });</code></pre>
+<hr />
+<h2 id="quick-revision">Quick Revision<a class="headerlink" href="#quick-revision" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong>Node.js = V8 (C++) + super power (C++).</strong> V8 can be embedded in any C++ program — that is why Node exists.</li>
+<li><strong>ECMAScript</strong> = the rulebook JS follows.</li>
+<li><strong>global</strong> is Node's <code>window</code>; <strong><code>this</code></strong> changes by context; <strong><code>globalThis</code></strong> works in every environment.</li>
+<li><strong>Web workers</strong> are for the browser, <strong>worker threads</strong> are for Node — both for heavy work off the main thread.</li>
+<li><strong>Modules protect variables from leaking</strong> — export what you want shared.</li>
+<li><strong>CJS</strong> = <code>require</code> / <code>module.exports</code>, sync, non-strict, Node's default. <strong>ESM</strong> = <code>import</code> / <code>export</code>, strict, used by React and Angular.</li>
+<li>Every module is <strong>wrapped in an IIFE</strong>, and <code>require</code> <strong>caches</strong> it — the file runs once.</li>
+<li><strong>require steps:</strong> resolve → load → wrap in IIFE → evaluate → cache.</li>
+<li><strong>JS is sync; libuv makes Node async.</strong> libuv is written in C and sits between V8 and the OS.</li>
+<li><strong>Never use sync code</strong> — it blocks the main thread. A sync function has no callback.</li>
+<li><strong>If the GEC is not free, nothing from libuv runs.</strong></li>
+<li><strong>V8 execution:</strong> code → tokens → AST → Ignition (byte code) → TurboFan (optimised code). Syntax error = no AST.</li>
+<li><strong>Event loop phases:</strong> timer → poll → check → close, with the <strong>priority cycle</strong> (<code>process.nextTick</code>, promises) draining before every phase.</li>
+<li><strong>Priority queue = microtask, phase = macrotask.</strong> One cycle = a <strong>Tick</strong>. Default thread pool = <strong>4</strong>.</li>
+<li><strong>Server:</strong> unique IP → socket → protocol (HTTP / FTP / SMTP); DNS maps domain to IP; web sockets are two-way.</li>
+<li><strong>RDBMS</strong> = fixed schema, joins, transactions (banking). <strong>NoSQL</strong> = flexible schema, nested, scales easily (social media).</li>
+<li><strong>API input:</strong> params (id), query (search/filter), headers (auth), body (create/update), cookies (session).</li>
+<li><strong>Middleware</strong> protects routes; <code>(err, req, res, next)</code>; one <code>res.send</code> per request.</li>
+<li><strong>Mongoose:</strong> Cluster → Databases → Collections → Documents → Fields. <code>runValidators: true</code> to validate on update.</li>
+<li><strong>Never trust user data.</strong> Validate every field, use try/catch, hash passwords with bcrypt.</li>
+</ul>
 
 
 
@@ -549,7 +2147,7 @@ console.log(math.add(5, 3)); // Outputs: 8</code></pre>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="February 6, 2025 04:30:54 UTC">February 6, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 16, 2026 09:11:58 UTC">August 16, 2026</span>
   </span>
 
     
@@ -565,7 +2163,7 @@ console.log(math.add(5, 3)); // Outputs: 8</code></pre>
     </span>
     <nav>
       
-        <a href="mailto:kausraj11@gmail.com">kaushal</a>
+        <a href="mailto:kausraj11@gmail.com">Kaushal Raj</a>
     </nav>
   </span>
 

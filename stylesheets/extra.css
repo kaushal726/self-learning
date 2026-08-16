@@ -213,6 +213,23 @@
 .md-header {
   box-shadow: none;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background-image: linear-gradient(
+    100deg,
+    var(--md-primary-fg-color) 0%,
+    color-mix(in srgb, var(--kb-accent) 26%, var(--md-primary-fg-color)) 100%
+  );
+}
+
+.md-footer {
+  background-image: linear-gradient(
+    100deg,
+    var(--md-footer-bg-color) 0%,
+    color-mix(in srgb, var(--kb-accent) 20%, var(--md-footer-bg-color)) 100%
+  );
+}
+
+.md-footer-meta {
+  background-color: transparent;
 }
 
 .md-header__title {
@@ -276,11 +293,13 @@
    -------------------------------------------------------------------------- */
 
 .md-typeset table:not([class]) {
+  display: table;
+  width: 100%;
   border: 1px solid var(--kb-line);
   border-radius: var(--kb-radius);
   box-shadow: none;
   overflow: hidden;
-  font-size: 0.72rem;
+  font-size: 0.78rem;
 }
 
 .md-typeset table:not([class]) th {
@@ -304,9 +323,11 @@
   background-color: color-mix(in srgb, var(--kb-accent) 4%, transparent);
 }
 
-/* Wide tables scroll instead of pushing the page sideways */
+/* Wide tables scroll inside their own container, never push the page sideways */
 .md-typeset__table {
   display: block;
+  width: 100%;
+  padding: 0;
   overflow-x: auto;
 }
 
@@ -348,6 +369,36 @@
 .md-clipboard:hover,
 .md-clipboard:focus-visible {
   color: var(--kb-accent);
+}
+
+/* --------------------------------------------------------------------------
+   6b. Mermaid diagrams
+   -------------------------------------------------------------------------- */
+
+.md-typeset .mermaid {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin: 1.4em 0;
+  padding: 1rem 0.75rem;
+  border: 1px solid var(--kb-line);
+  border-radius: var(--kb-radius);
+  background-color: var(--kb-surface);
+  text-align: center;
+}
+
+.md-typeset .mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Nothing in the content column may push the page sideways */
+.md-content__inner {
+  min-width: 0;
+}
+
+.md-typeset > * {
+  max-width: 100%;
 }
 
 /* --------------------------------------------------------------------------
@@ -399,6 +450,139 @@
 .md-typeset hr {
   border-bottom: 1px solid var(--kb-line-soft);
   margin: 2.4em 0;
+}
+
+/* --------------------------------------------------------------------------
+   8b. Home page — hero and cards
+   -------------------------------------------------------------------------- */
+
+.kb-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: center;
+  margin: 0.5rem 0 2.5rem;
+  padding: 2.2rem 2rem;
+  border: 1px solid var(--kb-line);
+  border-radius: calc(var(--kb-radius) * 1.6);
+  background:
+    radial-gradient(120% 120% at 12% 0%, var(--kb-accent-soft) 0%, transparent 58%),
+    var(--kb-surface);
+  box-shadow: var(--kb-shadow);
+}
+
+.kb-hero h1 {
+  margin: 0 0 0.35em;
+  font-size: 2.5em;
+  line-height: 1.1;
+}
+
+.kb-hero__text > p:first-of-type {
+  font-family: var(--kb-font-display);
+  font-size: 1.18em;
+  line-height: 1.45;
+  color: var(--kb-ink);
+  margin-bottom: 0.6em;
+}
+
+.kb-hero__text p {
+  max-width: 46ch;
+  color: var(--kb-ink-muted);
+}
+
+.kb-hero__art {
+  color: var(--kb-accent);
+  display: flex;
+  justify-content: center;
+}
+
+.kb-hero__art svg {
+  width: 100%;
+  max-width: 19rem;
+  height: auto;
+}
+
+.md-typeset .kb-hero .md-button {
+  margin: 0.4rem 0.5rem 0 0;
+  border-radius: var(--kb-radius-sm);
+  border-width: 1px;
+  font-weight: 600;
+  transition: transform var(--kb-speed) var(--kb-ease),
+    background-color var(--kb-speed) var(--kb-ease),
+    color var(--kb-speed) var(--kb-ease);
+}
+
+.md-typeset .kb-hero .md-button--primary {
+  background-color: var(--kb-accent);
+  border-color: var(--kb-accent);
+  color: #ffffff;
+}
+
+.md-typeset .kb-hero .md-button:hover {
+  background-color: var(--kb-accent);
+  border-color: var(--kb-accent);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* Card grid */
+.md-typeset .grid.cards > ul > li,
+.md-typeset .grid > .card {
+  border: 1px solid var(--kb-line);
+  border-radius: var(--kb-radius);
+  background-color: var(--kb-surface);
+  box-shadow: none;
+  padding: 1.1rem 1.2rem;
+  transition: border-color var(--kb-speed) var(--kb-ease),
+    box-shadow var(--kb-speed) var(--kb-ease),
+    transform var(--kb-speed) var(--kb-ease);
+}
+
+.md-typeset .grid.cards > ul > li:hover {
+  border-color: color-mix(in srgb, var(--kb-accent) 45%, var(--kb-line));
+  box-shadow: var(--kb-shadow);
+  transform: translateY(-2px);
+}
+
+.md-typeset .grid.cards > ul > li > hr {
+  margin: 0.7em 0;
+  border-bottom-color: var(--kb-line-soft);
+}
+
+.md-typeset .grid.cards .twemoji,
+.md-typeset .grid.cards svg {
+  fill: var(--kb-accent);
+}
+
+.md-typeset .grid.cards > ul > li p:last-child a {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.md-typeset .kb-step {
+  fill: var(--kb-accent);
+  vertical-align: -0.25em;
+}
+
+@media screen and (max-width: 59.9375em) {
+  .kb-hero {
+    grid-template-columns: 1fr;
+    padding: 1.6rem 1.3rem;
+    gap: 1.4rem;
+    text-align: left;
+  }
+
+  .kb-hero h1 {
+    font-size: 2em;
+  }
+
+  .kb-hero__art {
+    order: -1;
+  }
+
+  .kb-hero__art svg {
+    max-width: 13rem;
+  }
 }
 
 /* --------------------------------------------------------------------------

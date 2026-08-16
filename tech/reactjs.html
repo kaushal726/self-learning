@@ -1836,6 +1836,11 @@ Jaise tum Flipkart se alag-alag brands ka saman order kar sakte ho, waise hi NPM
 </ul>
 <p><strong>Real-life example:</strong>
 React ek actor jaise hai jo apni performance deta hai, aur React-DOM stage hai jahan wo perform karta hai.</p>
+<pre class="mermaid"><code>flowchart LR
+    A["Your JSX"] --&gt; B["react&lt;br/&gt;creates the element tree&lt;br/&gt;(what the UI should be)"]
+    B --&gt; C["react-dom&lt;br/&gt;renders that tree&lt;br/&gt;into the browser DOM"]
+    C --&gt; D["Browser page"]
+    B -.-&gt; E["react-native&lt;br/&gt;same tree, mobile renderer"]</code></pre>
 <hr />
 <h2 id="reactcreateelement-and-what-does-it-return">React.createElement and what does it return?<a class="headerlink" href="#reactcreateelement-and-what-does-it-return" title="Permanent link">¶</a></h2>
 <p>React.createElement ek method hai jo React elements banane ke liye use hoti hai. Ye ek JavaScript object return karta hai jo virtual DOM ka part banta hai.</p>
@@ -1848,6 +1853,12 @@ Jaise tum ek online shopping cart me items add karte ho aur wo list virtual hoti
 <pre class="highlight"><code class="language-jsx">import { createRoot } from "react-dom/client";
 const root = createRoot(document.getElementById("root"));
 root.render(&lt;App /&gt;);</code></pre>
+<pre class="mermaid"><code>flowchart LR
+    A["JSX"] --&gt;|Babel / Parcel| B["React.createElement()"]
+    B --&gt; C["React element&lt;br/&gt;(plain JS object)"]
+    C --&gt; D["root.render()"]
+    D --&gt; E["Virtual DOM"]
+    E --&gt; F["Actual DOM&lt;br/&gt;#root"]</code></pre>
 <hr />
 <h2 id="can-we-create-two-roots-in-one-app">Can we create two roots in one app?<a class="headerlink" href="#can-we-create-two-roots-in-one-app" title="Permanent link">¶</a></h2>
 <p>Haan, hum ek application me do alag-alag roots bana sakte hain, lekin ye recommended nahi hai kyunki state management aur performance issues aa sakte hain.</p>
@@ -1890,6 +1901,15 @@ Jaise pehle ghar ka furniture set ho jaye uske baad accessories laaye jaye, wais
 <p>Bundler ek tool hai jo multiple files (JS, CSS, images) ko ek hi file me combine karke optimize karta hai.</p>
 <p><strong>Real-life example:</strong>
 Jaise ek school ki kit me sare items ek hi bag me pack hote hain, waise hi bundler sab kuch combine kar deta hai.</p>
+<pre class="mermaid"><code>flowchart LR
+    A["Source files&lt;br/&gt;JSX, JS, CSS, images"] --&gt; B["Bundler&lt;br/&gt;Parcel / Webpack / Vite"]
+    B --&gt; C["Transpile&lt;br/&gt;Babel"]
+    B --&gt; D["Tree shaking&lt;br/&gt;drop unused code"]
+    B --&gt; E["Minify"]
+    C --&gt; F["Bundle"]
+    D --&gt; F
+    E --&gt; F
+    F --&gt; G["dist/ served to browser"]</code></pre>
 <hr />
 <h2 id="npm-and-why-we-need-it">NPM and Why We Need It<a class="headerlink" href="#npm-and-why-we-need-it" title="Permanent link">¶</a></h2>
 <p>NPM (Node Package Manager) ek package manager hai jo Node.js applications ke liye third-party libraries provide karta hai. Hume ye isliye chahiye taaki hum baar-baar same code na likhna pade aur efficient development ho sake.</p>
@@ -2072,6 +2092,14 @@ const Page = () =&gt; (
   &lt;/div&gt;
 );</code></pre>
 <p><strong>Real-life example</strong>: A <code>Dashboard</code> page in a web app can be composed of a <code>Sidebar</code>, <code>Header</code>, and <code>MainContent</code> components, each responsible for their own section.</p>
+<pre class="mermaid"><code>flowchart TB
+    A["App"] --&gt; B["Header"]
+    A --&gt; C["Body"]
+    A --&gt; D["Footer"]
+    C --&gt; E["Search"]
+    C --&gt; F["RestaurantList"]
+    F --&gt; G["RestaurantCard"]
+    F --&gt; H["RestaurantCard"]</code></pre>
 <hr />
 <h2 id="react-fragments"><strong>React Fragments</strong><a class="headerlink" href="#react-fragments" title="Permanent link">¶</a></h2>
 <p>React Fragments allow you to group multiple elements without adding extra nodes to the DOM. They help maintain cleaner DOM structures.</p>
@@ -2095,6 +2123,13 @@ const Page = () =&gt; (
 <li><strong>Actual DOM</strong>: The actual representation of the page that the browser renders.</li>
 </ul>
 <p><strong>Real-life example</strong>: In a dynamic to-do list app, React first updates the Virtual DOM when you add a new task, compares it to the old version, and only applies the changes to the Actual DOM, reducing the number of updates to the page.</p>
+<pre class="mermaid"><code>flowchart LR
+    S["State changes"] --&gt; V1["Old Virtual DOM"]
+    S --&gt; V2["New Virtual DOM"]
+    V1 --&gt; DF{"Diff"}
+    V2 --&gt; DF
+    DF --&gt;|only what changed| RD["Actual DOM update"]
+    DF --&gt;|unchanged| SK["Skipped — no DOM touch"]</code></pre>
 <hr />
 <h2 id="process-of-re-rendering"><strong>Process of Re-rendering</strong><a class="headerlink" href="#process-of-re-rendering" title="Permanent link">¶</a></h2>
 <p>The re-rendering process in React includes several stages:</p>
@@ -2106,10 +2141,23 @@ const Page = () =&gt; (
 <li><strong>Update DOM</strong>: React applies the updates to the real DOM.</li>
 </ol>
 <p><strong>Real-life example</strong>: If you're editing a note in a note-taking app, React will only update the specific part of the page that shows your note's text, rather than reloading the entire page.</p>
+<pre class="mermaid"><code>flowchart LR
+    A["1. Virtual DOM&lt;br/&gt;created"] --&gt; B["2. Render&lt;br/&gt;new tree"] --&gt; C["3. Diffing&lt;br/&gt;old vs new"] --&gt; D["4. Reconciliation&lt;br/&gt;work out minimum change"] --&gt; E["5. Update&lt;br/&gt;real DOM"]</code></pre>
 <hr />
 <h2 id="react-fiber"><strong>React Fiber</strong><a class="headerlink" href="#react-fiber" title="Permanent link">¶</a></h2>
 <p>React Fiber is a complete rewrite of React's core algorithm that allows for asynchronous rendering. It helps to optimize the rendering process by breaking down tasks into smaller units of work.</p>
 <p><strong>Real-life example</strong>: React Fiber ensures that UI updates in an e-commerce site remain smooth, even when there are many changes or animations.</p>
+<pre class="mermaid"><code>flowchart TB
+    subgraph OLD["Before Fiber — stack reconciler"]
+        direction LR
+        O1["Start render"] --&gt; O2["Runs to completion&lt;br/&gt;cannot be interrupted"] --&gt; O3["UI blocked"]
+    end
+    subgraph NEW["Fiber"]
+        direction LR
+        N1["Split into&lt;br/&gt;units of work"] --&gt; N2["Do one unit"] --&gt; N3{"Higher priority&lt;br/&gt;work waiting?"}
+        N3 --&gt;|Yes| N4["Pause, handle it,&lt;br/&gt;resume later"]
+        N3 --&gt;|No| N2
+    end</code></pre>
 <hr />
 <h2 id="advantages-of-react-fiber"><strong>Advantages of React Fiber</strong><a class="headerlink" href="#advantages-of-react-fiber" title="Permanent link">¶</a></h2>
 <ul>
@@ -2148,6 +2196,11 @@ export function greet() {
 <li><code>setCount</code>: A function that updates the state.</li>
 </ul>
 <p><strong>Real-life Example</strong>: In a counter application, <code>useState</code> is used to store the count value, and the <code>setCount</code> function updates it when a button is clicked.</p>
+<pre class="mermaid"><code>flowchart LR
+    A["Event&lt;br/&gt;e.g. button click"] --&gt; B["setState(newValue)"]
+    B --&gt; C["React marks the&lt;br/&gt;component as dirty"]
+    C --&gt; D["Component function&lt;br/&gt;runs again"]
+    D --&gt; E["New Virtual DOM&lt;br/&gt;→ diff → DOM update"]</code></pre>
 <h3 id="handling-previous-state-in-usestate"><strong>Handling Previous State in <code>useState</code></strong><a class="headerlink" href="#handling-previous-state-in-usestate" title="Permanent link">¶</a></h3>
 <p>React batches updates and sometimes needs the previous state value to compute the new state. You can pass a function to <code>setState</code> to access the previous state.</p>
 <p><strong>Example</strong>:</p>
@@ -2171,6 +2224,13 @@ export function greet() {
 <pre class="highlight"><code class="language-jsx">useEffect(() =&gt; {
   fetchWeatherData();
 }, []);</code></pre>
+<pre class="mermaid"><code>flowchart LR
+    A["Component renders"] --&gt; B["DOM committed"]
+    B --&gt; C["useEffect runs"]
+    C --&gt; D{"Dependency&lt;br/&gt;changed?"}
+    D --&gt;|Yes| E["Cleanup old effect&lt;br/&gt;→ run effect again"]
+    D --&gt;|No| F["Skip"]
+    B --&gt; G["Component unmounts"] --&gt; H["Cleanup function runs"]</code></pre>
 <h3 id="running-effects-on-specific-dependencies"><strong>Running Effects on Specific Dependencies</strong><a class="headerlink" href="#running-effects-on-specific-dependencies" title="Permanent link">¶</a></h3>
 <p>You can run an effect only when certain dependencies change.</p>
 <p><strong>Example</strong>:</p>
@@ -2246,6 +2306,17 @@ Imagine an online e-commerce platform:</p>
 <p><strong>Example</strong>:
 In a monolithic application, a user management system, order processing, and inventory management might all be part of one large application. Any change in the system requires rebuilding and redeploying the entire application.</p>
 <p><strong>Real-life Example</strong>: Traditional web applications, like early versions of Facebook, operated on a monolithic architecture where all the features were in a single codebase.</p>
+<pre class="mermaid"><code>flowchart TB
+    subgraph MONO["Monolithic"]
+        direction LR
+        M["One codebase&lt;br/&gt;UI + auth + payment + orders"] --&gt; MDB[("One database")]
+    end
+    subgraph MICRO["Microservices"]
+        direction LR
+        S1["Auth service"] --&gt; D1[("DB")]
+        S2["Payment service"] --&gt; D2[("DB")]
+        S3["Order service"] --&gt; D3[("DB")]
+    end</code></pre>
 <hr />
 <h2 id="cors-cross-origin-resource-sharing"><strong>CORS (Cross-Origin Resource Sharing)</strong><a class="headerlink" href="#cors-cross-origin-resource-sharing" title="Permanent link">¶</a></h2>
 <p>CORS is a security feature implemented by browsers to prevent websites from making requests to a different domain than the one that served the web page. It allows servers to control which domains are permitted to access their resources.</p>
@@ -2288,6 +2359,13 @@ When data is being fetched from an API, instead of showing a blank page, a shimm
 <li>It helps in mapping URLs to React components and enables users to navigate between different views of the application seamlessly.</li>
 </ul>
 <p><strong>Real-life Example</strong>: In an online shopping application, React Router allows navigating between the homepage, product details, shopping cart, and checkout pages without a page reload.</p>
+<pre class="mermaid"><code>flowchart TB
+    A["createBrowserRouter&lt;br/&gt;route config"] --&gt; B["RouterProvider"]
+    B --&gt; C{"URL path"}
+    C --&gt;|/| D["App → Outlet → Body"]
+    C --&gt;|/about| E["App → Outlet → About"]
+    C --&gt;|/restaurant/:id| F["App → Outlet → Menu&lt;br/&gt;useParams() reads :id"]
+    C --&gt;|no match / throw| G["errorElement&lt;br/&gt;useRouteError()"]</code></pre>
 <hr />
 <h2 id="router-provider"><strong>Router Provider</strong><a class="headerlink" href="#router-provider" title="Permanent link">¶</a></h2>
 <p>The <code>RouterProvider</code> component is used to set up the router in your React app and wrap your app with routing functionality. This is part of <strong>React Router v6+</strong>.</p>
@@ -2539,6 +2617,19 @@ class MyComponent extends Component {
 <hr />
 <h2 id="lifecycle-methods-in-class-components"><strong>Lifecycle Methods in Class Components</strong><a class="headerlink" href="#lifecycle-methods-in-class-components" title="Permanent link">¶</a></h2>
 <p>React class components have several lifecycle methods that allow you to run code at different stages of the component’s existence.</p>
+<pre class="mermaid"><code>flowchart TB
+    subgraph M["Mounting"]
+        direction LR
+        M1["constructor"] --&gt; M2["render"] --&gt; M3["componentDidMount"]
+    end
+    subgraph U["Updating — state or props change"]
+        direction LR
+        U1["render"] --&gt; U2["componentDidUpdate"]
+    end
+    subgraph UN["Unmounting"]
+        UN1["componentWillUnmount"]
+    end
+    M --&gt; U --&gt; UN</code></pre>
 <h3 id="mounting-phase-when-the-component-is-created"><strong>Mounting Phase</strong> (When the component is created)<a class="headerlink" href="#mounting-phase-when-the-component-is-created" title="Permanent link">¶</a></h3>
 <ul>
 <li><strong>constructor(props)</strong>: Initializes state and binds methods.</li>
@@ -2605,6 +2696,16 @@ class MyComponent extends Component {
 <li><strong>Render Phase</strong>: This is when React calculates what the UI should look like. It involves creating a Virtual DOM and figuring out what has changed.</li>
 <li><strong>Commit Phase</strong>: This is when React applies the changes to the actual DOM and updates the UI.</li>
 </ol>
+<pre class="mermaid"><code>flowchart LR
+    subgraph R["Render Phase — faster"]
+        direction TB
+        R1["Build Virtual DOM"] --&gt; R2["Diff against previous"] --&gt; R3["Can be paused / restarted"]
+    end
+    subgraph C["Commit Phase — slower"]
+        direction TB
+        C1["Apply changes to real DOM"] --&gt; C2["Run refs and effects"] --&gt; C3["Cannot be interrupted"]
+    end
+    R --&gt; C</code></pre>
 <h3 id="which-phase-is-faster"><strong>Which Phase is Faster?</strong><a class="headerlink" href="#which-phase-is-faster" title="Permanent link">¶</a></h3>
 <ul>
 <li>The <strong>Render Phase</strong> is faster because React only computes changes in the Virtual DOM and doesn’t make any direct changes to the actual DOM yet.</li>
@@ -2664,6 +2765,11 @@ function App() {
 <ul>
 <li><code>lazy</code> is used to dynamically import the <code>MyComponent</code>, and the <code>Suspense</code> component is used to show a fallback UI (like a loading spinner) while the component is loading.</li>
 </ul>
+<pre class="mermaid"><code>flowchart LR
+    A["User opens /"] --&gt; B["Main bundle only"]
+    A2["User clicks 'Grocery'"] --&gt; C["React.lazy triggers&lt;br/&gt;separate chunk download"]
+    C --&gt; D["Suspense fallback shown&lt;br/&gt;while loading"]
+    D --&gt; E["Component rendered"]</code></pre>
 <hr />
 <h2 id="lazy-suspense"><strong>Lazy Suspense</strong><a class="headerlink" href="#lazy-suspense" title="Permanent link">¶</a></h2>
 <p><strong>Suspense</strong> is a React component that works in combination with <strong>lazy loading</strong>. It allows you to display a loading indicator while React is waiting to load some resources, like a component or data.</p>
@@ -2703,6 +2809,10 @@ function App() {
 <ul>
 <li>Consider a parent component passing data down to a deeply nested child. The data has to be passed through every intermediate level, which is inefficient.</li>
 </ul>
+<pre class="mermaid"><code>flowchart TB
+    A["App — holds user"] --&gt;|user| B["Layout&lt;br/&gt;doesn't need it"]
+    B --&gt;|user| C["Sidebar&lt;br/&gt;doesn't need it"]
+    C --&gt;|user| D["Profile&lt;br/&gt;finally uses it"]</code></pre>
 <hr />
 <h2 id="lifting-state-up"><strong>Lifting State Up</strong><a class="headerlink" href="#lifting-state-up" title="Permanent link">¶</a></h2>
 <p><strong>Lifting the state up</strong> refers to the practice of moving state from a child component to a common parent component so that multiple children can share and update the same state. It is helpful when you want to synchronize state between sibling components.</p>
@@ -2737,9 +2847,17 @@ function ChildComponent2({ onInputChange }) {
 <ul>
 <li>The parent component holds the state (<code>inputValue</code>), and both child components share this state, updating it when necessary.</li>
 </ul>
+<pre class="mermaid"><code>flowchart TB
+    P["Parent&lt;br/&gt;holds inputValue state"] --&gt;|inputValue| C1["Child 1&lt;br/&gt;displays it"]
+    P --&gt;|onInputChange| C2["Child 2&lt;br/&gt;updates it"]
+    C2 -.-&gt;|calls handler| P</code></pre>
 <hr />
 <h2 id="redux"><strong>Redux</strong><a class="headerlink" href="#redux" title="Permanent link">¶</a></h2>
 <p><strong>Redux</strong> is a state management library for JavaScript apps, often used with React. It provides a centralized store to manage the state of your application in a predictable way.</p>
+<pre class="mermaid"><code>flowchart LR
+    A["Component"] --&gt;|dispatch action| B["Reducer / Slice"]
+    B --&gt;|returns new state| C["Store&lt;br/&gt;single source of truth"]
+    C --&gt;|useSelector| A</code></pre>
 <h3 id="how-redux-works"><strong>How Redux Works:</strong><a class="headerlink" href="#how-redux-works" title="Permanent link">¶</a></h3>
 <ol>
 <li><strong>Store</strong>: Redux holds the entire state of your application in a single object, called the <strong>store</strong>.</li>
@@ -3061,6 +3179,9 @@ function Child(props) {
 }</code></pre>
 </li>
 </ul>
+<pre class="mermaid"><code>flowchart LR
+    P["Parent"] --&gt;|props — data down| C["Child"]
+    C --&gt;|callback function — events up| P</code></pre>
 <hr />
 <h2 id="controlled-vs-uncontrolled-components"><strong>Controlled vs Uncontrolled Components</strong><a class="headerlink" href="#controlled-vs-uncontrolled-components" title="Permanent link">¶</a></h2>
 <ul>
@@ -3127,6 +3248,10 @@ function Child(props) {
     return this.props.children;
   }
 }</code></pre>
+<pre class="mermaid"><code>flowchart LR
+    A["Child component throws"] --&gt; B{"Wrapped in an&lt;br/&gt;Error Boundary?"}
+    B --&gt;|Yes| C["getDerivedStateFromError&lt;br/&gt;→ fallback UI shown"]
+    B --&gt;|No| D["Whole React tree unmounts&lt;br/&gt;— blank page"]</code></pre>
 <hr />
 <h2 id="concurrent-mode"><strong>Concurrent Mode</strong><a class="headerlink" href="#concurrent-mode" title="Permanent link">¶</a></h2>
 <p><strong>Concurrent Mode</strong> is an experimental feature in React that helps improve the performance of rendering complex applications by allowing React to interrupt rendering to work on multiple tasks at once.</p>
@@ -3278,7 +3403,7 @@ In an e-commerce app, users can scroll through products while the app loads thei
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="January 28, 2025 03:45:45 UTC">January 28, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 16, 2026 09:11:58 UTC">August 16, 2026</span>
   </span>
 
     
@@ -3294,7 +3419,7 @@ In an e-commerce app, users can scroll through products while the app loads thei
     </span>
     <nav>
       
-        <a href="mailto:kausraj11@gmail.com">kaushal</a>
+        <a href="mailto:kausraj11@gmail.com">Kaushal Raj</a>
     </nav>
   </span>
 

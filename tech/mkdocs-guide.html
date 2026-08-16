@@ -597,7 +597,7 @@
 
 
 <h1 id="mkdocs-guide">MkDocs Guide<a class="headerlink" href="#mkdocs-guide" title="Permanent link">¶</a></h1>
-<p>MkDocs turns a folder of Markdown files into a static documentation site. This guide covers how this project is set up and how to work with it day to day. For publishing the built site, see <a href="mkdocs-publish.html">Publishing to GitHub Pages</a>.</p>
+<p>MkDocs turns a folder of Markdown files into a static documentation site. This guide covers how this project is set up and how to work with it day to day, including how to publish the built site.</p>
 <hr />
 <h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">¶</a></h2>
 <ol>
@@ -722,7 +722,7 @@ pip install -r requirements.txt</code></pre>
 </tr>
 <tr>
 <td><code>mkdocs gh-deploy</code></td>
-<td>Build and push to the <code>gh-pages</code> branch. See the <a href="mkdocs-publish.html">publishing guide</a>.</td>
+<td>Build and push to the <code>gh-pages</code> branch, which GitHub Pages serves.</td>
 </tr>
 <tr>
 <td><code>mkdocs new .</code></td>
@@ -776,9 +776,8 @@ extra_css:
   - Home: index.md
   - Docs: docs.md
   - Tech:
-      - AI and LLM Engineering: tech/ai.md
-      - MkDocs Guide: tech/mkdocs-guide.md
-      - Publishing: tech/mkdocs-publish.md</code></pre>
+      - Artificial Intelligence: tech/ai.md
+      - MkDocs Guide: tech/mkdocs-guide.md</code></pre>
 <p>Behaviour worth knowing:</p>
 <ul>
 <li>Nesting a list under a title creates a section. With the <code>navigation.sections</code> theme feature enabled, sections render as headings in the sidebar rather than collapsible groups.</li>
@@ -799,9 +798,9 @@ tags: MkDocs, Documentation
 <p><code>title</code> overrides both the browser title and the sidebar label. Without it, MkDocs falls back to the first <code>#</code> heading, and then to the filename.</p>
 <h3 id="internal-links">Internal links<a class="headerlink" href="#internal-links" title="Permanent link">¶</a></h3>
 <p>Link to other pages by their <strong>file path</strong>, not their URL:</p>
-<pre class="highlight"><code class="language-markdown">[Publishing guide](./mkdocs-publish.md)
+<pre class="highlight"><code class="language-markdown">[MkDocs guide](./mkdocs-guide.md)
 [AI docs](../tech/ai.md)
-[A specific section](./mkdocs-publish.md#troubleshooting)</code></pre>
+[A specific section](./mkdocs-guide.md#troubleshooting)</code></pre>
 <p>MkDocs rewrites these to correct URLs at build time and warns about broken targets. Linking to <code>/tech/ai/</code> directly works in the browser but skips validation and breaks under a different <code>site_url</code> subpath.</p>
 <h3 id="images">Images<a class="headerlink" href="#images" title="Permanent link">¶</a></h3>
 <p>Put images under <code>docs/</code> — for example <code>docs/assets/diagram.png</code> — and reference them relatively:</p>
@@ -1020,7 +1019,7 @@ tags: MkDocs, Documentation
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 16, 2026 05:40:22 UTC">August 16, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 16, 2026 09:11:58 UTC">August 16, 2026</span>
   </span>
 
     
@@ -1036,7 +1035,7 @@ tags: MkDocs, Documentation
     </span>
     <nav>
       
-        <a href="mailto:kausraj11@gmail.com">kaushal</a>
+        <a href="mailto:kausraj11@gmail.com">Kaushal Raj</a>
     </nav>
   </span>
 
