@@ -629,8 +629,10 @@
 </table>
 <p><code>mkdocs gh-deploy</code> does four things in one step: builds the site into a temporary directory, commits the result to the local <code>gh-pages</code> branch, force-pushes that branch to <code>origin</code>, and returns you to the branch you started on. GitHub Pages then serves whatever is at the root of <code>gh-pages</code>.</p>
 <p>The generated site is disposable. Everything on <code>gh-pages</code> can be rebuilt from <code>main</code> at any time, which is why the branch is force-pushed rather than merged.</p>
-<p>!!! warning "Never edit gh-pages directly"
-    Any commit you make on <code>gh-pages</code> is destroyed by the next deploy. If you find yourself checked out on <code>gh-pages</code> looking at HTML files, run <code>git checkout main</code> before doing anything else.</p>
+<div class="admonition warning">
+<p class="admonition-title">Never edit gh-pages directly</p>
+<p>Any commit you make on <code>gh-pages</code> is destroyed by the next deploy. If you find yourself checked out on <code>gh-pages</code> looking at HTML files, run <code>git checkout main</code> before doing anything else.</p>
+</div>
 <hr />
 <h2 id="one-time-setup">One-Time Setup<a class="headerlink" href="#one-time-setup" title="Permanent link">¶</a></h2>
 <h3 id="1-install-dependencies">1. Install dependencies<a class="headerlink" href="#1-install-dependencies" title="Permanent link">¶</a></h3>
@@ -687,8 +689,10 @@ git push origin main
 
 mkdocs gh-deploy --clean</code></pre>
 <p>Do the source push first. If a deploy goes wrong, you want the sources already safe on the remote.</p>
-<p>!!! note "gh-deploy builds your working tree, not your last commit"
-    Uncommitted local edits <strong>are</strong> included in the deployed site. That is convenient for a quick preview and dangerous for a real release — it lets the live site drift ahead of <code>main</code>. Commit first.</p>
+<div class="admonition note">
+<p class="admonition-title">gh-deploy builds your working tree, not your last commit</p>
+<p>Uncommitted local edits <strong>are</strong> included in the deployed site. That is convenient for a quick preview and dangerous for a real release — it lets the live site drift ahead of <code>main</code>. Commit first.</p>
+</div>
 <hr />
 <h2 id="automated-deployment">Automated Deployment<a class="headerlink" href="#automated-deployment" title="Permanent link">¶</a></h2>
 <p>This repository also has a GitHub Actions workflow at <code>.github/workflows/gh-pages.yml</code>. It builds and publishes to <code>gh-pages</code> on every push to <code>main</code>, so pushing your sources is enough:</p>
@@ -887,7 +891,7 @@ mkdocs gh-deploy --clean</code></pre>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 16, 2026 05:35:26 UTC">August 16, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 16, 2026 05:36:32 UTC">August 16, 2026</span>
   </span>
 
     
