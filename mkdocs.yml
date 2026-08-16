@@ -7,12 +7,24 @@ repo_url: https://github.com/kaushal726/self-learning
 edit_uri: blob/master/docs/
 
 theme:
-  features:
-    - header.autohide
-  text: Roboto
   name: material
+  font:
+    text: Source Sans 3
+    code: JetBrains Mono
+  icon:
+    repo: fontawesome/brands/github
   features:
     - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - navigation.indexes
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tooltips
   palette:
     - media: "(prefers-color-scheme)"
       toggle:
@@ -20,15 +32,15 @@ theme:
         name: Switch to light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
-      accent: indigo
+      primary: custom
+      accent: custom
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: indigo
-      accent: indigo
+      primary: custom
+      accent: custom
       toggle:
         icon: material/brightness-4
         name: Switch to system preference
@@ -46,6 +58,9 @@ extra:
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/kaushal-raj-074673213?utm_source=share&utm_campaign=share_via&utm_content=profile
 
+extra_css:
+  - stylesheets/extra.css
+
 markdown_extensions:
   - toc:
       permalink: "¶"
@@ -53,6 +68,8 @@ markdown_extensions:
   - attr_list
   - def_list
   - tables
+  - admonition
+  - pymdownx.details
   - pymdownx.highlight:
       use_pygments: false
   - pymdownx.snippets
