@@ -1,0 +1,1565 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Practical guide to AI concepts, large language models, prompting, RAG, agents, and shipping LLM-powered features.">
+      
+      
+        <meta name="author" content="Kaushal Raj">
+      
+      
+        <link rel="canonical" href="https://kaushal726.github.io/self-learning/tech/ai.html">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>AI and LLM Engineering - Knowledge Bank</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="https://unpkg.com/iframe-worker/shim"></script>
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ai-and-llm-engineering" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Knowledge Bank" class="md-header__button md-logo" aria-label="Knowledge Bank" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Knowledge Bank
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AI and LLM Engineering
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/kaushal726/self-learning" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Knowledge Bank" class="md-nav__button md-logo" aria-label="Knowledge Bank" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Knowledge Bank
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/kaushal726/self-learning" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-landscape" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI Landscape
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-large-language-models-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Large Language Models Work
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How Large Language Models Work">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transformer-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transformer basics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#training-stages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Training stages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sampling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reasoning-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reasoning models
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tokens-context-and-cost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tokens, Context, and Cost
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt Engineering
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prompt Engineering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#structure-of-a-good-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structure of a good prompt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#techniques-that-reliably-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Techniques that reliably help
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#techniques-that-often-backfire" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Techniques that often backfire
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt template
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structured-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structured Output
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#embeddings-and-vector-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Embeddings and Vector Search
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Embeddings and Vector Search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vector-stores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vector stores
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chunking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chunking
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retrieval-augmented-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Retrieval-Augmented Generation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Retrieval-Augmented Generation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#making-rag-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Making RAG work
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-rag-is-the-wrong-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When RAG is the wrong tool
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tool-use-and-function-calling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tool Use and Function Calling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agents
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Agents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#should-you-build-one" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Should you build one?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keeping-long-runs-healthy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keeping long runs healthy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fine-tuning-vs-prompting-vs-rag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fine-tuning vs Prompting vs RAG
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evaluation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Evaluation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#build-an-eval-set-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build an eval set first
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scoring-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scoring methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rag-specific-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RAG-specific metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#production-concerns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production Concerns
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-and-safety" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security and Safety
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-snippets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference Snippets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reference Snippets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-call" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic call
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#streaming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Streaming
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tool-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tool loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retry-with-backoff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Retry with backoff
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minimal-rag-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimal RAG pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#glossary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Glossary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="ai-and-llm-engineering">AI and LLM Engineering<a class="headerlink" href="#ai-and-llm-engineering" title="Permanent link">¶</a></h1>
+<p>A practical reference for building software with modern AI models — what the pieces are, when to use each one, and how to ship something reliable.</p>
+<hr />
+<h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">¶</a></h2>
+<ol>
+<li><a href="#ai-landscape">AI Landscape</a></li>
+<li><a href="#how-large-language-models-work">How Large Language Models Work</a></li>
+<li><a href="#tokens-context-and-cost">Tokens, Context, and Cost</a></li>
+<li><a href="#prompt-engineering">Prompt Engineering</a></li>
+<li><a href="#structured-output">Structured Output</a></li>
+<li><a href="#embeddings-and-vector-search">Embeddings and Vector Search</a></li>
+<li><a href="#retrieval-augmented-generation">Retrieval-Augmented Generation</a></li>
+<li><a href="#tool-use-and-function-calling">Tool Use and Function Calling</a></li>
+<li><a href="#agents">Agents</a></li>
+<li><a href="#fine-tuning-vs-prompting-vs-rag">Fine-tuning vs Prompting vs RAG</a></li>
+<li><a href="#evaluation">Evaluation</a></li>
+<li><a href="#production-concerns">Production Concerns</a></li>
+<li><a href="#security-and-safety">Security and Safety</a></li>
+<li><a href="#reference-snippets">Reference Snippets</a></li>
+<li><a href="#glossary">Glossary</a></li>
+</ol>
+<hr />
+<h2 id="ai-landscape">AI Landscape<a class="headerlink" href="#ai-landscape" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Artificial Intelligence</td>
+<td>Umbrella term for systems that perform tasks normally requiring human intelligence.</td>
+</tr>
+<tr>
+<td>Machine Learning</td>
+<td>Systems that learn patterns from data instead of being explicitly programmed.</td>
+</tr>
+<tr>
+<td>Deep Learning</td>
+<td>Machine learning using multi-layer neural networks.</td>
+</tr>
+<tr>
+<td>Generative AI</td>
+<td>Models that produce new content — text, images, audio, code.</td>
+</tr>
+<tr>
+<td>Large Language Model (LLM)</td>
+<td>A deep-learning model trained on large text corpora to predict and generate language.</td>
+</tr>
+<tr>
+<td>Multimodal model</td>
+<td>A model that accepts more than one input type (text plus images, audio, or documents).</td>
+</tr>
+</tbody>
+</table>
+<p>For most application work today, "AI feature" means "call a hosted LLM over HTTP and design carefully around its behaviour."</p>
+<hr />
+<h2 id="how-large-language-models-work">How Large Language Models Work<a class="headerlink" href="#how-large-language-models-work" title="Permanent link">¶</a></h2>
+<h3 id="transformer-basics">Transformer basics<a class="headerlink" href="#transformer-basics" title="Permanent link">¶</a></h3>
+<p>Modern LLMs are built on the transformer architecture. The core mechanism is <strong>self-attention</strong>: for each token in the input, the model computes how strongly it relates to every other token, then blends their representations. Stacking dozens of attention and feed-forward layers gives the model a rich, context-sensitive view of the whole input.</p>
+<p>Practical consequences:</p>
+<ul>
+<li>Attention cost grows roughly with the square of the input length, which is why long inputs are slower and more expensive.</li>
+<li>The model has no memory between requests. Every call is stateless — you resend the whole conversation each time.</li>
+<li>Output is generated one token at a time, each conditioned on everything before it.</li>
+</ul>
+<h3 id="training-stages">Training stages<a class="headerlink" href="#training-stages" title="Permanent link">¶</a></h3>
+<ol>
+<li><strong>Pre-training</strong> — next-token prediction over a very large corpus. Produces raw language ability and world knowledge.</li>
+<li><strong>Supervised fine-tuning</strong> — training on curated instruction/response pairs so the model follows instructions.</li>
+<li><strong>Preference tuning (RLHF and variants)</strong> — ranking model outputs by human or model preference to shape helpfulness, tone, and safety.</li>
+</ol>
+<h3 id="sampling">Sampling<a class="headerlink" href="#sampling" title="Permanent link">¶</a></h3>
+<p>At each step the model produces a probability distribution over the vocabulary. How you sample from it determines variability:</p>
+<ul>
+<li><strong>Temperature</strong> — flattens or sharpens the distribution. Lower means more deterministic.</li>
+<li><strong>Top-p (nucleus sampling)</strong> — sample only from the smallest set of tokens whose probabilities sum to <code>p</code>.</li>
+<li><strong>Top-k</strong> — sample only from the <code>k</code> most likely tokens.</li>
+</ul>
+<p>Note that several current frontier models have removed these knobs in favour of prompting and an effort/reasoning setting — check your provider's API reference before relying on them.</p>
+<h3 id="reasoning-models">Reasoning models<a class="headerlink" href="#reasoning-models" title="Permanent link">¶</a></h3>
+<p>Newer models can produce internal reasoning before their visible answer. This trades latency and tokens for accuracy on multi-step problems. Providers expose this as an on/off setting or as an "effort" level. Use higher reasoning for planning, debugging, and analysis; use lower for classification, extraction, and chat.</p>
+<hr />
+<h2 id="tokens-context-and-cost">Tokens, Context, and Cost<a class="headerlink" href="#tokens-context-and-cost" title="Permanent link">¶</a></h2>
+<p>A <strong>token</strong> is a chunk of text — roughly 3–4 characters of English, less for code and non-English text. Models bill per token and limit total tokens.</p>
+<ul>
+<li><strong>Context window</strong> — the maximum tokens in a single request, covering system prompt, conversation history, tool definitions, retrieved documents, and the generated output.</li>
+<li><strong>Input vs output pricing</strong> — output tokens generally cost several times more than input tokens.</li>
+<li><strong>Prompt caching</strong> — providers can cache a stable prefix of your prompt and charge a fraction of the normal rate to reuse it. Caching is a prefix match: any byte change invalidates everything after it, so put stable content first (system prompt, tool definitions) and volatile content last (timestamps, the current user question).</li>
+</ul>
+<p>Cost control checklist:</p>
+<ul>
+<li>Count tokens with the provider's own token-counting endpoint, not a third-party tokenizer from another vendor.</li>
+<li>Cache the shared prefix on repeated calls.</li>
+<li>Send only the retrieved passages you need, not whole documents.</li>
+<li>Trim or summarise old conversation turns instead of resending everything forever.</li>
+<li>Route simple tasks to a smaller, cheaper model.</li>
+</ul>
+<hr />
+<h2 id="prompt-engineering">Prompt Engineering<a class="headerlink" href="#prompt-engineering" title="Permanent link">¶</a></h2>
+<h3 id="structure-of-a-good-prompt">Structure of a good prompt<a class="headerlink" href="#structure-of-a-good-prompt" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Role and context</td>
+<td>Who the model is acting as and what the situation is.</td>
+</tr>
+<tr>
+<td>Task</td>
+<td>The single, specific thing to do.</td>
+</tr>
+<tr>
+<td>Input data</td>
+<td>The content to operate on, clearly delimited.</td>
+</tr>
+<tr>
+<td>Constraints</td>
+<td>Length, format, tone, what to avoid.</td>
+</tr>
+<tr>
+<td>Output format</td>
+<td>Exact shape of the response.</td>
+</tr>
+<tr>
+<td>Examples</td>
+<td>One to five worked examples for anything non-obvious.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="techniques-that-reliably-help">Techniques that reliably help<a class="headerlink" href="#techniques-that-reliably-help" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Be specific.</strong> "Summarise in three bullets, each under 20 words, focused on financial risk" beats "summarise this".</li>
+<li><strong>Few-shot examples.</strong> Showing two or three input/output pairs is usually more effective than describing the format in prose.</li>
+<li><strong>Chain of thought.</strong> Asking the model to work through the problem step by step improves multi-step accuracy. Reasoning models do this natively.</li>
+<li><strong>Delimit inputs.</strong> Wrap user-supplied content in XML-style tags or fenced blocks so the model can tell instructions apart from data.</li>
+<li><strong>Positive instructions.</strong> "Respond in plain prose" works better than "do not use markdown".</li>
+<li><strong>Prompt chaining.</strong> Split a complex job into several small calls — extract, then classify, then write — instead of one prompt that does everything.</li>
+</ul>
+<h3 id="techniques-that-often-backfire">Techniques that often backfire<a class="headerlink" href="#techniques-that-often-backfire" title="Permanent link">¶</a></h3>
+<ul>
+<li>Stacking emphasis ("CRITICAL: YOU MUST ALWAYS...") on capable models causes over-triggering; state the rule once, plainly.</li>
+<li>Vague quality words ("make it good", "be thorough") give the model nothing to aim at.</li>
+<li>Very long prompts full of edge cases the model then over-applies. Prefer a short prompt plus examples.</li>
+</ul>
+<h3 id="prompt-template">Prompt template<a class="headerlink" href="#prompt-template" title="Permanent link">¶</a></h3>
+<pre class="highlight"><code class="language-text">You are a &lt;role&gt; helping with &lt;domain&gt;.
+
+Task: &lt;one specific instruction&gt;
+
+Rules:
+- &lt;constraint&gt;
+- &lt;constraint&gt;
+
+Input:
+&lt;data&gt;
+{{user_input}}
+&lt;/data&gt;
+
+Respond as: &lt;exact output format&gt;</code></pre>
+<hr />
+<h2 id="structured-output">Structured Output<a class="headerlink" href="#structured-output" title="Permanent link">¶</a></h2>
+<p>Free-form text is hard to consume from code. Three approaches, best first:</p>
+<ol>
+<li><strong>Schema-constrained output.</strong> Provide a JSON Schema and the provider guarantees a conforming response. Most reliable option when available.</li>
+<li><strong>Tool/function calling with a strict schema.</strong> Define a tool whose parameters are the shape you want, and force the model to call it.</li>
+<li><strong>Prompt-only JSON.</strong> Ask for JSON and parse it. Always wrap parsing in error handling and retry once on failure.</li>
+</ol>
+<p>Schema tips:</p>
+<ul>
+<li>Set <code>additionalProperties: false</code> and list <code>required</code> fields.</li>
+<li>Use <code>enum</code> for closed sets — it removes an entire class of parsing bugs.</li>
+<li>Keep schemas flat; deeply nested and recursive schemas are often unsupported.</li>
+<li>Always validate the parsed object before using it, even with guaranteed formats.</li>
+</ul>
+<hr />
+<h2 id="embeddings-and-vector-search">Embeddings and Vector Search<a class="headerlink" href="#embeddings-and-vector-search" title="Permanent link">¶</a></h2>
+<p>An <strong>embedding</strong> maps text to a fixed-length vector such that semantically similar text lands nearby. Similarity is normally measured by cosine similarity.</p>
+<p>Uses: semantic search, deduplication, clustering, classification, recommendation, and the retrieval half of RAG.</p>
+<h3 id="vector-stores">Vector stores<a class="headerlink" href="#vector-stores" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Fits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pgvector</code> (PostgreSQL)</td>
+<td>You already run Postgres and want one database.</td>
+</tr>
+<tr>
+<td>Managed vector services</td>
+<td>Large scale, low operational effort.</td>
+</tr>
+<tr>
+<td>Embedded libraries (FAISS and similar)</td>
+<td>Local, batch, or single-process workloads.</td>
+</tr>
+</tbody>
+</table>
+<p>Indexes such as HNSW give approximate nearest-neighbour search — fast lookups at a small recall cost, tunable with parameters such as <code>ef_search</code>.</p>
+<h3 id="chunking">Chunking<a class="headerlink" href="#chunking" title="Permanent link">¶</a></h3>
+<p>Retrieval quality is dominated by chunking quality.</p>
+<ul>
+<li>Split on structure — headings, sections, functions — rather than a fixed character count.</li>
+<li>Target roughly 200–800 tokens per chunk, with 10–20% overlap.</li>
+<li>Store metadata with each chunk (source, title, section, URL, timestamp) so you can filter and cite.</li>
+<li>Prepend the document title and section heading to each chunk so it stands alone.</li>
+</ul>
+<hr />
+<h2 id="retrieval-augmented-generation">Retrieval-Augmented Generation<a class="headerlink" href="#retrieval-augmented-generation" title="Permanent link">¶</a></h2>
+<p>RAG grounds a model's answers in your own data without retraining it.</p>
+<pre class="highlight"><code class="language-text">Query
+  → embed query
+  → search vector store (+ keyword search)
+  → rerank top candidates
+  → build prompt with the best passages
+  → model generates answer with citations</code></pre>
+<h3 id="making-rag-work">Making RAG work<a class="headerlink" href="#making-rag-work" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Hybrid search.</strong> Combine vector similarity with keyword/BM25 search. Keyword search catches exact identifiers, error codes, and product names that embeddings blur.</li>
+<li><strong>Rerank.</strong> Retrieve 20–50 candidates cheaply, then rerank to the top 3–8 with a cross-encoder or a small model call.</li>
+<li><strong>Cite sources.</strong> Return the chunk identifiers used, and show them in the UI. This is the cheapest hallucination defence you have.</li>
+<li><strong>Allow "I don't know".</strong> Instruct the model to say when the context doesn't contain the answer, rather than filling the gap.</li>
+<li><strong>Query rewriting.</strong> Rewrite conversational follow-ups ("and the second one?") into standalone queries before retrieval.</li>
+<li><strong>Filter by metadata.</strong> Restrict retrieval by tenant, product, language, or date before ranking.</li>
+</ul>
+<h3 id="when-rag-is-the-wrong-tool">When RAG is the wrong tool<a class="headerlink" href="#when-rag-is-the-wrong-tool" title="Permanent link">¶</a></h3>
+<p>If the whole corpus fits comfortably in the context window and the cost is acceptable, just send it. Long-context models have made small-corpus RAG unnecessary in many cases.</p>
+<hr />
+<h2 id="tool-use-and-function-calling">Tool Use and Function Calling<a class="headerlink" href="#tool-use-and-function-calling" title="Permanent link">¶</a></h2>
+<p>Tool use lets the model request an action your code performs. The model never executes anything itself — it emits a structured call, you run it, and you return the result.</p>
+<p>The loop:</p>
+<ol>
+<li>Send the request with a list of tool definitions (name, description, JSON Schema for inputs).</li>
+<li>The model responds either with an answer or with one or more tool calls.</li>
+<li>Execute each call, then send the results back as tool results.</li>
+<li>Repeat until the model responds without calling a tool.</li>
+</ol>
+<p>Design guidance:</p>
+<ul>
+<li><strong>Descriptions decide everything.</strong> Say <em>when</em> to call the tool, not only what it does.</li>
+<li><strong>Keep the tool set small.</strong> A focused set of 5–15 tools beats 60 overlapping ones. Use dynamic tool discovery if you genuinely have many.</li>
+<li><strong>Return errors as results, not exceptions.</strong> Mark the result as an error and describe what went wrong so the model can recover.</li>
+<li><strong>Execute parallel calls in parallel</strong> and return all results in a single message.</li>
+<li><strong>Gate destructive actions.</strong> Anything irreversible — sending mail, deleting records, moving money — should require confirmation, and validation belongs in your code, not in the prompt.</li>
+</ul>
+<hr />
+<h2 id="agents">Agents<a class="headerlink" href="#agents" title="Permanent link">¶</a></h2>
+<p>An agent is a model in a loop with tools, deciding its own next step until a goal is met.</p>
+<h3 id="should-you-build-one">Should you build one?<a class="headerlink" href="#should-you-build-one" title="Permanent link">¶</a></h3>
+<p>Check all four before committing:</p>
+<ul>
+<li><strong>Complexity</strong> — is the task genuinely multi-step and hard to specify up front?</li>
+<li><strong>Value</strong> — does the outcome justify higher latency and cost?</li>
+<li><strong>Viability</strong> — is the model actually capable at this task?</li>
+<li><strong>Cost of error</strong> — can mistakes be caught and rolled back?</li>
+</ul>
+<p>If any answer is no, use a simpler tier: a single call, or a fixed pipeline of calls that your code orchestrates. Most "agent" products are better as workflows.</p>
+<h3 id="patterns">Patterns<a class="headerlink" href="#patterns" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Single call</td>
+<td>One request, one response. Classification, extraction, summarisation.</td>
+</tr>
+<tr>
+<td>Chain</td>
+<td>Fixed sequence of calls, each feeding the next.</td>
+</tr>
+<tr>
+<td>Router</td>
+<td>One call classifies the request, then dispatches to a specialised handler.</td>
+</tr>
+<tr>
+<td>Parallel fan-out</td>
+<td>Independent subtasks run concurrently, results merged.</td>
+</tr>
+<tr>
+<td>Evaluator/optimiser</td>
+<td>One model produces, another critiques, loop until the critique passes.</td>
+</tr>
+<tr>
+<td>Autonomous agent</td>
+<td>Model plans and chooses tools freely until the goal is reached.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="keeping-long-runs-healthy">Keeping long runs healthy<a class="headerlink" href="#keeping-long-runs-healthy" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Context management</strong> — summarise or drop stale tool output before the window fills.</li>
+<li><strong>Memory</strong> — persist durable facts to files or a store so they survive restarts.</li>
+<li><strong>Step limits</strong> — cap iterations and total token spend; loops without a ceiling are a production incident waiting to happen.</li>
+<li><strong>Checkpoints</strong> — make each step observable and recoverable.</li>
+<li><strong>Sub-agents</strong> — delegate independent, sizeable tracks of work; don't delegate what one or two tool calls would finish.</li>
+</ul>
+<hr />
+<h2 id="fine-tuning-vs-prompting-vs-rag">Fine-tuning vs Prompting vs RAG<a class="headerlink" href="#fine-tuning-vs-prompting-vs-rag" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Need</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Model lacks facts about your domain</td>
+<td>RAG</td>
+</tr>
+<tr>
+<td>Model has the knowledge but wrong format or tone</td>
+<td>Prompting, few-shot examples</td>
+</tr>
+<tr>
+<td>Consistent style or output shape at scale</td>
+<td>Fine-tuning</td>
+</tr>
+<tr>
+<td>Cheaper or faster inference for a narrow task</td>
+<td>Fine-tune a small model</td>
+</tr>
+<tr>
+<td>Freshness — data changes daily</td>
+<td>RAG (fine-tuning cannot keep up)</td>
+</tr>
+</tbody>
+</table>
+<p>Order of attempts: prompt → few-shot → RAG → fine-tune. Fine-tuning is the last step because it costs the most, is hardest to iterate on, and locks you to a model version. It does not add knowledge reliably — it shapes behaviour.</p>
+<hr />
+<h2 id="evaluation">Evaluation<a class="headerlink" href="#evaluation" title="Permanent link">¶</a></h2>
+<p>Without evaluation you cannot tell an improvement from a regression.</p>
+<h3 id="build-an-eval-set-first">Build an eval set first<a class="headerlink" href="#build-an-eval-set-first" title="Permanent link">¶</a></h3>
+<p>Collect 50–200 real inputs with expected outputs or acceptance criteria. Include the awkward cases: empty input, hostile input, ambiguous requests, very long documents.</p>
+<h3 id="scoring-methods">Scoring methods<a class="headerlink" href="#scoring-methods" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Fits</th>
+<th>Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Exact match / regex</td>
+<td>Classification, extraction, structured fields</td>
+<td>Free</td>
+</tr>
+<tr>
+<td>Programmatic checks</td>
+<td>Valid JSON, schema conformance, code compiles, tests pass</td>
+<td>Free</td>
+</tr>
+<tr>
+<td>LLM-as-judge</td>
+<td>Open-ended quality, tone, helpfulness</td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td>Human review</td>
+<td>Final gate before release; calibrating the judge</td>
+<td>High</td>
+</tr>
+</tbody>
+</table>
+<p>LLM-as-judge tips: give the judge a concrete rubric with independently checkable criteria, not "rate 1–10". Score criteria one at a time. Run the judge on a strong model even when the system under test uses a small one.</p>
+<h3 id="rag-specific-metrics">RAG-specific metrics<a class="headerlink" href="#rag-specific-metrics" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Retrieval recall</strong> — is the correct passage in the retrieved set at all?</li>
+<li><strong>Precision at k</strong> — how much of what was retrieved is relevant?</li>
+<li><strong>Faithfulness</strong> — is every claim in the answer supported by the retrieved context?</li>
+<li><strong>Answer relevance</strong> — does the answer actually address the question?</li>
+</ul>
+<p>Run evals in CI on every prompt change. Prompts are code.</p>
+<hr />
+<h2 id="production-concerns">Production Concerns<a class="headerlink" href="#production-concerns" title="Permanent link">¶</a></h2>
+<p><strong>Latency.</strong> Stream responses so users see the first token quickly. Run independent calls in parallel. Cache stable prefixes. Use a smaller model where quality allows. Reasoning models can take minutes on hard tasks — design the UI for asynchronous checking rather than a blocking spinner.</p>
+<p><strong>Reliability.</strong> Retry transient failures (429, 5xx, network) with exponential backoff and jitter; never retry 400 or 401. Set explicit timeouts. Have a fallback model configured. Handle every stop reason, including refusals and hitting the token cap — code that reads the first content block unconditionally will break.</p>
+<p><strong>Observability.</strong> Log the prompt version, model, token usage, latency, stop reason, and request ID for every call. Sample and review real outputs weekly. Track cost per request and per user.</p>
+<p><strong>Versioning.</strong> Pin exact model identifiers rather than floating aliases in production. Treat prompts as versioned artefacts in source control. Re-run evals whenever the model or prompt changes.</p>
+<p><strong>Idempotency.</strong> Model output is non-deterministic even at low temperature. Anything that writes to a database or calls a payment API needs an idempotency key on your side.</p>
+<hr />
+<h2 id="security-and-safety">Security and Safety<a class="headerlink" href="#security-and-safety" title="Permanent link">¶</a></h2>
+<p><strong>Prompt injection</strong> is the defining vulnerability of LLM applications. Any text the model reads — a web page, a PDF, an email, a code comment, a tool result — can contain instructions, and the model has no reliable way to tell data from directives.</p>
+<p>Mitigations:</p>
+<ul>
+<li>Never grant the model authority it should not have. Enforce permissions in your code, not in the prompt.</li>
+<li>Treat all retrieved and tool-returned content as untrusted data. Delimit it clearly and say so in the system prompt.</li>
+<li>Require human confirmation for irreversible or outward-facing actions.</li>
+<li>Never place secrets in prompts, system prompts, or memory files — they persist in conversation history and logs.</li>
+<li>Sandbox any generated code, and constrain filesystem paths to a fixed root.</li>
+<li>Constrain outbound network access from tool execution environments.</li>
+</ul>
+<p><strong>Data handling.</strong> Know your provider's retention policy. Redact personal data before sending it. Check whether zero-retention mode is available if you need it. Confirm the compliance posture — residency, certifications, sub-processors — before shipping regulated workloads.</p>
+<p><strong>Output safety.</strong> Never render model output as raw HTML without sanitising it. Never pass model output straight into a shell, SQL query, or <code>eval</code>. Validate against a schema before it reaches any downstream system.</p>
+<hr />
+<h2 id="reference-snippets">Reference Snippets<a class="headerlink" href="#reference-snippets" title="Permanent link">¶</a></h2>
+<h3 id="basic-call">Basic call<a class="headerlink" href="#basic-call" title="Permanent link">¶</a></h3>
+<pre class="highlight"><code class="language-javascript">const response = await client.messages.create({
+  model: MODEL_ID,
+  max_tokens: 4096,
+  system: "You are a concise technical assistant.",
+  messages: [{ role: "user", content: userInput }],
+});</code></pre>
+<h3 id="streaming">Streaming<a class="headerlink" href="#streaming" title="Permanent link">¶</a></h3>
+<pre class="highlight"><code class="language-javascript">const stream = await client.messages.stream({
+  model: MODEL_ID,
+  max_tokens: 4096,
+  messages: [{ role: "user", content: userInput }],
+});
+
+for await (const event of stream) {
+  if (event.type === "content_block_delta" &amp;&amp; event.delta.type === "text_delta") {
+    process.stdout.write(event.delta.text);
+  }
+}
+
+const final = await stream.finalMessage();</code></pre>
+<h3 id="tool-loop">Tool loop<a class="headerlink" href="#tool-loop" title="Permanent link">¶</a></h3>
+<pre class="highlight"><code class="language-javascript">const messages = [{ role: "user", content: userInput }];
+
+while (true) {
+  const response = await client.messages.create({
+    model: MODEL_ID,
+    max_tokens: 4096,
+    tools,
+    messages,
+  });
+
+  if (response.stop_reason !== "tool_use") {
+    return response;
+  }
+
+  messages.push({ role: "assistant", content: response.content });
+
+  const results = await Promise.all(
+    response.content
+      .filter((block) =&gt; block.type === "tool_use")
+      .map(async (block) =&gt; {
+        try {
+          const output = await runTool(block.name, block.input);
+          return { type: "tool_result", tool_use_id: block.id, content: output };
+        } catch (error) {
+          return {
+            type: "tool_result",
+            tool_use_id: block.id,
+            content: `Error: ${error.message}`,
+            is_error: true,
+          };
+        }
+      }),
+  );
+
+  messages.push({ role: "user", content: results });
+}</code></pre>
+<h3 id="retry-with-backoff">Retry with backoff<a class="headerlink" href="#retry-with-backoff" title="Permanent link">¶</a></h3>
+<pre class="highlight"><code class="language-javascript">async function withRetry(fn, attempts = 4) {
+  for (let i = 0; i &lt; attempts; i++) {
+    try {
+      return await fn();
+    } catch (error) {
+      const retryable = [408, 429, 500, 502, 503, 529].includes(error.status);
+      if (!retryable || i === attempts - 1) throw error;
+      const delay = Math.min(1000 * 2 ** i, 30000) + Math.random() * 500;
+      await new Promise((resolve) =&gt; setTimeout(resolve, delay));
+    }
+  }
+}</code></pre>
+<h3 id="minimal-rag-pipeline">Minimal RAG pipeline<a class="headerlink" href="#minimal-rag-pipeline" title="Permanent link">¶</a></h3>
+<pre class="highlight"><code class="language-javascript">async function answer(question, filters = {}) {
+  const queryVector = await embed(question);
+  const candidates = await vectorStore.search(queryVector, { limit: 40, filters });
+  const keywordHits = await keywordSearch(question, { limit: 20, filters });
+  const merged = dedupe([...candidates, ...keywordHits]);
+  const top = await rerank(question, merged, 6);
+
+  const context = top
+    .map((chunk, i) =&gt; `[${i + 1}] ${chunk.title}\n${chunk.text}`)
+    .join("\n\n");
+
+  return client.messages.create({
+    model: MODEL_ID,
+    max_tokens: 2048,
+    system:
+      "Answer only from the provided context. Cite sources as [n]. " +
+      "If the context does not contain the answer, say so plainly.",
+    messages: [
+      { role: "user", content: `&lt;context&gt;\n${context}\n&lt;/context&gt;\n\nQuestion: ${question}` },
+    ],
+  });
+}</code></pre>
+<hr />
+<h2 id="glossary">Glossary<a class="headerlink" href="#glossary" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Agent</td>
+<td>A model in a loop with tools, choosing its own next action.</td>
+</tr>
+<tr>
+<td>Chunk</td>
+<td>A passage of a document stored and retrieved as a unit.</td>
+</tr>
+<tr>
+<td>Context window</td>
+<td>Maximum tokens a model can process in one request.</td>
+</tr>
+<tr>
+<td>Embedding</td>
+<td>A vector representation of text used for semantic similarity.</td>
+</tr>
+<tr>
+<td>Few-shot</td>
+<td>Including worked examples in the prompt.</td>
+</tr>
+<tr>
+<td>Fine-tuning</td>
+<td>Further training of a base model on your own examples.</td>
+</tr>
+<tr>
+<td>Grounding</td>
+<td>Constraining answers to supplied source material.</td>
+</tr>
+<tr>
+<td>Hallucination</td>
+<td>Confident output that is not supported by facts or context.</td>
+</tr>
+<tr>
+<td>Inference</td>
+<td>Running a trained model to produce output.</td>
+</tr>
+<tr>
+<td>Prompt caching</td>
+<td>Reusing a cached prompt prefix at reduced cost.</td>
+</tr>
+<tr>
+<td>Prompt injection</td>
+<td>Malicious instructions hidden in content the model reads.</td>
+</tr>
+<tr>
+<td>RAG</td>
+<td>Retrieval-augmented generation — retrieve, then generate.</td>
+</tr>
+<tr>
+<td>Reranking</td>
+<td>Reordering retrieved candidates by relevance before use.</td>
+</tr>
+<tr>
+<td>System prompt</td>
+<td>Persistent instructions that frame the model's behaviour.</td>
+</tr>
+<tr>
+<td>Temperature</td>
+<td>Sampling parameter controlling output randomness.</td>
+</tr>
+<tr>
+<td>Token</td>
+<td>The unit of text models read, generate, and bill for.</td>
+</tr>
+<tr>
+<td>Tool use</td>
+<td>The model requesting an action that your code executes.</td>
+</tr>
+<tr>
+<td>Vector database</td>
+<td>A store optimised for nearest-neighbour search over embeddings.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 16, 2026 05:21:47 UTC">August 16, 2026</span>
+  </span>
+
+    
+    
+    
+      
+  
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Contributors">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4"/></svg>
+      
+    </span>
+    <nav>
+      
+        <a href="mailto:kausraj11@gmail.com">kaushal</a>
+    </nav>
+  </span>
+
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 <a href="https://github.com/kaushal726">Kaushal Raj</a>.
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/kaushal726" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://fosstodon.org/@squidfunk" target="_blank" rel="noopener" title="fosstodon.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M357.2 48h70.6L273.6 224.2 455 464H313L201.7 318.6 74.5 464H3.8l164.9-188.5L-5.2 48h145.6l100.5 132.9zm-24.8 373.8h39.1L119.1 88h-42z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/kaushal-raj-074673213?utm_source=share&utm_campaign=share_via&utm_content=profile" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
