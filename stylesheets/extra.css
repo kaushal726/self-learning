@@ -15,7 +15,7 @@
 
   --kb-radius: 10px;
   --kb-radius-sm: 6px;
-  --kb-measure: 78ch;
+  --kb-measure: 74ch;
 
   --kb-ease: cubic-bezier(0.2, 0, 0.2, 1);
   --kb-speed: 160ms;
@@ -23,8 +23,8 @@
 
 /* Light — warm paper */
 [data-md-color-scheme="default"] {
-  --kb-ink: #16202a;
-  --kb-ink-muted: #5a6672;
+  --kb-ink: #111a22;
+  --kb-ink-muted: #4b5763;
   --kb-paper: #fbfaf7;
   --kb-surface: #ffffff;
   --kb-line: #e3e0d8;
@@ -58,8 +58,8 @@
 
 /* Dark — ink navy */
 [data-md-color-scheme="slate"] {
-  --kb-ink: #dce3e8;
-  --kb-ink-muted: #94a3b0;
+  --kb-ink: #e8eef4;
+  --kb-ink-muted: #a3b1bd;
   --kb-paper: #0f1419;
   --kb-surface: #161c23;
   --kb-line: #263039;
@@ -96,9 +96,17 @@
    -------------------------------------------------------------------------- */
 
 .md-typeset {
-  font-size: 0.78rem;
-  line-height: 1.72;
-  letter-spacing: 0.002em;
+  font-size: 0.86rem;
+  line-height: 1.8;
+  letter-spacing: 0.003em;
+}
+
+.md-typeset p {
+  margin: 0 0 1.1em;
+}
+
+.md-typeset > :first-child {
+  margin-top: 0;
 }
 
 .md-typeset h1,
