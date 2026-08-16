@@ -73,7 +73,11 @@ markdown_extensions:
   - pymdownx.highlight:
       use_pygments: false
   - pymdownx.snippets
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - mdx_gh_links:
       user: mkdocs
       repo: mkdocs

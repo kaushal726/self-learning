@@ -16,14 +16,14 @@ tags: All the key technologies and concepts (React, TypeScript, WebRTC, IndexedD
 ## Table of Contents
 
 1. [System Overview](#system-overview)
-2. [Architecture & Design Patterns](#architecture--design-patterns)
+2. [Architecture & Design Patterns](#architecture-design-patterns)
 3. [Core Technologies](#core-technologies)
 4. [Implementation Phases](#implementation-phases)
-5. [Data Flow & Synchronization](#data-flow--synchronization)
+5. [Data Flow & Synchronization](#data-flow-synchronization)
 6. [Network Communication](#network-communication)
 7. [Security Considerations](#security-considerations)
 8. [Testing Strategy](#testing-strategy)
-9. [Deployment & Distribution](#deployment--distribution)
+9. [Deployment & Distribution](#deployment-distribution)
 10. [Troubleshooting Guide](#troubleshooting-guide)
 
 ---

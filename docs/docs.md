@@ -25,7 +25,7 @@ Welcome to the documentation portal. Here you'll find comprehensive guides and r
 - [Playwright](./tech/playwright.md)
 - [Google Tag Manager](./tech/post_deploy.md)
 - [Offline System](./tech/offline-system.md)
-- [AI and LLM Engineering](./tech/ai.md)
+- [Artificial Intelligence](./tech/ai.md)
 - [MkDocs Guide](./tech/mkdocs-guide.md)
 - [Publishing to GitHub Pages](./tech/mkdocs-publish.md)
 - [References](./tech/reference-links.md)

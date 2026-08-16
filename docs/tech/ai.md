@@ -1,497 +1,409 @@
 ---
-title: AI and LLM Engineering
-description: Practical guide to AI concepts, large language models, prompting, RAG, agents, and shipping LLM-powered features.
+title: Artificial Intelligence
+
+description: Evolution of AI from the Turing test to agentic AI — rule-based systems, machine learning, deep learning, computer vision, NLP, transformers, LLMs, and generative AI.
 owners: Kaushal Raj
 authors: Kaushal Raj
 categories: Artificial Intelligence
-tags: AI, LLM, Machine Learning, Prompt Engineering, RAG, Embeddings, Vector Database, Agents, Tool Use, Evaluation, Fine-tuning
+tags: AI, Evolution of AI, Turing Test, Machine Learning, Deep Learning, Neural Network, Computer Vision, NLP, Transformer, LLM, Generative AI, Agentic AI
 ---
 
-# AI and LLM Engineering
+# Artificial Intelligence
 
-A practical reference for building software with modern AI models — what the pieces are, when to use each one, and how to ship something reliable.
+Notes on what AI is and how it evolved — from the Turing test to agentic AI.
 
 ---
 
 ## Table of Contents
 
-1. [AI Landscape](#ai-landscape)
-2. [How Large Language Models Work](#how-large-language-models-work)
-3. [Tokens, Context, and Cost](#tokens-context-and-cost)
-4. [Prompt Engineering](#prompt-engineering)
-5. [Structured Output](#structured-output)
-6. [Embeddings and Vector Search](#embeddings-and-vector-search)
-7. [Retrieval-Augmented Generation](#retrieval-augmented-generation)
-8. [Tool Use and Function Calling](#tool-use-and-function-calling)
-9. [Agents](#agents)
-10. [Fine-tuning vs Prompting vs RAG](#fine-tuning-vs-prompting-vs-rag)
-11. [Evaluation](#evaluation)
-12. [Production Concerns](#production-concerns)
-13. [Security and Safety](#security-and-safety)
-14. [Reference Snippets](#reference-snippets)
-15. [Glossary](#glossary)
+**Chapter 1 — [Evolution of AI](#chapter-1-evolution-of-ai)**
+
+1. [What is Artificial Intelligence](#what-is-artificial-intelligence)
+2. [The Early Years — 1950s](#the-early-years-1950s)
+3. [Deep Blue — 1997](#deep-blue-1997)
+4. [Rule-Based AI — 1957 to 1980](#rule-based-ai-1957-to-1980)
+5. [AI after 1980 — Machine Learning](#ai-after-1980-machine-learning)
+6. [Deep Learning](#deep-learning)
+7. [ML vs DL](#ml-vs-dl)
+8. [Computer Vision Revolution](#computer-vision-revolution)
+9. [Natural Language Processing](#natural-language-processing)
+10. [Transformer — The Game Changer](#transformer-the-game-changer)
+11. [Large Language Models](#large-language-models)
+12. [Generative AI](#generative-ai)
+13. [The ChatGPT Moment](#the-chatgpt-moment)
+14. [Multimodal AI](#multimodal-ai)
+15. [Agentic AI](#agentic-ai)
+16. [Full Timeline](#full-timeline)
+
+**Chapter 2 — [Search Engine vs LLM](#chapter-2-search-engine-vs-llm)**
+
+**[Quick Revision](#quick-revision)**
 
 ---
 
-## AI Landscape
+## Chapter 1 — Evolution of AI
 
-| Term | Meaning |
+How AI got from "can a machine think" to models that plan and act.
+
+### What is Artificial Intelligence
+
+**AI = a task that requires human intelligence + a machine that can do that task.**
+
+```mermaid
+flowchart LR
+    A["Task needs<br/>human intelligence"] --> C{AI}
+    B["Machine can<br/>do the task"] --> C
+    C --> D["Example:<br/>a human can drive a car<br/>→ now a machine can too"]
+```
+
+Example: driving a car needs human intelligence. When a machine can do it, that is AI.
+
+#### Synthetic Intelligence
+
+Another name for the same idea — **human-created intelligence**. Intelligence that did not come from nature, but was built.
+
+#### What machine intelligence must do
+
+1. Learn from data
+2. Recognise patterns
+3. Make decisions
+4. Solve unplanned scenarios
+
+Point 4 is the real test. Anything can follow a script; intelligence shows up when the situation was never scripted.
+
+### The Early Years — 1950s
+
+#### 1. 1950 — Alan Turing
+
+Turing put forward the statement that **a machine can think**, and the **Turing test** was performed to check it.
+
+The test: two rooms — one has a human, the other has a machine. A person asks both of them questions, and has to identify which answer came from the human and which came from the machine. If they cannot tell, the machine passes.
+
+```mermaid
+flowchart LR
+    J["Judge<br/>(human)"] -->|question| A["Room A<br/>Human"]
+    J -->|question| B["Room B<br/>Machine"]
+    A -->|answer| J
+    B -->|answer| J
+    J --> R{"Can the judge tell<br/>which is which?"}
+    R -->|No| P["Machine passes"]
+    R -->|Yes| F["Machine fails"]
+```
+
+#### 2. 1955 — John McCarthy
+
+He **introduced the word "AI"**. The field was formally born at the Dartmouth conference the following year, 1956.
+
+#### AI Winter
+
+After the early excitement, results did not arrive. **No major funding in AI** — this stretch is called the AI winter. There were two of them (roughly the mid-1970s and the late 1980s), and both followed the same pattern: big promises, small results, money gone.
+
+### Deep Blue — 1997
+
+**Deep Blue** was the first machine — a chess engine — which **defeated the human champion of chess** at that time, Garry Kasparov.
+
+**But it was not AI.**
+
+It was generally a huge dataset that worked on **permutations and combinations**. It searched enormous numbers of possible moves very fast and picked the best one. It did not learn anything. Play it a thousand games and it would be exactly as good on the last one as the first.
+
+!!! note "Date check"
+    The Deep Blue match against Kasparov was **1997**, not 1957. 1957 is the start of the rule-based era below.
+
+### Rule-Based AI — 1957 to 1980
+
+AI in this period worked on **sets of rules**.
+
+Many rules were **prefilled**, and based on that huge set of `if-else` conditions, it used to work that way.
+
+```mermaid
+flowchart LR
+    I["Input"] --> R["Rules written by humans<br/>if / else if / else"] --> O["Output"]
+```
+
+Example: an early medical system storing "IF fever AND rash THEN check measles" — every one of those lines written by hand, by a human expert.
+
+The limit is obvious in hindsight: the real world has more cases than anyone can write rules for.
+
+### AI after 1980 — Machine Learning
+
+**Machine learning comes into the picture.** Instead of rules, it works on **examples**.
+
+We used to give examples to the machine, feed it all the data, and the machine used that data to **predict** — does this look like 80% a cat?
+
+But note what that means: **the human still has to input the data**, and the machine only predicts from that data. It never learns beyond what was fed.
+
+```mermaid
+flowchart LR
+    D["Input data"] --> F["Features chosen<br/>by a human"] --> M["ML algorithm"] --> P["Prediction<br/>80% cat"]
+```
+
+The human's job moved from *writing rules* to *choosing features* — the "this is what matters about the image" step. That step is called **feature engineering**, and it is the bottleneck deep learning removes.
+
+### Deep Learning
+
+#### Neural Networking
+
+**Instead of a human telling it, the computer can learn automatically.**
+
+The features are no longer hand-picked. The network figures out for itself which patterns matter — early layers catch edges, later layers catch shapes, later still whole objects.
+
+Where it showed up:
+
+- Image recognition
+- Speech recognition
+- Translation
+- GPU revolution
+- Internet and large datasets
+
+The last two are the reason it worked *now* and not in 1990. The maths was mostly already known. What was missing was enough data and enough compute — the internet supplied one, GPUs the other.
+
+### ML vs DL
+
+| Machine Learning | Deep Learning |
 | --- | --- |
-| Artificial Intelligence | Umbrella term for systems that perform tasks normally requiring human intelligence. |
-| Machine Learning | Systems that learn patterns from data instead of being explicitly programmed. |
-| Deep Learning | Machine learning using multi-layer neural networks. |
-| Generative AI | Models that produce new content — text, images, audio, code. |
-| Large Language Model (LLM) | A deep-learning model trained on large text corpora to predict and generate language. |
-| Multimodal model | A model that accepts more than one input type (text plus images, audio, or documents). |
+| Requires a small dataset | Needs very large datasets |
+| Faster training | Slow, compute-heavy training |
+| Structured data | Handles raw data — images, audio, text |
+| **Feature engineering** done by humans | A specialised subset of ML based on **artificial neural networks**, inspired by the human brain |
+| `Input data → features extract → ML algo → output` | `Input data → neural network learns features itself → output` |
 
-For most application work today, "AI feature" means "call a hosted LLM over HTTP and design carefully around its behaviour."
+```mermaid
+flowchart TB
+    subgraph ML["Machine Learning"]
+        direction LR
+        A1["Input data"] --> A2["Feature extraction<br/>(human)"] --> A3["ML algorithm"] --> A4["Output"]
+    end
+    subgraph DL["Deep Learning"]
+        direction LR
+        B1["Input data"] --> B2["Neural network<br/>learns features itself"] --> B3["Output"]
+    end
+```
+
+DL sits inside ML, which sits inside AI:
+
+```mermaid
+flowchart TB
+    AI["Artificial Intelligence"] --> ML["Machine Learning"] --> DL["Deep Learning"] --> GEN["Generative AI / LLMs"]
+```
+
+### Computer Vision Revolution
+
+The two ingredients:
+
+- **The image dataset — ImageNet**
+- **The trained large neural network**
+
+Here large datasets go under lots and lots of deep neural network layers and get trained.
+
+The moment this became real was **AlexNet in 2012** — a deep network that won the ImageNet competition by such a wide margin that the field switched to deep learning almost overnight.
+
+Where it helped:
+
+- Face unlock
+- Self-driving cars
+- X-ray and medical imaging
+
+**From here, the machine can actually see.**
+
+### Natural Language Processing
+
+NLP created a great impact, but here we got to know that **the most difficult thing to process is text**.
+
+Text is hard because meaning depends on order and on distance — "the dog bit the man" and "the man bit the dog" use identical words, and the word that explains a pronoun can sit twenty words away.
+
+The progression:
+
+| Step | Approach | What it does | Limitation |
+| --- | --- | --- | --- |
+| 0 | **Bag of Words** | Counts which words appear | Throws away word order completely |
+| 1 | **n-grams** | Looks at 2–3 word groups | Context still very short |
+| 2 | **RNN** | Reads word by word, carries a memory | Forgets across long sentences |
+| 3 | **LSTM** | RNN with a gated memory cell | Better memory, but strictly sequential and slow |
+
+```mermaid
+flowchart LR
+    A["Bag of Words"] --> B["n-grams"] --> C["RNN"] --> D["LSTM"] --> E["Transformer"]
+```
+
+Every step here is an attempt to solve one problem: **how far back can the model remember?**
+
+### Transformer — The Game Changer
+
+**The transformer is an algorithm — the game changer of AI after 2017.** It connected all the dots at the time of deep learning, and a lot more concepts came after it.
+
+The paper is *Attention Is All You Need* (2017), and the key idea is **attention**: instead of reading word by word like an RNN, the model looks at **all words at once** and works out how strongly each word relates to every other word.
+
+```mermaid
+flowchart TB
+    subgraph OLD["RNN / LSTM"]
+        direction LR
+        R1["word 1"] --> R2["word 2"] --> R3["word 3"] --> R4["word 4"]
+    end
+    subgraph NEW["Transformer — attention"]
+        direction LR
+        T1["word 1"] <--> T2["word 2"]
+        T2 <--> T3["word 3"]
+        T1 <--> T3
+        T3 <--> T4["word 4"]
+        T1 <--> T4
+    end
+```
+
+Two things follow from that:
+
+- **Long-range context** — the model can link a word to another one far away in the text.
+- **Parallel training** — no waiting for word 1 before word 2, so training can use the whole GPU at once. This is what made training on internet-scale data possible.
+
+### Large Language Models
+
+> **"Transformer trained on very, very large datasets."**
+
+**GPU + Data = a good LLM model.**
+
+An LLM is trained on one simple objective — predict the next word — repeated over a colossal amount of text. Everything else (answering, summarising, writing code) falls out of doing that well enough.
+
+```mermaid
+flowchart LR
+    A["Transformer<br/>architecture"] --> C["LLM"]
+    B["Very large<br/>text dataset"] --> C
+    G["GPUs"] --> C
+    C --> D["Predict the<br/>next token"]
+```
+
+### Generative AI
+
+**Earlier, AI could do:**
+
+- Classification
+- Predictions
+- Recommendations
+
+**Now, AI can generate anything — this is the new thing.** Here comes **Generative AI**.
+
+```mermaid
+flowchart LR
+    subgraph BEFORE["Earlier AI — discriminative"]
+        A["Input"] --> B["Classify / predict /<br/>recommend"]
+    end
+    subgraph NOW["Generative AI"]
+        C["Prompt"] --> D["Generate new<br/>text, image, audio, code"]
+    end
+```
+
+The difference in one line: earlier AI **picked from options that already existed**; generative AI **produces something that did not exist before**.
+
+### The ChatGPT Moment
+
+**November 2022.**
+
+The technology was not new — the transformer was five years old and GPT models already existed. What changed was **access**: it was put behind a chat box that anyone could type into, with no setup and no code. That is what turned a research field into something everybody used.
+
+### Multimodal AI
+
+Not just text. The same model accepts and produces **multiple kinds of input** — text, images, audio, video, documents.
+
+```mermaid
+flowchart LR
+    T["Text"] --> M["Multimodal model"]
+    I["Image"] --> M
+    A["Audio"] --> M
+    V["Video / PDF"] --> M
+    M --> O["Text, image, audio<br/>or code output"]
+```
+
+Example: show it a photo of a chart and ask "what is the trend here" — one model handles both the seeing and the answering.
+
+### Agentic AI
+
+The current step. Instead of answering once, the model **plans, uses tools, and acts in a loop** until a goal is reached.
+
+```mermaid
+flowchart LR
+    G["Goal"] --> P["Model plans"]
+    P --> T["Uses a tool<br/>search, code, API"]
+    T --> O["Observes the result"]
+    O --> D{"Goal done?"}
+    D -->|No| P
+    D -->|Yes| F["Final answer"]
+```
+
+Chat answers a question. An agent **finishes a task**.
 
 ---
 
-## How Large Language Models Work
+### Full Timeline
 
-### Transformer basics
-
-Modern LLMs are built on the transformer architecture. The core mechanism is **self-attention**: for each token in the input, the model computes how strongly it relates to every other token, then blends their representations. Stacking dozens of attention and feed-forward layers gives the model a rich, context-sensitive view of the whole input.
-
-Practical consequences:
-
-- Attention cost grows roughly with the square of the input length, which is why long inputs are slower and more expensive.
-- The model has no memory between requests. Every call is stateless — you resend the whole conversation each time.
-- Output is generated one token at a time, each conditioned on everything before it.
-
-### Training stages
-
-1. **Pre-training** — next-token prediction over a very large corpus. Produces raw language ability and world knowledge.
-2. **Supervised fine-tuning** — training on curated instruction/response pairs so the model follows instructions.
-3. **Preference tuning (RLHF and variants)** — ranking model outputs by human or model preference to shape helpfulness, tone, and safety.
-
-### Sampling
-
-At each step the model produces a probability distribution over the vocabulary. How you sample from it determines variability:
-
-- **Temperature** — flattens or sharpens the distribution. Lower means more deterministic.
-- **Top-p (nucleus sampling)** — sample only from the smallest set of tokens whose probabilities sum to `p`.
-- **Top-k** — sample only from the `k` most likely tokens.
-
-Note that several current frontier models have removed these knobs in favour of prompting and an effort/reasoning setting — check your provider's API reference before relying on them.
-
-### Reasoning models
-
-Newer models can produce internal reasoning before their visible answer. This trades latency and tokens for accuracy on multi-step problems. Providers expose this as an on/off setting or as an "effort" level. Use higher reasoning for planning, debugging, and analysis; use lower for classification, extraction, and chat.
-
----
-
-## Tokens, Context, and Cost
-
-A **token** is a chunk of text — roughly 3–4 characters of English, less for code and non-English text. Models bill per token and limit total tokens.
-
-- **Context window** — the maximum tokens in a single request, covering system prompt, conversation history, tool definitions, retrieved documents, and the generated output.
-- **Input vs output pricing** — output tokens generally cost several times more than input tokens.
-- **Prompt caching** — providers can cache a stable prefix of your prompt and charge a fraction of the normal rate to reuse it. Caching is a prefix match: any byte change invalidates everything after it, so put stable content first (system prompt, tool definitions) and volatile content last (timestamps, the current user question).
-
-Cost control checklist:
-
-- Count tokens with the provider's own token-counting endpoint, not a third-party tokenizer from another vendor.
-- Cache the shared prefix on repeated calls.
-- Send only the retrieved passages you need, not whole documents.
-- Trim or summarise old conversation turns instead of resending everything forever.
-- Route simple tasks to a smaller, cheaper model.
-
----
-
-## Prompt Engineering
-
-### Structure of a good prompt
-
-| Part | Purpose |
+| Year | Milestone |
 | --- | --- |
-| Role and context | Who the model is acting as and what the situation is. |
-| Task | The single, specific thing to do. |
-| Input data | The content to operate on, clearly delimited. |
-| Constraints | Length, format, tone, what to avoid. |
-| Output format | Exact shape of the response. |
-| Examples | One to five worked examples for anything non-obvious. |
+| 1950 | Alan Turing — "can a machine think", the Turing test |
+| 1956 | John McCarthy — coins the word **AI** (proposed 1955, Dartmouth 1956) |
+| 1957 – 1980 | **Rule-based AI** — prefilled `if-else` rules |
+| 1970s – 80s | **AI winters** — no major funding |
+| 1980s onward | **Machine Learning** — learn from examples |
+| 1997 | **Deep Blue** defeats Garry Kasparov (brute force, not AI) |
+| 1990s – 2000s | **Deep learning** research, neural networks |
+| 2012 | **AlexNet** — ImageNet, the computer vision revolution |
+| 2016 | **AlphaGo** beats Lee Sedol |
+| 2017 | **Transformers** — *Attention Is All You Need* |
+| 2018 – 2020 | **GPT** models scale up |
+| Nov 2022 | **The ChatGPT moment** |
+| 2023 – 2024 | **Multimodal AI** |
+| 2025 | **Agentic AI** |
 
-### Techniques that reliably help
-
-- **Be specific.** "Summarise in three bullets, each under 20 words, focused on financial risk" beats "summarise this".
-- **Few-shot examples.** Showing two or three input/output pairs is usually more effective than describing the format in prose.
-- **Chain of thought.** Asking the model to work through the problem step by step improves multi-step accuracy. Reasoning models do this natively.
-- **Delimit inputs.** Wrap user-supplied content in XML-style tags or fenced blocks so the model can tell instructions apart from data.
-- **Positive instructions.** "Respond in plain prose" works better than "do not use markdown".
-- **Prompt chaining.** Split a complex job into several small calls — extract, then classify, then write — instead of one prompt that does everything.
-
-### Techniques that often backfire
-
-- Stacking emphasis ("CRITICAL: YOU MUST ALWAYS...") on capable models causes over-triggering; state the rule once, plainly.
-- Vague quality words ("make it good", "be thorough") give the model nothing to aim at.
-- Very long prompts full of edge cases the model then over-applies. Prefer a short prompt plus examples.
-
-### Prompt template
-
-```text
-You are a <role> helping with <domain>.
-
-Task: <one specific instruction>
-
-Rules:
-- <constraint>
-- <constraint>
-
-Input:
-<data>
-{{user_input}}
-</data>
-
-Respond as: <exact output format>
+```mermaid
+flowchart LR
+    A["1950<br/>Turing"] --> B["1956<br/>McCarthy"] --> C["1957-80<br/>Rule-based AI"] --> D["1980s<br/>ML"] --> E["1997<br/>Deep Blue"] --> F["2012<br/>AlexNet"] --> G["2016<br/>AlphaGo"] --> H["2017<br/>Transformer"] --> I["2018-20<br/>GPT"] --> J["Nov 2022<br/>ChatGPT"] --> K["2025<br/>Agentic AI"]
 ```
 
 ---
 
-## Structured Output
+## Chapter 2 — Search Engine vs LLM
 
-Free-form text is hard to consume from code. Three approaches, best first:
+**Search engine** → matches relevant documents and **returns results**.
 
-1. **Schema-constrained output.** Provide a JSON Schema and the provider guarantees a conforming response. Most reliable option when available.
-2. **Tool/function calling with a strict schema.** Define a tool whose parameters are the shape you want, and force the model to call it.
-3. **Prompt-only JSON.** Ask for JSON and parse it. Always wrap parsing in error handling and retry once on failure.
-
-Schema tips:
-
-- Set `additionalProperties: false` and list `required` fields.
-- Use `enum` for closed sets — it removes an entire class of parsing bugs.
-- Keep schemas flat; deeply nested and recursive schemas are often unsupported.
-- Always validate the parsed object before using it, even with guaranteed formats.
-
----
-
-## Embeddings and Vector Search
-
-An **embedding** maps text to a fixed-length vector such that semantically similar text lands nearby. Similarity is normally measured by cosine similarity.
-
-Uses: semantic search, deduplication, clustering, classification, recommendation, and the retrieval half of RAG.
-
-### Vector stores
-
-| Option | Fits |
-| --- | --- |
-| `pgvector` (PostgreSQL) | You already run Postgres and want one database. |
-| Managed vector services | Large scale, low operational effort. |
-| Embedded libraries (FAISS and similar) | Local, batch, or single-process workloads. |
-
-Indexes such as HNSW give approximate nearest-neighbour search — fast lookups at a small recall cost, tunable with parameters such as `ef_search`.
-
-### Chunking
-
-Retrieval quality is dominated by chunking quality.
-
-- Split on structure — headings, sections, functions — rather than a fixed character count.
-- Target roughly 200–800 tokens per chunk, with 10–20% overlap.
-- Store metadata with each chunk (source, title, section, URL, timestamp) so you can filter and cite.
-- Prepend the document title and section heading to each chunk so it stands alone.
-
----
-
-## Retrieval-Augmented Generation
-
-RAG grounds a model's answers in your own data without retraining it.
+**ChatGPT** → takes a prompt, uses learned patterns, **predicts** and **generates text**.
 
 ```text
-Query
-  → embed query
-  → search vector store (+ keyword search)
-  → rerank top candidates
-  → build prompt with the best passages
-  → model generates answer with citations
+Search Engine  →  Retrieve
+LLM            →  Generate
 ```
 
-### Making RAG work
+```mermaid
+flowchart TB
+    subgraph SE["Search Engine"]
+        direction LR
+        Q1["Query"] --> M1["Match documents"] --> R1["List of links"]
+    end
+    subgraph LLM["LLM"]
+        direction LR
+        Q2["Prompt"] --> M2["Learned patterns<br/>predict next token"] --> R2["Generated answer"]
+    end
+```
 
-- **Hybrid search.** Combine vector similarity with keyword/BM25 search. Keyword search catches exact identifiers, error codes, and product names that embeddings blur.
-- **Rerank.** Retrieve 20–50 candidates cheaply, then rerank to the top 3–8 with a cross-encoder or a small model call.
-- **Cite sources.** Return the chunk identifiers used, and show them in the UI. This is the cheapest hallucination defence you have.
-- **Allow "I don't know".** Instruct the model to say when the context doesn't contain the answer, rather than filling the gap.
-- **Query rewriting.** Rewrite conversational follow-ups ("and the second one?") into standalone queries before retrieval.
-- **Filter by metadata.** Restrict retrieval by tenant, product, language, or date before ranking.
-
-### When RAG is the wrong tool
-
-If the whole corpus fits comfortably in the context window and the cost is acceptable, just send it. Long-context models have made small-corpus RAG unnecessary in many cases.
-
----
-
-## Tool Use and Function Calling
-
-Tool use lets the model request an action your code performs. The model never executes anything itself — it emits a structured call, you run it, and you return the result.
-
-The loop:
-
-1. Send the request with a list of tool definitions (name, description, JSON Schema for inputs).
-2. The model responds either with an answer or with one or more tool calls.
-3. Execute each call, then send the results back as tool results.
-4. Repeat until the model responds without calling a tool.
-
-Design guidance:
-
-- **Descriptions decide everything.** Say *when* to call the tool, not only what it does.
-- **Keep the tool set small.** A focused set of 5–15 tools beats 60 overlapping ones. Use dynamic tool discovery if you genuinely have many.
-- **Return errors as results, not exceptions.** Mark the result as an error and describe what went wrong so the model can recover.
-- **Execute parallel calls in parallel** and return all results in a single message.
-- **Gate destructive actions.** Anything irreversible — sending mail, deleting records, moving money — should require confirmation, and validation belongs in your code, not in the prompt.
-
----
-
-## Agents
-
-An agent is a model in a loop with tools, deciding its own next step until a goal is met.
-
-### Should you build one?
-
-Check all four before committing:
-
-- **Complexity** — is the task genuinely multi-step and hard to specify up front?
-- **Value** — does the outcome justify higher latency and cost?
-- **Viability** — is the model actually capable at this task?
-- **Cost of error** — can mistakes be caught and rolled back?
-
-If any answer is no, use a simpler tier: a single call, or a fixed pipeline of calls that your code orchestrates. Most "agent" products are better as workflows.
-
-### Patterns
-
-| Pattern | Description |
-| --- | --- |
-| Single call | One request, one response. Classification, extraction, summarisation. |
-| Chain | Fixed sequence of calls, each feeding the next. |
-| Router | One call classifies the request, then dispatches to a specialised handler. |
-| Parallel fan-out | Independent subtasks run concurrently, results merged. |
-| Evaluator/optimiser | One model produces, another critiques, loop until the critique passes. |
-| Autonomous agent | Model plans and chooses tools freely until the goal is reached. |
-
-### Keeping long runs healthy
-
-- **Context management** — summarise or drop stale tool output before the window fills.
-- **Memory** — persist durable facts to files or a store so they survive restarts.
-- **Step limits** — cap iterations and total token spend; loops without a ceiling are a production incident waiting to happen.
-- **Checkpoints** — make each step observable and recoverable.
-- **Sub-agents** — delegate independent, sizeable tracks of work; don't delegate what one or two tool calls would finish.
-
----
-
-## Fine-tuning vs Prompting vs RAG
-
-| Need | Use |
-| --- | --- |
-| Model lacks facts about your domain | RAG |
-| Model has the knowledge but wrong format or tone | Prompting, few-shot examples |
-| Consistent style or output shape at scale | Fine-tuning |
-| Cheaper or faster inference for a narrow task | Fine-tune a small model |
-| Freshness — data changes daily | RAG (fine-tuning cannot keep up) |
-
-Order of attempts: prompt → few-shot → RAG → fine-tune. Fine-tuning is the last step because it costs the most, is hardest to iterate on, and locks you to a model version. It does not add knowledge reliably — it shapes behaviour.
-
----
-
-## Evaluation
-
-Without evaluation you cannot tell an improvement from a regression.
-
-### Build an eval set first
-
-Collect 50–200 real inputs with expected outputs or acceptance criteria. Include the awkward cases: empty input, hostile input, ambiguous requests, very long documents.
-
-### Scoring methods
-
-| Method | Fits | Cost |
+| | Search Engine | LLM |
 | --- | --- | --- |
-| Exact match / regex | Classification, extraction, structured fields | Free |
-| Programmatic checks | Valid JSON, schema conformance, code compiles, tests pass | Free |
-| LLM-as-judge | Open-ended quality, tone, helpfulness | Moderate |
-| Human review | Final gate before release; calibrating the judge | High |
+| Job | Retrieve | Generate |
+| Output | Links to existing pages | New text written on the spot |
+| Source | Documents that exist | Patterns learned in training |
+| Wrong answers | Gives an irrelevant link | Can state something false confidently |
 
-LLM-as-judge tips: give the judge a concrete rubric with independently checkable criteria, not "rate 1–10". Score criteria one at a time. Run the judge on a strong model even when the system under test uses a small one.
-
-### RAG-specific metrics
-
-- **Retrieval recall** — is the correct passage in the retrieved set at all?
-- **Precision at k** — how much of what was retrieved is relevant?
-- **Faithfulness** — is every claim in the answer supported by the retrieved context?
-- **Answer relevance** — does the answer actually address the question?
-
-Run evals in CI on every prompt change. Prompts are code.
+The two combine well — retrieve first, then generate from what was retrieved. That combination is called **RAG** (Retrieval-Augmented Generation): search your own documents, then hand the best passages to the LLM so its answer is grounded in real sources instead of memory alone.
 
 ---
 
-## Production Concerns
+## Quick Revision
 
-**Latency.** Stream responses so users see the first token quickly. Run independent calls in parallel. Cache stable prefixes. Use a smaller model where quality allows. Reasoning models can take minutes on hard tasks — design the UI for asynchronous checking rather than a blocking spinner.
-
-**Reliability.** Retry transient failures (429, 5xx, network) with exponential backoff and jitter; never retry 400 or 401. Set explicit timeouts. Have a fallback model configured. Handle every stop reason, including refusals and hitting the token cap — code that reads the first content block unconditionally will break.
-
-**Observability.** Log the prompt version, model, token usage, latency, stop reason, and request ID for every call. Sample and review real outputs weekly. Track cost per request and per user.
-
-**Versioning.** Pin exact model identifiers rather than floating aliases in production. Treat prompts as versioned artefacts in source control. Re-run evals whenever the model or prompt changes.
-
-**Idempotency.** Model output is non-deterministic even at low temperature. Anything that writes to a database or calls a payment API needs an idempotency key on your side.
-
----
-
-## Security and Safety
-
-**Prompt injection** is the defining vulnerability of LLM applications. Any text the model reads — a web page, a PDF, an email, a code comment, a tool result — can contain instructions, and the model has no reliable way to tell data from directives.
-
-Mitigations:
-
-- Never grant the model authority it should not have. Enforce permissions in your code, not in the prompt.
-- Treat all retrieved and tool-returned content as untrusted data. Delimit it clearly and say so in the system prompt.
-- Require human confirmation for irreversible or outward-facing actions.
-- Never place secrets in prompts, system prompts, or memory files — they persist in conversation history and logs.
-- Sandbox any generated code, and constrain filesystem paths to a fixed root.
-- Constrain outbound network access from tool execution environments.
-
-**Data handling.** Know your provider's retention policy. Redact personal data before sending it. Check whether zero-retention mode is available if you need it. Confirm the compliance posture — residency, certifications, sub-processors — before shipping regulated workloads.
-
-**Output safety.** Never render model output as raw HTML without sanitising it. Never pass model output straight into a shell, SQL query, or `eval`. Validate against a schema before it reaches any downstream system.
-
----
-
-## Reference Snippets
-
-### Basic call
-
-```javascript
-const response = await client.messages.create({
-  model: MODEL_ID,
-  max_tokens: 4096,
-  system: "You are a concise technical assistant.",
-  messages: [{ role: "user", content: userInput }],
-});
-```
-
-### Streaming
-
-```javascript
-const stream = await client.messages.stream({
-  model: MODEL_ID,
-  max_tokens: 4096,
-  messages: [{ role: "user", content: userInput }],
-});
-
-for await (const event of stream) {
-  if (event.type === "content_block_delta" && event.delta.type === "text_delta") {
-    process.stdout.write(event.delta.text);
-  }
-}
-
-const final = await stream.finalMessage();
-```
-
-### Tool loop
-
-```javascript
-const messages = [{ role: "user", content: userInput }];
-
-while (true) {
-  const response = await client.messages.create({
-    model: MODEL_ID,
-    max_tokens: 4096,
-    tools,
-    messages,
-  });
-
-  if (response.stop_reason !== "tool_use") {
-    return response;
-  }
-
-  messages.push({ role: "assistant", content: response.content });
-
-  const results = await Promise.all(
-    response.content
-      .filter((block) => block.type === "tool_use")
-      .map(async (block) => {
-        try {
-          const output = await runTool(block.name, block.input);
-          return { type: "tool_result", tool_use_id: block.id, content: output };
-        } catch (error) {
-          return {
-            type: "tool_result",
-            tool_use_id: block.id,
-            content: `Error: ${error.message}`,
-            is_error: true,
-          };
-        }
-      }),
-  );
-
-  messages.push({ role: "user", content: results });
-}
-```
-
-### Retry with backoff
-
-```javascript
-async function withRetry(fn, attempts = 4) {
-  for (let i = 0; i < attempts; i++) {
-    try {
-      return await fn();
-    } catch (error) {
-      const retryable = [408, 429, 500, 502, 503, 529].includes(error.status);
-      if (!retryable || i === attempts - 1) throw error;
-      const delay = Math.min(1000 * 2 ** i, 30000) + Math.random() * 500;
-      await new Promise((resolve) => setTimeout(resolve, delay));
-    }
-  }
-}
-```
-
-### Minimal RAG pipeline
-
-```javascript
-async function answer(question, filters = {}) {
-  const queryVector = await embed(question);
-  const candidates = await vectorStore.search(queryVector, { limit: 40, filters });
-  const keywordHits = await keywordSearch(question, { limit: 20, filters });
-  const merged = dedupe([...candidates, ...keywordHits]);
-  const top = await rerank(question, merged, 6);
-
-  const context = top
-    .map((chunk, i) => `[${i + 1}] ${chunk.title}\n${chunk.text}`)
-    .join("\n\n");
-
-  return client.messages.create({
-    model: MODEL_ID,
-    max_tokens: 2048,
-    system:
-      "Answer only from the provided context. Cite sources as [n]. " +
-      "If the context does not contain the answer, say so plainly.",
-    messages: [
-      { role: "user", content: `<context>\n${context}\n</context>\n\nQuestion: ${question}` },
-    ],
-  });
-}
-```
-
----
-
-## Glossary
-
-| Term | Definition |
-| --- | --- |
-| Agent | A model in a loop with tools, choosing its own next action. |
-| Chunk | A passage of a document stored and retrieved as a unit. |
-| Context window | Maximum tokens a model can process in one request. |
-| Embedding | A vector representation of text used for semantic similarity. |
-| Few-shot | Including worked examples in the prompt. |
-| Fine-tuning | Further training of a base model on your own examples. |
-| Grounding | Constraining answers to supplied source material. |
-| Hallucination | Confident output that is not supported by facts or context. |
-| Inference | Running a trained model to produce output. |
-| Prompt caching | Reusing a cached prompt prefix at reduced cost. |
-| Prompt injection | Malicious instructions hidden in content the model reads. |
-| RAG | Retrieval-augmented generation — retrieve, then generate. |
-| Reranking | Reordering retrieved candidates by relevance before use. |
-| System prompt | Persistent instructions that frame the model's behaviour. |
-| Temperature | Sampling parameter controlling output randomness. |
-| Token | The unit of text models read, generate, and bill for. |
-| Tool use | The model requesting an action that your code executes. |
-| Vector database | A store optimised for nearest-neighbour search over embeddings. |
+- **AI** — task needing human intelligence, done by a machine.
+- **1950 Turing test** → **1955/56 McCarthy names AI** → **AI winter**.
+- **Deep Blue (1997)** — brute force permutations, not AI, learned nothing.
+- **1957–1980 rule-based** — humans write every `if-else`.
+- **After 1980, ML** — learn from examples, but humans still pick the features.
+- **Deep learning** — the network learns the features itself; needed GPUs + internet-scale data.
+- **AlexNet 2012** — the machine can actually see.
+- **NLP** — text is the hardest: Bag of Words → n-grams → RNN → LSTM.
+- **Transformer 2017** — attention, long-range context, parallel training. The game changer.
+- **LLM** — transformer + very large datasets + GPUs.
+- **Generative AI** — earlier AI classified, now AI creates.
+- **Nov 2022** — the ChatGPT moment put it in everyone's hands.
+- **Multimodal → Agentic AI** — many input types, then models that plan and act.
+- **Search engine retrieves; an LLM generates.**
