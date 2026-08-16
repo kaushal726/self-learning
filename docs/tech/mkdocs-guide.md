@@ -9,7 +9,7 @@ tags: MkDocs, Material, Documentation, Static Site, Markdown, Python
 
 # MkDocs Guide
 
-MkDocs turns a folder of Markdown files into a static documentation site. This guide covers how this project is set up and how to work with it day to day. For publishing the built site, see [Publishing to GitHub Pages](./mkdocs-publish.md).
+MkDocs turns a folder of Markdown files into a static documentation site. This guide covers how this project is set up and how to work with it day to day, including how to publish the built site.
 
 ---
 
@@ -105,7 +105,7 @@ Two rules follow from this layout:
 | `mkdocs build` | Render the site into `site/`. |
 | `mkdocs build --clean` | Delete stale files from `site/` before building. |
 | `mkdocs build --strict` | Fail the build on any warning. Use this in CI. |
-| `mkdocs gh-deploy` | Build and push to the `gh-pages` branch. See the [publishing guide](./mkdocs-publish.md). |
+| `mkdocs gh-deploy` | Build and push to the `gh-pages` branch, which GitHub Pages serves. |
 | `mkdocs new .` | Scaffold a new MkDocs project in the current folder. |
 | `mkdocs --help` | Full command reference. |
 
@@ -166,9 +166,8 @@ nav:
   - Home: index.md
   - Docs: docs.md
   - Tech:
-      - AI and LLM Engineering: tech/ai.md
+      - Artificial Intelligence: tech/ai.md
       - MkDocs Guide: tech/mkdocs-guide.md
-      - Publishing: tech/mkdocs-publish.md
 ```
 
 Behaviour worth knowing:
@@ -203,9 +202,9 @@ tags: MkDocs, Documentation
 Link to other pages by their **file path**, not their URL:
 
 ```markdown
-[Publishing guide](./mkdocs-publish.md)
+[MkDocs guide](./mkdocs-guide.md)
 [AI docs](../tech/ai.md)
-[A specific section](./mkdocs-publish.md#troubleshooting)
+[A specific section](./mkdocs-guide.md#troubleshooting)
 ```
 
 MkDocs rewrites these to correct URLs at build time and warns about broken targets. Linking to `/tech/ai/` directly works in the browser but skips validation and breaks under a different `site_url` subpath.

@@ -64,6 +64,15 @@ Jaise tum Flipkart se alag-alag brands ka saman order kar sakte ho, waise hi NPM
 **Real-life example:**
 React ek actor jaise hai jo apni performance deta hai, aur React-DOM stage hai jahan wo perform karta hai.
 
+
+```mermaid
+flowchart LR
+    A["Your JSX"] --> B["react<br/>creates the element tree<br/>(what the UI should be)"]
+    B --> C["react-dom<br/>renders that tree<br/>into the browser DOM"]
+    C --> D["Browser page"]
+    B -.-> E["react-native<br/>same tree, mobile renderer"]
+```
+
 ---
 
 ## React.createElement and what does it return?
@@ -85,6 +94,16 @@ React 18 se pehle ReactDOM.render() use hota tha, ab "createRoot" function use h
 import { createRoot } from "react-dom/client";
 const root = createRoot(document.getElementById("root"));
 root.render(<App />);
+```
+
+
+```mermaid
+flowchart LR
+    A["JSX"] -->|Babel / Parcel| B["React.createElement()"]
+    B --> C["React element<br/>(plain JS object)"]
+    C --> D["root.render()"]
+    D --> E["Virtual DOM"]
+    E --> F["Actual DOM<br/>#root"]
 ```
 
 ---
@@ -159,6 +178,19 @@ Bundler ek tool hai jo multiple files (JS, CSS, images) ko ek hi file me combine
 
 **Real-life example:**
 Jaise ek school ki kit me sare items ek hi bag me pack hote hain, waise hi bundler sab kuch combine kar deta hai.
+
+
+```mermaid
+flowchart LR
+    A["Source files<br/>JSX, JS, CSS, images"] --> B["Bundler<br/>Parcel / Webpack / Vite"]
+    B --> C["Transpile<br/>Babel"]
+    B --> D["Tree shaking<br/>drop unused code"]
+    B --> E["Minify"]
+    C --> F["Bundle"]
+    D --> F
+    E --> F
+    F --> G["dist/ served to browser"]
+```
 
 ---
 
@@ -449,6 +481,18 @@ const Page = () => (
 
 **Real-life example**: A `Dashboard` page in a web app can be composed of a `Sidebar`, `Header`, and `MainContent` components, each responsible for their own section.
 
+
+```mermaid
+flowchart TB
+    A["App"] --> B["Header"]
+    A --> C["Body"]
+    A --> D["Footer"]
+    C --> E["Search"]
+    C --> F["RestaurantList"]
+    F --> G["RestaurantCard"]
+    F --> H["RestaurantCard"]
+```
+
 ---
 
 ## **React Fragments**
@@ -486,6 +530,17 @@ A config-driven UI refers to designing a UI based on configuration files that sp
 
 **Real-life example**: In a dynamic to-do list app, React first updates the Virtual DOM when you add a new task, compares it to the old version, and only applies the changes to the Actual DOM, reducing the number of updates to the page.
 
+
+```mermaid
+flowchart LR
+    S["State changes"] --> V1["Old Virtual DOM"]
+    S --> V2["New Virtual DOM"]
+    V1 --> DF{"Diff"}
+    V2 --> DF
+    DF -->|only what changed| RD["Actual DOM update"]
+    DF -->|unchanged| SK["Skipped — no DOM touch"]
+```
+
 ---
 
 ## **Process of Re-rendering**
@@ -500,6 +555,12 @@ The re-rendering process in React includes several stages:
 
 **Real-life example**: If you're editing a note in a note-taking app, React will only update the specific part of the page that shows your note's text, rather than reloading the entire page.
 
+
+```mermaid
+flowchart LR
+    A["1. Virtual DOM<br/>created"] --> B["2. Render<br/>new tree"] --> C["3. Diffing<br/>old vs new"] --> D["4. Reconciliation<br/>work out minimum change"] --> E["5. Update<br/>real DOM"]
+```
+
 ---
 
 ## **React Fiber**
@@ -507,6 +568,21 @@ The re-rendering process in React includes several stages:
 React Fiber is a complete rewrite of React's core algorithm that allows for asynchronous rendering. It helps to optimize the rendering process by breaking down tasks into smaller units of work.
 
 **Real-life example**: React Fiber ensures that UI updates in an e-commerce site remain smooth, even when there are many changes or animations.
+
+
+```mermaid
+flowchart TB
+    subgraph OLD["Before Fiber — stack reconciler"]
+        direction LR
+        O1["Start render"] --> O2["Runs to completion<br/>cannot be interrupted"] --> O3["UI blocked"]
+    end
+    subgraph NEW["Fiber"]
+        direction LR
+        N1["Split into<br/>units of work"] --> N2["Do one unit"] --> N3{"Higher priority<br/>work waiting?"}
+        N3 -->|Yes| N4["Pause, handle it,<br/>resume later"]
+        N3 -->|No| N2
+    end
+```
 
 ---
 
@@ -566,6 +642,15 @@ const [count, setCount] = useState(0);
 
 **Real-life Example**: In a counter application, `useState` is used to store the count value, and the `setCount` function updates it when a button is clicked.
 
+
+```mermaid
+flowchart LR
+    A["Event<br/>e.g. button click"] --> B["setState(newValue)"]
+    B --> C["React marks the<br/>component as dirty"]
+    C --> D["Component function<br/>runs again"]
+    D --> E["New Virtual DOM<br/>→ diff → DOM update"]
+```
+
 ### **Handling Previous State in `useState`**
 
 React batches updates and sometimes needs the previous state value to compute the new state. You can pass a function to `setState` to access the previous state.
@@ -603,6 +688,17 @@ useEffect(() => {
 useEffect(() => {
   fetchWeatherData();
 }, []);
+```
+
+
+```mermaid
+flowchart LR
+    A["Component renders"] --> B["DOM committed"]
+    B --> C["useEffect runs"]
+    C --> D{"Dependency<br/>changed?"}
+    D -->|Yes| E["Cleanup old effect<br/>→ run effect again"]
+    D -->|No| F["Skip"]
+    B --> G["Component unmounts"] --> H["Cleanup function runs"]
 ```
 
 ### **Running Effects on Specific Dependencies**
@@ -716,6 +812,21 @@ In a monolithic application, a user management system, order processing, and inv
 
 **Real-life Example**: Traditional web applications, like early versions of Facebook, operated on a monolithic architecture where all the features were in a single codebase.
 
+
+```mermaid
+flowchart TB
+    subgraph MONO["Monolithic"]
+        direction LR
+        M["One codebase<br/>UI + auth + payment + orders"] --> MDB[("One database")]
+    end
+    subgraph MICRO["Microservices"]
+        direction LR
+        S1["Auth service"] --> D1[("DB")]
+        S2["Payment service"] --> D2[("DB")]
+        S3["Order service"] --> D3[("DB")]
+    end
+```
+
 ---
 
 ## **CORS (Cross-Origin Resource Sharing)**
@@ -800,6 +911,17 @@ Let's break down the key concepts related to **React Router DOM**, and I’ll al
 - It helps in mapping URLs to React components and enables users to navigate between different views of the application seamlessly.
 
 **Real-life Example**: In an online shopping application, React Router allows navigating between the homepage, product details, shopping cart, and checkout pages without a page reload.
+
+
+```mermaid
+flowchart TB
+    A["createBrowserRouter<br/>route config"] --> B["RouterProvider"]
+    B --> C{"URL path"}
+    C -->|/| D["App → Outlet → Body"]
+    C -->|/about| E["App → Outlet → About"]
+    C -->|/restaurant/:id| F["App → Outlet → Menu<br/>useParams() reads :id"]
+    C -->|no match / throw| G["errorElement<br/>useRouteError()"]
+```
 
 ---
 
@@ -1144,6 +1266,23 @@ this.setState({ counter: this.state.counter + 1 });
 
 React class components have several lifecycle methods that allow you to run code at different stages of the component’s existence.
 
+
+```mermaid
+flowchart TB
+    subgraph M["Mounting"]
+        direction LR
+        M1["constructor"] --> M2["render"] --> M3["componentDidMount"]
+    end
+    subgraph U["Updating — state or props change"]
+        direction LR
+        U1["render"] --> U2["componentDidUpdate"]
+    end
+    subgraph UN["Unmounting"]
+        UN1["componentWillUnmount"]
+    end
+    M --> U --> UN
+```
+
 ### **Mounting Phase** (When the component is created)
 
 - **constructor(props)**: Initializes state and binds methods.
@@ -1191,6 +1330,20 @@ React rendering has two main phases:
 
 1. **Render Phase**: This is when React calculates what the UI should look like. It involves creating a Virtual DOM and figuring out what has changed.
 2. **Commit Phase**: This is when React applies the changes to the actual DOM and updates the UI.
+
+
+```mermaid
+flowchart LR
+    subgraph R["Render Phase — faster"]
+        direction TB
+        R1["Build Virtual DOM"] --> R2["Diff against previous"] --> R3["Can be paused / restarted"]
+    end
+    subgraph C["Commit Phase — slower"]
+        direction TB
+        C1["Apply changes to real DOM"] --> C2["Run refs and effects"] --> C3["Cannot be interrupted"]
+    end
+    R --> C
+```
 
 ### **Which Phase is Faster?**
 
@@ -1263,6 +1416,15 @@ function App() {
 
 - `lazy` is used to dynamically import the `MyComponent`, and the `Suspense` component is used to show a fallback UI (like a loading spinner) while the component is loading.
 
+
+```mermaid
+flowchart LR
+    A["User opens /"] --> B["Main bundle only"]
+    A2["User clicks 'Grocery'"] --> C["React.lazy triggers<br/>separate chunk download"]
+    C --> D["Suspense fallback shown<br/>while loading"]
+    D --> E["Component rendered"]
+```
+
 ---
 
 ## **Lazy Suspense**
@@ -1311,6 +1473,14 @@ function App() {
 
 - Consider a parent component passing data down to a deeply nested child. The data has to be passed through every intermediate level, which is inefficient.
 
+
+```mermaid
+flowchart TB
+    A["App — holds user"] -->|user| B["Layout<br/>doesn't need it"]
+    B -->|user| C["Sidebar<br/>doesn't need it"]
+    C -->|user| D["Profile<br/>finally uses it"]
+```
+
 ---
 
 ## **Lifting State Up**
@@ -1351,11 +1521,27 @@ function ChildComponent2({ onInputChange }) {
 
 - The parent component holds the state (`inputValue`), and both child components share this state, updating it when necessary.
 
+
+```mermaid
+flowchart TB
+    P["Parent<br/>holds inputValue state"] -->|inputValue| C1["Child 1<br/>displays it"]
+    P -->|onInputChange| C2["Child 2<br/>updates it"]
+    C2 -.->|calls handler| P
+```
+
 ---
 
 ## **Redux**
 
 **Redux** is a state management library for JavaScript apps, often used with React. It provides a centralized store to manage the state of your application in a predictable way.
+
+
+```mermaid
+flowchart LR
+    A["Component"] -->|dispatch action| B["Reducer / Slice"]
+    B -->|returns new state| C["Store<br/>single source of truth"]
+    C -->|useSelector| A
+```
 
 ### **How Redux Works:**
 
@@ -1710,6 +1896,13 @@ Both **Axios** and **Fetch** are used for making HTTP requests, but they have so
     }
     ```
 
+
+```mermaid
+flowchart LR
+    P["Parent"] -->|props — data down| C["Child"]
+    C -->|callback function — events up| P
+```
+
 ---
 
 ## **Controlled vs Uncontrolled Components**
@@ -1784,6 +1977,14 @@ An **Error Boundary** is a React component that catches JavaScript errors anywhe
     }
   }
   ```
+
+
+```mermaid
+flowchart LR
+    A["Child component throws"] --> B{"Wrapped in an<br/>Error Boundary?"}
+    B -->|Yes| C["getDerivedStateFromError<br/>→ fallback UI shown"]
+    B -->|No| D["Whole React tree unmounts<br/>— blank page"]
+```
 
 ---
 

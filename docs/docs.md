@@ -27,5 +27,4 @@ Welcome to the documentation portal. Here you'll find comprehensive guides and r
 - [Offline System](./tech/offline-system.md)
 - [Artificial Intelligence](./tech/ai.md)
 - [MkDocs Guide](./tech/mkdocs-guide.md)
-- [Publishing to GitHub Pages](./tech/mkdocs-publish.md)
 - [References](./tech/reference-links.md)
