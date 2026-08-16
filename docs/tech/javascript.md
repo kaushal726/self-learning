@@ -29,6 +29,14 @@ A JavaScript engine is a **program that executes JavaScript code**. Every browse
 _Real-Life Example_:  
 Think of the engine as the "brain" of the browser that understands and executes JavaScript instructions.
 
+
+```mermaid
+flowchart LR
+    A["JS source code"] --> B["Parser"] --> C["Abstract Syntax Tree"]
+    C --> D["Interpreter<br/>byte code"] --> E["Execution"]
+    D -->|hot code| F["JIT Compiler<br/>optimised code"] --> E
+```
+
 ---
 
 ## **ES Versions**
@@ -69,6 +77,14 @@ function greet() {
   console.log(`Hello, ${this.name}`);
 }
 greet.call(person); // Hello, Kaushal
+```
+
+
+```mermaid
+flowchart LR
+    F["fn.call(thisArg, a, b)"] -->|"args passed one by one"| R["Runs immediately"]
+    G["fn.apply(thisArg, [a, b])"] -->|"args passed as array"| R
+    H["fn.bind(thisArg, a, b)"] -->|"returns a new function"| L["Runs later"]
 ```
 
 ---
@@ -158,6 +174,20 @@ console.log(x); // 10
 // console.log(z); // Error
 ```
 
+
+```mermaid
+flowchart TB
+    subgraph V["var"]
+        V1["Function scoped"] --> V2["Hoisted as undefined"] --> V3["Can redeclare + reassign"]
+    end
+    subgraph L["let"]
+        L1["Block scoped"] --> L2["Hoisted but in TDZ"] --> L3["Reassign only"]
+    end
+    subgraph C["const"]
+        C1["Block scoped"] --> C2["Hoisted but in TDZ"] --> C3["No reassign"]
+    end
+```
+
 ---
 
 ## **Callback Hell**
@@ -178,6 +208,15 @@ setTimeout(() => {
 }, 1000);
 ```
 
+
+```mermaid
+flowchart TB
+    A["getUser(id, cb)"] --> B["  getOrders(user, cb)"]
+    B --> C["    getPayment(order, cb)"]
+    C --> D["      getInvoice(payment, cb)"]
+    D --> E["Pyramid of doom<br/>hard to read, hard to handle errors"]
+```
+
 ---
 
 ## **Promises**
@@ -191,6 +230,16 @@ const fetchData = new Promise((resolve, reject) => {
   setTimeout(() => resolve("Data fetched!"), 1000);
 });
 fetchData.then((data) => console.log(data)); // Data fetched!
+```
+
+
+```mermaid
+flowchart LR
+    P["new Promise()"] --> PE["pending"]
+    PE -->|resolve| F["fulfilled → .then()"]
+    PE -->|reject| R["rejected → .catch()"]
+    F --> FN["finally()"]
+    R --> FN
 ```
 
 ---
@@ -222,6 +271,22 @@ _With `let` and `const`:_
 ```javascript
 console.log(y); // ReferenceError: Cannot access 'y' before initialization
 let y = 20;
+```
+
+
+```mermaid
+flowchart LR
+    subgraph MEM["1. Memory creation phase"]
+        direction TB
+        M1["var x → undefined"]
+        M2["function fn() → full function"]
+        M3["let / const → TDZ"]
+    end
+    subgraph EXE["2. Execution phase"]
+        direction TB
+        E1["Values assigned line by line"]
+    end
+    MEM --> EXE
 ```
 
 ---
@@ -256,6 +321,17 @@ const person = {
 person.greet(); // Kaushal
 ```
 
+
+```mermaid
+flowchart TB
+    A["Where is this used?"] --> B["Global scope → window / global"]
+    A --> C["Object method → the object"]
+    A --> D["Normal function → global / undefined in strict"]
+    A --> E["Arrow function → this of the parent scope"]
+    A --> F["Class → the instance"]
+    A --> G["call / apply / bind → whatever you pass"]
+```
+
 ---
 
 ## **Self-Invoking Functions/IIFE**
@@ -285,6 +361,15 @@ function add(a) {
   };
 }
 console.log(add(5)(10)); // 15
+```
+
+
+```mermaid
+flowchart LR
+    A["add(a, b, c)"] --> B["curried: add(a)(b)(c)"]
+    B --> C["add(2) → fn waiting for b"]
+    C --> D["(3) → fn waiting for c"]
+    D --> E["(4) → returns 9"]
 ```
 
 ---
@@ -330,6 +415,16 @@ _Real-Life Example_:
 // Clicking the button will trigger both logs.
 ```
 
+
+```mermaid
+flowchart TB
+    W["window"] --> D["document"] --> B["body"] --> DIV["div"] --> BTN["button — clicked"]
+    BTN -.->|"bubbling: event travels up"| DIV
+    DIV -.-> B
+    B -.-> D
+    D -.-> W
+```
+
 ---
 
 ## **Event Delegation**
@@ -344,6 +439,13 @@ document.getElementById("parent").addEventListener("click", (e) => {
     console.log("Button clicked");
   }
 });
+```
+
+
+```mermaid
+flowchart LR
+    A["100 list items"] -->|"without delegation"| B["100 listeners"]
+    A -->|"with delegation"| C["1 listener on the parent<br/>event.target tells you which item"]
 ```
 
 ---
@@ -379,6 +481,16 @@ function outer() {
 const increment = outer();
 increment(); // 1
 increment(); // 2
+```
+
+
+```mermaid
+flowchart LR
+    subgraph OUTER["outer() — runs and returns"]
+        V["let count = 0"]
+    end
+    OUTER --> INNER["inner()<br/>still remembers count"]
+    INNER -->|"closure keeps the scope alive"| V
 ```
 
 ---
@@ -422,6 +534,14 @@ function debounce(func, delay) {
 }
 ```
 
+
+```mermaid
+flowchart LR
+    A["Typing: k, ka, kau, kaus"] --> B["Timer resets on every keystroke"]
+    B --> C["User stops for 300ms"]
+    C --> D["Function runs once"]
+```
+
 ---
 
 ## **Throttling**
@@ -444,6 +564,13 @@ function throttle(func, delay) {
 }
 ```
 
+
+```mermaid
+flowchart LR
+    A["Scroll fires 100 times/sec"] --> B["Allow one call per interval"]
+    B --> C["Runs at a fixed rate<br/>e.g. once every 200ms"]
+```
+
 ---
 
 ## **Spread Operator**
@@ -456,6 +583,13 @@ _Real-Life Example_:
 const arr = [1, 2, 3];
 const newArr = [...arr, 4, 5];
 console.log(newArr); // [1, 2, 3, 4, 5]
+```
+
+
+```mermaid
+flowchart LR
+    S["Spread ...<br/>expands"] --> S1["[...arr1, ...arr2]<br/>many items out of one"]
+    R["Rest ...<br/>collects"] --> R1["fn(...args)<br/>one array out of many"]
 ```
 
 ---
@@ -476,6 +610,15 @@ console.log(sum(1, 2, 3, 4)); // 10
 ## **Data Storage in JavaScript**
 
 Web applications often require ways to store data on the client side. Let's dive into the most commonly used storage mechanisms: **Local Storage**, **Session Storage**, **IndexedDB**, and **Cookies**. We'll explore what they are, how they work, their differences, and real-life examples.
+
+
+```mermaid
+flowchart TB
+    A["Where to store on the client?"] --> B["localStorage<br/>~5MB · never expires"]
+    A --> C["sessionStorage<br/>~5MB · dies with the tab"]
+    A --> D["IndexedDB<br/>large · structured · async"]
+    A --> E["Cookies<br/>~4KB · sent with every request"]
+```
 
 ---
 
@@ -723,6 +866,14 @@ console.log(factorial(5)); // Calculates and caches
 console.log(factorial(5)); // Returns cached result
 ```
 
+
+```mermaid
+flowchart LR
+    A["fn(5)"] --> B{"In cache?"}
+    B -->|Yes| C["Return cached result<br/>no recompute"]
+    B -->|No| D["Compute → store in cache → return"]
+```
+
 ---
 
 ### **Promises**
@@ -820,6 +971,14 @@ console.log(iterator.next()); // { value: 3, done: false }
 console.log(iterator.next()); // { value: undefined, done: true }
 ```
 
+
+```mermaid
+flowchart LR
+    A["function*"] --> B["gen.next()"] --> C["runs to first yield<br/>pauses"]
+    C --> D["gen.next()"] --> E["resumes from where it paused"]
+    E --> F["done: true when finished"]
+```
+
 ---
 
 ### **Temporal Dead Zone (TDZ)**
@@ -835,6 +994,15 @@ You try to open a shop before it officially opens.
 ```javascript
 console.log(a); // ReferenceError: Cannot access 'a' before initialization
 let a = 10;
+```
+
+
+```mermaid
+flowchart LR
+    A["Block starts"] --> B["TDZ<br/>let/const exist but unusable"]
+    B --> C["Declaration line reached"]
+    C --> D["Variable usable"]
+    B -.->|"access here"| E["ReferenceError"]
 ```
 
 ---
@@ -915,6 +1083,15 @@ function outer() {
 outer();
 ```
 
+
+```mermaid
+flowchart TB
+    G["Global scope"] --> O["outer() scope"] --> I["inner() scope"]
+    I -.->|"can look up"| O
+    O -.->|"can look up"| G
+    G -.->|"cannot look down"| O
+```
+
 ---
 
 ## **DOM and BOM**
@@ -938,6 +1115,14 @@ When you click a button on a webpage, the DOM handles what happens to the button
 ```javascript
 // Changing the text of an element with ID 'myButton'
 document.getElementById("myButton").innerText = "Clicked!";
+```
+
+
+```mermaid
+flowchart TB
+    D["document"] --> H["html"]
+    H --> HE["head"] --> T["title"]
+    H --> B["body"] --> DIV["div"] --> P["p"]
 ```
 
 ---
@@ -1576,6 +1761,20 @@ The **JavaScript Runtime Environment** is the system that provides JavaScript wi
 4. **Event Loop and Callback Queue:**
    - A mechanism to handle asynchronous tasks like I/O operations, timers, and events (explained further below).
 
+
+```mermaid
+flowchart TB
+    subgraph RT["JavaScript Runtime"]
+        direction LR
+        CS["Call Stack"] --- MH["Memory Heap"]
+        EL["Event Loop"] --- CQ["Callback Queue<br/>macrotasks"]
+        EL --- MQ["Microtask Queue<br/>promises"]
+    end
+    WA["Web APIs / libuv<br/>timers, fetch, DOM"] --> CQ
+    CS --> WA
+    EL --> CS
+```
+
 ---
 
 ### **Event Loop**
@@ -1632,6 +1831,15 @@ Imagine you're ordering food at a restaurant:
 3. Meanwhile, the waiter serves other customers (non-blocking behavior).
 4. Once your meal is ready, the waiter delivers it to your table (callback in the callback queue).
 
+
+```mermaid
+flowchart LR
+    A["Call stack empty?"] -->|No| A
+    A -->|Yes| B["Drain microtask queue<br/>promises, queueMicrotask"]
+    B --> C["Take one macrotask<br/>setTimeout, events"]
+    C --> A
+```
+
 ---
 
 ### **Runtime Environment: Browser vs. Node.js**
@@ -1685,6 +1893,21 @@ Data handling in JavaScript involves managing and manipulating data, including o
 ### **Deep Copy vs. Shallow Copy**
 
 When you copy an object or array in JavaScript, there are two types of copies:
+
+
+```mermaid
+flowchart TB
+    subgraph SH["Shallow copy"]
+        direction LR
+        S1["copy"] --> S2["nested object"]
+        S3["original"] --> S2
+    end
+    subgraph DP["Deep copy"]
+        direction LR
+        D1["copy"] --> D2["its own nested object"]
+        D3["original"] --> D4["original nested object"]
+    end
+```
 
 ### **1. Shallow Copy**
 
@@ -1881,6 +2104,14 @@ child.sayHi(); // Hi from Child!
 **Real-Life Example**:  
 Think of a family tree: a child inherits traits (e.g., eye color) from their parents but can also have their own unique traits.
 
+
+```mermaid
+flowchart TB
+    O["myObj"] -->|"__proto__"| P["Object.prototype"]
+    A["myArr"] -->|"__proto__"| AP["Array.prototype"] -->|"__proto__"| P
+    P -->|"__proto__"| N["null — end of the chain"]
+```
+
 ---
 
 ### **Event Loop and Concurrency Model**
@@ -1956,6 +2187,13 @@ console.log(weakMap.get(obj)); // undefined
 
 **Real-Life Example**:  
 WeakMaps are like lockers that automatically clean up when the key (object) is removed.
+
+
+```mermaid
+flowchart LR
+    A["Map — strong reference"] --> B["Key stays in memory<br/>even if nothing else uses it"]
+    C["WeakMap — weak reference"] --> D["Key can be garbage collected<br/>when nothing else points to it"]
+```
 
 ---
 
@@ -2035,6 +2273,16 @@ try {
 
 **Real-Life Example**:  
 Try-catch is like a seatbelt in a car, ensuring safety during unexpected events.
+
+
+```mermaid
+flowchart LR
+    A["try { risky code }"] --> B{"Error thrown?"}
+    B -->|Yes| C["catch (err)<br/>handle it"]
+    B -->|No| D["Continue"]
+    C --> E["finally<br/>always runs"]
+    D --> E
+```
 
 ---
 
@@ -2171,6 +2419,16 @@ console.log("End");
 
 **Real-Life Example**:  
 A spinner displayed during a network request can be hidden using `setTimeout` after the data is loaded.
+
+
+```mermaid
+flowchart LR
+    A["setTimeout(fn, 1000)"] --> B["Web API timer starts"]
+    B --> C["After 1000ms → callback moved to callback queue"]
+    C --> D{"Call stack empty?"}
+    D -->|No| D
+    D -->|Yes| E["Callback runs<br/>so 1000ms is the minimum, not exact"]
+```
 
 ---
 
