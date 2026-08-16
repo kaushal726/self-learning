@@ -1,0 +1,448 @@
+/* ==========================================================================
+   Knowledge Bank — theme overrides
+   Concept: engineering notebook. Warm paper in light, ink-navy in dark,
+   one teal accent, serif display headings against a humanist sans body.
+   ========================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap");
+
+/* --------------------------------------------------------------------------
+   1. Design tokens
+   -------------------------------------------------------------------------- */
+
+:root {
+  --kb-font-display: "Source Serif 4", Georgia, "Times New Roman", serif;
+
+  --kb-radius: 10px;
+  --kb-radius-sm: 6px;
+  --kb-measure: 78ch;
+
+  --kb-ease: cubic-bezier(0.2, 0, 0.2, 1);
+  --kb-speed: 160ms;
+}
+
+/* Light — warm paper */
+[data-md-color-scheme="default"] {
+  --kb-ink: #16202a;
+  --kb-ink-muted: #5a6672;
+  --kb-paper: #fbfaf7;
+  --kb-surface: #ffffff;
+  --kb-line: #e3e0d8;
+  --kb-line-soft: #efece5;
+  --kb-accent: #0e7c6b;
+  --kb-accent-soft: rgba(14, 124, 107, 0.09);
+  --kb-shadow: 0 1px 2px rgba(20, 32, 43, 0.05), 0 8px 24px rgba(20, 32, 43, 0.06);
+
+  --md-primary-fg-color: #14202b;
+  --md-primary-fg-color--light: #35485c;
+  --md-primary-fg-color--dark: #0c141d;
+  --md-primary-bg-color: #f7f6f2;
+  --md-primary-bg-color--light: rgba(247, 246, 242, 0.72);
+
+  --md-accent-fg-color: var(--kb-accent);
+  --md-accent-fg-color--transparent: var(--kb-accent-soft);
+
+  --md-default-bg-color: var(--kb-paper);
+  --md-default-fg-color: var(--kb-ink);
+  --md-default-fg-color--light: var(--kb-ink-muted);
+  --md-default-fg-color--lighter: #8b95a0;
+  --md-typeset-color: var(--kb-ink);
+  --md-typeset-a-color: var(--kb-accent);
+
+  --md-code-bg-color: #f4f2ec;
+  --md-code-fg-color: #263440;
+
+  --md-footer-bg-color: #14202b;
+  --md-footer-bg-color--dark: #0c141d;
+}
+
+/* Dark — ink navy */
+[data-md-color-scheme="slate"] {
+  --kb-ink: #dce3e8;
+  --kb-ink-muted: #94a3b0;
+  --kb-paper: #0f1419;
+  --kb-surface: #161c23;
+  --kb-line: #263039;
+  --kb-line-soft: #1d252d;
+  --kb-accent: #56d3c2;
+  --kb-accent-soft: rgba(86, 211, 194, 0.12);
+  --kb-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.32);
+
+  --md-hue: 210;
+
+  --md-primary-fg-color: #131a21;
+  --md-primary-fg-color--light: #2a3742;
+  --md-primary-fg-color--dark: #0b1015;
+  --md-primary-bg-color: #e6ecf1;
+
+  --md-accent-fg-color: var(--kb-accent);
+  --md-accent-fg-color--transparent: var(--kb-accent-soft);
+
+  --md-default-bg-color: var(--kb-paper);
+  --md-default-fg-color: var(--kb-ink);
+  --md-default-fg-color--light: var(--kb-ink-muted);
+  --md-typeset-color: var(--kb-ink);
+  --md-typeset-a-color: var(--kb-accent);
+
+  --md-code-bg-color: #131a21;
+  --md-code-fg-color: #cbd5dd;
+
+  --md-footer-bg-color: #0b1015;
+  --md-footer-bg-color--dark: #080c10;
+}
+
+/* --------------------------------------------------------------------------
+   2. Typography
+   -------------------------------------------------------------------------- */
+
+.md-typeset {
+  font-size: 0.78rem;
+  line-height: 1.72;
+  letter-spacing: 0.002em;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4 {
+  font-family: var(--kb-font-display);
+  color: var(--kb-ink);
+  letter-spacing: -0.012em;
+  font-weight: 600;
+}
+
+.md-typeset h1 {
+  font-size: 2.05em;
+  line-height: 1.18;
+  margin-bottom: 0.5em;
+  font-weight: 700;
+}
+
+/* Signature element: accent rule flush left of every section heading */
+.md-typeset h2 {
+  position: relative;
+  margin-top: 2.4em;
+  padding-top: 0.9em;
+  padding-left: 0.75rem;
+  font-size: 1.42em;
+  line-height: 1.3;
+  border-top: 1px solid var(--kb-line-soft);
+}
+
+.md-typeset h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.15em;
+  bottom: 0.18em;
+  width: 3px;
+  border-radius: 2px;
+  background: var(--kb-accent);
+}
+
+.md-typeset h3 {
+  margin-top: 1.9em;
+  font-size: 1.15em;
+  letter-spacing: -0.006em;
+}
+
+.md-typeset h4 {
+  font-size: 1em;
+  color: var(--kb-ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-family: var(--md-text-font-family), sans-serif;
+  font-weight: 700;
+}
+
+/* Keep prose readable without narrowing tables and code */
+.md-typeset p,
+.md-typeset ul,
+.md-typeset ol,
+.md-typeset blockquote {
+  max-width: var(--kb-measure);
+}
+
+.md-typeset .headerlink {
+  color: var(--md-default-fg-color--lighter);
+  opacity: 0;
+  transition: opacity var(--kb-speed) var(--kb-ease);
+}
+
+.md-typeset :hover > .headerlink,
+.md-typeset .headerlink:focus-visible {
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   3. Links
+   -------------------------------------------------------------------------- */
+
+.md-typeset a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: color-mix(in srgb, var(--kb-accent) 35%, transparent);
+  text-underline-offset: 0.18em;
+  transition: color var(--kb-speed) var(--kb-ease),
+    text-decoration-color var(--kb-speed) var(--kb-ease);
+}
+
+.md-typeset a:hover {
+  text-decoration-color: var(--kb-accent);
+}
+
+.md-typeset a.headerlink,
+.md-nav a,
+.md-tabs a,
+.md-footer a {
+  text-decoration: none;
+}
+
+/* --------------------------------------------------------------------------
+   4. Header, sidebar, footer
+   -------------------------------------------------------------------------- */
+
+.md-header {
+  box-shadow: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.md-header__title {
+  font-family: var(--kb-font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+}
+
+.md-search__form {
+  border-radius: var(--kb-radius-sm);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.md-search__form:hover {
+  background-color: rgba(255, 255, 255, 0.16);
+}
+
+.md-nav {
+  font-size: 0.7rem;
+}
+
+.md-nav__title {
+  font-family: var(--kb-font-display);
+  font-weight: 600;
+  color: var(--kb-ink-muted);
+}
+
+.md-nav__link {
+  border-radius: var(--kb-radius-sm);
+  padding: 0.22rem 0.4rem;
+  margin-left: -0.4rem;
+  transition: background-color var(--kb-speed) var(--kb-ease),
+    color var(--kb-speed) var(--kb-ease);
+}
+
+.md-nav__link:hover {
+  background-color: var(--kb-accent-soft);
+  color: var(--kb-accent);
+}
+
+.md-nav__link--active,
+.md-nav__link--active:hover {
+  color: var(--kb-accent);
+  font-weight: 600;
+  background-color: var(--kb-accent-soft);
+}
+
+/* Right-hand table of contents gets an accent marker on the active item */
+.md-nav--secondary .md-nav__link--active {
+  box-shadow: inset 2px 0 0 var(--kb-accent);
+  border-radius: 0 var(--kb-radius-sm) var(--kb-radius-sm) 0;
+}
+
+.md-footer-meta {
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* --------------------------------------------------------------------------
+   5. Tables
+   -------------------------------------------------------------------------- */
+
+.md-typeset table:not([class]) {
+  border: 1px solid var(--kb-line);
+  border-radius: var(--kb-radius);
+  box-shadow: none;
+  overflow: hidden;
+  font-size: 0.72rem;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: var(--kb-accent-soft);
+  color: var(--kb-ink);
+  font-family: var(--md-text-font-family), sans-serif;
+  font-weight: 700;
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid var(--kb-line);
+  white-space: nowrap;
+}
+
+.md-typeset table:not([class]) td {
+  border-top: 1px solid var(--kb-line-soft);
+  vertical-align: top;
+}
+
+.md-typeset table:not([class]) tr:hover td {
+  background-color: color-mix(in srgb, var(--kb-accent) 4%, transparent);
+}
+
+/* Wide tables scroll instead of pushing the page sideways */
+.md-typeset__table {
+  display: block;
+  overflow-x: auto;
+}
+
+/* --------------------------------------------------------------------------
+   6. Code
+   -------------------------------------------------------------------------- */
+
+.md-typeset code {
+  border-radius: 4px;
+  padding: 0.1em 0.36em;
+  font-size: 0.84em;
+  border: 1px solid var(--kb-line-soft);
+}
+
+.md-typeset pre > code {
+  border: 0;
+  padding: 0.9rem 1rem;
+}
+
+.md-typeset .highlight,
+.md-typeset pre {
+  border-radius: var(--kb-radius);
+}
+
+.md-typeset .highlight {
+  border: 1px solid var(--kb-line);
+  overflow: hidden;
+}
+
+.md-typeset .highlight > pre > code {
+  line-height: 1.62;
+}
+
+.md-clipboard {
+  color: var(--md-default-fg-color--lighter);
+  transition: color var(--kb-speed) var(--kb-ease);
+}
+
+.md-clipboard:hover,
+.md-clipboard:focus-visible {
+  color: var(--kb-accent);
+}
+
+/* --------------------------------------------------------------------------
+   7. Admonitions and quotes
+   -------------------------------------------------------------------------- */
+
+.md-typeset .admonition,
+.md-typeset details {
+  border: 1px solid var(--kb-line);
+  border-left-width: 3px;
+  border-radius: var(--kb-radius);
+  box-shadow: none;
+  font-size: 0.74rem;
+  background-color: var(--kb-surface);
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+  font-family: var(--md-text-font-family), sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.md-typeset blockquote {
+  border-left: 3px solid var(--kb-accent);
+  color: var(--kb-ink-muted);
+  font-style: normal;
+  padding-left: 1rem;
+  margin-left: 0;
+}
+
+/* --------------------------------------------------------------------------
+   8. Lists and rules
+   -------------------------------------------------------------------------- */
+
+.md-typeset ul li::marker {
+  color: var(--kb-accent);
+}
+
+.md-typeset ol li::marker {
+  color: var(--kb-ink-muted);
+  font-weight: 700;
+}
+
+.md-typeset li {
+  margin-bottom: 0.35em;
+}
+
+.md-typeset hr {
+  border-bottom: 1px solid var(--kb-line-soft);
+  margin: 2.4em 0;
+}
+
+/* --------------------------------------------------------------------------
+   9. Accessibility and motion
+   -------------------------------------------------------------------------- */
+
+:where(a, button, summary, .md-nav__link, .md-clipboard):focus-visible {
+  outline: 2px solid var(--kb-accent);
+  outline-offset: 2px;
+  border-radius: var(--kb-radius-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .md-typeset .headerlink {
+    opacity: 1;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   10. Responsive
+   -------------------------------------------------------------------------- */
+
+@media screen and (min-width: 76.25em) {
+  .md-grid {
+    max-width: 68rem;
+  }
+}
+
+@media screen and (max-width: 44.9375em) {
+  .md-typeset {
+    font-size: 0.76rem;
+  }
+
+  .md-typeset h1 {
+    font-size: 1.7em;
+  }
+
+  .md-typeset h2 {
+    font-size: 1.3em;
+    margin-top: 2em;
+  }
+
+  .md-typeset table:not([class]) th {
+    white-space: normal;
+  }
+}
