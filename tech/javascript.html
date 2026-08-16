@@ -1692,6 +1692,10 @@ Imagine you are on an e-commerce site. When you click on "Add to Cart," the item
 </ul>
 <p><em>Real-Life Example</em>:<br />
 Think of the engine as the "brain" of the browser that understands and executes JavaScript instructions.</p>
+<pre class="mermaid"><code>flowchart LR
+    A["JS source code"] --&gt; B["Parser"] --&gt; C["Abstract Syntax Tree"]
+    C --&gt; D["Interpreter&lt;br/&gt;byte code"] --&gt; E["Execution"]
+    D --&gt;|hot code| F["JIT Compiler&lt;br/&gt;optimised code"] --&gt; E</code></pre>
 <hr />
 <h2 id="es-versions"><strong>ES Versions</strong><a class="headerlink" href="#es-versions" title="Permanent link">¶</a></h2>
 <p>ES (ECMAScript) is the <strong>standard of JavaScript</strong>. Major versions include:</p>
@@ -1717,6 +1721,10 @@ function greet() {
   console.log(`Hello, ${this.name}`);
 }
 greet.call(person); // Hello, Kaushal</code></pre>
+<pre class="mermaid"><code>flowchart LR
+    F["fn.call(thisArg, a, b)"] --&gt;|"args passed one by one"| R["Runs immediately"]
+    G["fn.apply(thisArg, [a, b])"] --&gt;|"args passed as array"| R
+    H["fn.bind(thisArg, a, b)"] --&gt;|"returns a new function"| L["Runs later"]</code></pre>
 <hr />
 <h2 id="apply"><strong>Apply</strong><a class="headerlink" href="#apply" title="Permanent link">¶</a></h2>
 <p><code>apply()</code> is similar to <code>call()</code>, but it takes <strong>arguments as an array</strong>.</p>
@@ -1771,6 +1779,16 @@ console.log(greet("Kaushal")); // Hello, Kaushal</code></pre>
 console.log(x); // 10
 // console.log(y); // Error
 // console.log(z); // Error</code></pre>
+<pre class="mermaid"><code>flowchart TB
+    subgraph V["var"]
+        V1["Function scoped"] --&gt; V2["Hoisted as undefined"] --&gt; V3["Can redeclare + reassign"]
+    end
+    subgraph L["let"]
+        L1["Block scoped"] --&gt; L2["Hoisted but in TDZ"] --&gt; L3["Reassign only"]
+    end
+    subgraph C["const"]
+        C1["Block scoped"] --&gt; C2["Hoisted but in TDZ"] --&gt; C3["No reassign"]
+    end</code></pre>
 <hr />
 <h2 id="callback-hell"><strong>Callback Hell</strong><a class="headerlink" href="#callback-hell" title="Permanent link">¶</a></h2>
 <p>Callback hell occurs when <strong>nested callbacks make the code unreadable</strong>.</p>
@@ -1784,6 +1802,11 @@ console.log(x); // 10
     }, 1000);
   }, 1000);
 }, 1000);</code></pre>
+<pre class="mermaid"><code>flowchart TB
+    A["getUser(id, cb)"] --&gt; B["  getOrders(user, cb)"]
+    B --&gt; C["    getPayment(order, cb)"]
+    C --&gt; D["      getInvoice(payment, cb)"]
+    D --&gt; E["Pyramid of doom&lt;br/&gt;hard to read, hard to handle errors"]</code></pre>
 <hr />
 <h2 id="promises"><strong>Promises</strong><a class="headerlink" href="#promises" title="Permanent link">¶</a></h2>
 <p>Promises help handle asynchronous tasks by providing <code>.then()</code> and <code>.catch()</code> methods to avoid callback hell.</p>
@@ -1792,6 +1815,12 @@ console.log(x); // 10
   setTimeout(() =&gt; resolve("Data fetched!"), 1000);
 });
 fetchData.then((data) =&gt; console.log(data)); // Data fetched!</code></pre>
+<pre class="mermaid"><code>flowchart LR
+    P["new Promise()"] --&gt; PE["pending"]
+    PE --&gt;|resolve| F["fulfilled → .then()"]
+    PE --&gt;|reject| R["rejected → .catch()"]
+    F --&gt; FN["finally()"]
+    R --&gt; FN</code></pre>
 <hr />
 <h2 id="implicit-type-conversion"><strong>Implicit Type Conversion</strong><a class="headerlink" href="#implicit-type-conversion" title="Permanent link">¶</a></h2>
 <p>JavaScript <strong>converts types automatically</strong> in some situations.</p>
@@ -1806,6 +1835,18 @@ var x = 10;</code></pre>
 <p><em>With <code>let</code> and <code>const</code>:</em></p>
 <pre class="highlight"><code class="language-javascript">console.log(y); // ReferenceError: Cannot access 'y' before initialization
 let y = 20;</code></pre>
+<pre class="mermaid"><code>flowchart LR
+    subgraph MEM["1. Memory creation phase"]
+        direction TB
+        M1["var x → undefined"]
+        M2["function fn() → full function"]
+        M3["let / const → TDZ"]
+    end
+    subgraph EXE["2. Execution phase"]
+        direction TB
+        E1["Values assigned line by line"]
+    end
+    MEM --&gt; EXE</code></pre>
 <hr />
 <h2 id="vs"><strong>== vs ===</strong><a class="headerlink" href="#vs" title="Permanent link">¶</a></h2>
 <ul>
@@ -1826,6 +1867,13 @@ console.log(5 === "5"); // false (type mismatch)</code></pre>
   },
 };
 person.greet(); // Kaushal</code></pre>
+<pre class="mermaid"><code>flowchart TB
+    A["Where is this used?"] --&gt; B["Global scope → window / global"]
+    A --&gt; C["Object method → the object"]
+    A --&gt; D["Normal function → global / undefined in strict"]
+    A --&gt; E["Arrow function → this of the parent scope"]
+    A --&gt; F["Class → the instance"]
+    A --&gt; G["call / apply / bind → whatever you pass"]</code></pre>
 <hr />
 <h2 id="self-invoking-functionsiife"><strong>Self-Invoking Functions/IIFE</strong><a class="headerlink" href="#self-invoking-functionsiife" title="Permanent link">¶</a></h2>
 <p>An Immediately Invoked Function Expression (IIFE) is a function that runs as soon as it is defined.</p>
@@ -1843,6 +1891,11 @@ person.greet(); // Kaushal</code></pre>
   };
 }
 console.log(add(5)(10)); // 15</code></pre>
+<pre class="mermaid"><code>flowchart LR
+    A["add(a, b, c)"] --&gt; B["curried: add(a)(b)(c)"]
+    B --&gt; C["add(2) → fn waiting for b"]
+    C --&gt; D["(3) → fn waiting for c"]
+    D --&gt; E["(4) → returns 9"]</code></pre>
 <hr />
 <h2 id="unary-functions"><strong>Unary Functions</strong><a class="headerlink" href="#unary-functions" title="Permanent link">¶</a></h2>
 <p>A unary function is a function that <strong>takes only one argument</strong>.</p>
@@ -1865,6 +1918,12 @@ console.log(add(2, 3)); // 5</code></pre>
   &lt;button onclick="console.log('Button clicked')"&gt;Click Me&lt;/button&gt;
 &lt;/div&gt;
 // Clicking the button will trigger both logs.</code></pre>
+<pre class="mermaid"><code>flowchart TB
+    W["window"] --&gt; D["document"] --&gt; B["body"] --&gt; DIV["div"] --&gt; BTN["button — clicked"]
+    BTN -.-&gt;|"bubbling: event travels up"| DIV
+    DIV -.-&gt; B
+    B -.-&gt; D
+    D -.-&gt; W</code></pre>
 <hr />
 <h2 id="event-delegation"><strong>Event Delegation</strong><a class="headerlink" href="#event-delegation" title="Permanent link">¶</a></h2>
 <p>Event delegation involves <strong>attaching a single event listener to a parent element</strong> to handle events for its child elements.</p>
@@ -1874,6 +1933,9 @@ console.log(add(2, 3)); // 5</code></pre>
     console.log("Button clicked");
   }
 });</code></pre>
+<pre class="mermaid"><code>flowchart LR
+    A["100 list items"] --&gt;|"without delegation"| B["100 listeners"]
+    A --&gt;|"with delegation"| C["1 listener on the parent&lt;br/&gt;event.target tells you which item"]</code></pre>
 <hr />
 <h2 id="event-handling"><strong>Event Handling</strong><a class="headerlink" href="#event-handling" title="Permanent link">¶</a></h2>
 <p>Event handling involves adding listeners to elements to perform actions when an event occurs (like <code>click</code>, <code>hover</code>, etc.).</p>
@@ -1895,6 +1957,12 @@ console.log(add(2, 3)); // 5</code></pre>
 const increment = outer();
 increment(); // 1
 increment(); // 2</code></pre>
+<pre class="mermaid"><code>flowchart LR
+    subgraph OUTER["outer() — runs and returns"]
+        V["let count = 0"]
+    end
+    OUTER --&gt; INNER["inner()&lt;br/&gt;still remembers count"]
+    INNER --&gt;|"closure keeps the scope alive"| V</code></pre>
 <hr />
 <h2 id="data-binding"><strong>Data Binding</strong><a class="headerlink" href="#data-binding" title="Permanent link">¶</a></h2>
 <p>Data binding is the process of <strong>connecting UI elements to application data</strong> so they update automatically when the data changes.</p>
@@ -1918,6 +1986,10 @@ Typing in a search bar delays API calls until the user stops typing.</p>
     timer = setTimeout(() =&gt; func.apply(this, args), delay);
   };
 }</code></pre>
+<pre class="mermaid"><code>flowchart LR
+    A["Typing: k, ka, kau, kaus"] --&gt; B["Timer resets on every keystroke"]
+    B --&gt; C["User stops for 300ms"]
+    C --&gt; D["Function runs once"]</code></pre>
 <hr />
 <h2 id="throttling"><strong>Throttling</strong><a class="headerlink" href="#throttling" title="Permanent link">¶</a></h2>
 <p>Throttling ensures a function <strong>executes at regular intervals</strong>, even if triggered continuously.</p>
@@ -1933,6 +2005,9 @@ Scrolling events trigger updates at fixed intervals.</p>
     }
   };
 }</code></pre>
+<pre class="mermaid"><code>flowchart LR
+    A["Scroll fires 100 times/sec"] --&gt; B["Allow one call per interval"]
+    B --&gt; C["Runs at a fixed rate&lt;br/&gt;e.g. once every 200ms"]</code></pre>
 <hr />
 <h2 id="spread-operator"><strong>Spread Operator</strong><a class="headerlink" href="#spread-operator" title="Permanent link">¶</a></h2>
 <p>The spread operator (<code>...</code>) expands <strong>iterable elements</strong> into individual elements.</p>
@@ -1940,6 +2015,9 @@ Scrolling events trigger updates at fixed intervals.</p>
 <pre class="highlight"><code class="language-javascript">const arr = [1, 2, 3];
 const newArr = [...arr, 4, 5];
 console.log(newArr); // [1, 2, 3, 4, 5]</code></pre>
+<pre class="mermaid"><code>flowchart LR
+    S["Spread ...&lt;br/&gt;expands"] --&gt; S1["[...arr1, ...arr2]&lt;br/&gt;many items out of one"]
+    R["Rest ...&lt;br/&gt;collects"] --&gt; R1["fn(...args)&lt;br/&gt;one array out of many"]</code></pre>
 <hr />
 <h2 id="rest-operator"><strong>Rest Operator</strong><a class="headerlink" href="#rest-operator" title="Permanent link">¶</a></h2>
 <p>The rest operator (<code>...</code>) combines <strong>multiple elements into a single array</strong>.</p>
@@ -1950,6 +2028,11 @@ console.log(newArr); // [1, 2, 3, 4, 5]</code></pre>
 console.log(sum(1, 2, 3, 4)); // 10</code></pre>
 <h2 id="data-storage-in-javascript"><strong>Data Storage in JavaScript</strong><a class="headerlink" href="#data-storage-in-javascript" title="Permanent link">¶</a></h2>
 <p>Web applications often require ways to store data on the client side. Let's dive into the most commonly used storage mechanisms: <strong>Local Storage</strong>, <strong>Session Storage</strong>, <strong>IndexedDB</strong>, and <strong>Cookies</strong>. We'll explore what they are, how they work, their differences, and real-life examples.</p>
+<pre class="mermaid"><code>flowchart TB
+    A["Where to store on the client?"] --&gt; B["localStorage&lt;br/&gt;~5MB · never expires"]
+    A --&gt; C["sessionStorage&lt;br/&gt;~5MB · dies with the tab"]
+    A --&gt; D["IndexedDB&lt;br/&gt;large · structured · async"]
+    A --&gt; E["Cookies&lt;br/&gt;~4KB · sent with every request"]</code></pre>
 <hr />
 <h3 id="1-local-storage"><strong>1. Local Storage</strong><a class="headerlink" href="#1-local-storage" title="Permanent link">¶</a></h3>
 <p><strong>Local Storage</strong> is a key-value pair-based storage mechanism that allows you to store data in the browser <strong>without an expiration date</strong>. The data persists even after the browser is closed and reopened.</p>
@@ -2173,6 +2256,10 @@ fetchData(handleData);</code></pre>
 const factorial = memoizedFactorial();
 console.log(factorial(5)); // Calculates and caches
 console.log(factorial(5)); // Returns cached result</code></pre>
+<pre class="mermaid"><code>flowchart LR
+    A["fn(5)"] --&gt; B{"In cache?"}
+    B --&gt;|Yes| C["Return cached result&lt;br/&gt;no recompute"]
+    B --&gt;|No| D["Compute → store in cache → return"]</code></pre>
 <hr />
 <h3 id="promises_1"><strong>Promises</strong><a class="headerlink" href="#promises_1" title="Permanent link">¶</a></h3>
 <p>A <strong>Promise</strong> represents a value that will be resolved in the future. It is used to handle asynchronous operations more effectively, avoiding callback nesting (callback hell).</p>
@@ -2245,6 +2332,10 @@ console.log(iterator.next()); // { value: 1, done: false }
 console.log(iterator.next()); // { value: 2, done: false }
 console.log(iterator.next()); // { value: 3, done: false }
 console.log(iterator.next()); // { value: undefined, done: true }</code></pre>
+<pre class="mermaid"><code>flowchart LR
+    A["function*"] --&gt; B["gen.next()"] --&gt; C["runs to first yield&lt;br/&gt;pauses"]
+    C --&gt; D["gen.next()"] --&gt; E["resumes from where it paused"]
+    E --&gt; F["done: true when finished"]</code></pre>
 <hr />
 <h3 id="temporal-dead-zone-tdz"><strong>Temporal Dead Zone (TDZ)</strong><a class="headerlink" href="#temporal-dead-zone-tdz" title="Permanent link">¶</a></h3>
 <p>The <strong>Temporal Dead Zone</strong> refers to the time between entering the scope of a variable declared with <code>let</code> or <code>const</code> and its declaration. Accessing the variable in this period throws a <code>ReferenceError</code>.</p>
@@ -2253,6 +2344,11 @@ console.log(iterator.next()); // { value: undefined, done: true }</code></pre>
 <h4 id="code-example_4"><strong>Code Example:</strong><a class="headerlink" href="#code-example_4" title="Permanent link">¶</a></h4>
 <pre class="highlight"><code class="language-javascript">console.log(a); // ReferenceError: Cannot access 'a' before initialization
 let a = 10;</code></pre>
+<pre class="mermaid"><code>flowchart LR
+    A["Block starts"] --&gt; B["TDZ&lt;br/&gt;let/const exist but unusable"]
+    B --&gt; C["Declaration line reached"]
+    C --&gt; D["Variable usable"]
+    B -.-&gt;|"access here"| E["ReferenceError"]</code></pre>
 <hr />
 <h3 id="callback-hell_1"><strong>Callback Hell</strong><a class="headerlink" href="#callback-hell_1" title="Permanent link">¶</a></h3>
 <p><strong>Callback Hell</strong> occurs when multiple nested callbacks make code difficult to read and maintain.</p>
@@ -2310,6 +2406,11 @@ firstTask(() =&gt; {
 }
 
 outer();</code></pre>
+<pre class="mermaid"><code>flowchart TB
+    G["Global scope"] --&gt; O["outer() scope"] --&gt; I["inner() scope"]
+    I -.-&gt;|"can look up"| O
+    O -.-&gt;|"can look up"| G
+    G -.-&gt;|"cannot look down"| O</code></pre>
 <hr />
 <h2 id="dom-and-bom"><strong>DOM and BOM</strong><a class="headerlink" href="#dom-and-bom" title="Permanent link">¶</a></h2>
 <h3 id="dom-document-object-model"><strong>DOM (Document Object Model)</strong><a class="headerlink" href="#dom-document-object-model" title="Permanent link">¶</a></h3>
@@ -2325,6 +2426,10 @@ outer();</code></pre>
 <h4 id="code-example_6"><strong>Code Example:</strong><a class="headerlink" href="#code-example_6" title="Permanent link">¶</a></h4>
 <pre class="highlight"><code class="language-javascript">// Changing the text of an element with ID 'myButton'
 document.getElementById("myButton").innerText = "Clicked!";</code></pre>
+<pre class="mermaid"><code>flowchart TB
+    D["document"] --&gt; H["html"]
+    H --&gt; HE["head"] --&gt; T["title"]
+    H --&gt; B["body"] --&gt; DIV["div"] --&gt; P["p"]</code></pre>
 <hr />
 <h3 id="bom-browser-object-model"><strong>BOM (Browser Object Model)</strong><a class="headerlink" href="#bom-browser-object-model" title="Permanent link">¶</a></h3>
 <p>The BOM represents everything provided by the browser outside the DOM, including browser-specific objects like <code>window</code>, <code>navigator</code>, and <code>history</code>.</p>
@@ -2843,6 +2948,16 @@ console.log(name.at(-1)); // "l"</code></pre>
 </li>
 <li>A mechanism to handle asynchronous tasks like I/O operations, timers, and events (explained further below).</li>
 </ol>
+<pre class="mermaid"><code>flowchart TB
+    subgraph RT["JavaScript Runtime"]
+        direction LR
+        CS["Call Stack"] --- MH["Memory Heap"]
+        EL["Event Loop"] --- CQ["Callback Queue&lt;br/&gt;macrotasks"]
+        EL --- MQ["Microtask Queue&lt;br/&gt;promises"]
+    end
+    WA["Web APIs / libuv&lt;br/&gt;timers, fetch, DOM"] --&gt; CQ
+    CS --&gt; WA
+    EL --&gt; CS</code></pre>
 <hr />
 <h3 id="event-loop"><strong>Event Loop</strong><a class="headerlink" href="#event-loop" title="Permanent link">¶</a></h3>
 <p>The <strong>event loop</strong> is a critical component of JavaScript's runtime, responsible for handling asynchronous operations. JavaScript is single-threaded, so the event loop allows it to perform non-blocking tasks by managing the execution of tasks in a coordinated manner.</p>
@@ -2901,6 +3016,11 @@ console.log("Immediate Log");
 <li>Meanwhile, the waiter serves other customers (non-blocking behavior).</li>
 <li>Once your meal is ready, the waiter delivers it to your table (callback in the callback queue).</li>
 </ol>
+<pre class="mermaid"><code>flowchart LR
+    A["Call stack empty?"] --&gt;|No| A
+    A --&gt;|Yes| B["Drain microtask queue&lt;br/&gt;promises, queueMicrotask"]
+    B --&gt; C["Take one macrotask&lt;br/&gt;setTimeout, events"]
+    C --&gt; A</code></pre>
 <hr />
 <h3 id="runtime-environment-browser-vs-nodejs"><strong>Runtime Environment: Browser vs. Node.js</strong><a class="headerlink" href="#runtime-environment-browser-vs-nodejs" title="Permanent link">¶</a></h3>
 <h4 id="browser-runtime"><strong>Browser Runtime</strong><a class="headerlink" href="#browser-runtime" title="Permanent link">¶</a></h4>
@@ -2952,6 +3072,17 @@ console.log("Immediate Log");
 <hr />
 <h3 id="deep-copy-vs-shallow-copy"><strong>Deep Copy vs. Shallow Copy</strong><a class="headerlink" href="#deep-copy-vs-shallow-copy" title="Permanent link">¶</a></h3>
 <p>When you copy an object or array in JavaScript, there are two types of copies:</p>
+<pre class="mermaid"><code>flowchart TB
+    subgraph SH["Shallow copy"]
+        direction LR
+        S1["copy"] --&gt; S2["nested object"]
+        S3["original"] --&gt; S2
+    end
+    subgraph DP["Deep copy"]
+        direction LR
+        D1["copy"] --&gt; D2["its own nested object"]
+        D3["original"] --&gt; D4["original nested object"]
+    end</code></pre>
 <h3 id="1-shallow-copy"><strong>1. Shallow Copy</strong><a class="headerlink" href="#1-shallow-copy" title="Permanent link">¶</a></h3>
 <ul>
 <li><strong>Definition:</strong> A shallow copy only copies the top-level properties. If the copied object contains nested objects or arrays, those references are shared, not duplicated.</li>
@@ -3096,6 +3227,10 @@ child.greet(); // Hello from Parent!
 child.sayHi(); // Hi from Child!</code></pre>
 <p><strong>Real-Life Example</strong>:<br />
 Think of a family tree: a child inherits traits (e.g., eye color) from their parents but can also have their own unique traits.</p>
+<pre class="mermaid"><code>flowchart TB
+    O["myObj"] --&gt;|"__proto__"| P["Object.prototype"]
+    A["myArr"] --&gt;|"__proto__"| AP["Array.prototype"] --&gt;|"__proto__"| P
+    P --&gt;|"__proto__"| N["null — end of the chain"]</code></pre>
 <hr />
 <h3 id="event-loop-and-concurrency-model"><strong>Event Loop and Concurrency Model</strong><a class="headerlink" href="#event-loop-and-concurrency-model" title="Permanent link">¶</a></h3>
 <p><strong>Definition</strong>:<br />
@@ -3149,6 +3284,9 @@ obj = null; // Now obj is garbage collected
 console.log(weakMap.get(obj)); // undefined</code></pre>
 <p><strong>Real-Life Example</strong>:<br />
 WeakMaps are like lockers that automatically clean up when the key (object) is removed.</p>
+<pre class="mermaid"><code>flowchart LR
+    A["Map — strong reference"] --&gt; B["Key stays in memory&lt;br/&gt;even if nothing else uses it"]
+    C["WeakMap — weak reference"] --&gt; D["Key can be garbage collected&lt;br/&gt;when nothing else points to it"]</code></pre>
 <hr />
 <h3 id="dynamic-imports"><strong>Dynamic Imports</strong><a class="headerlink" href="#dynamic-imports" title="Permanent link">¶</a></h3>
 <p><strong>Definition</strong>:<br />
@@ -3196,6 +3334,12 @@ Error handling in JavaScript ensures the program behaves gracefully when encount
 }</code></pre>
 <p><strong>Real-Life Example</strong>:<br />
 Try-catch is like a seatbelt in a car, ensuring safety during unexpected events.</p>
+<pre class="mermaid"><code>flowchart LR
+    A["try { risky code }"] --&gt; B{"Error thrown?"}
+    B --&gt;|Yes| C["catch (err)&lt;br/&gt;handle it"]
+    B --&gt;|No| D["Continue"]
+    C --&gt; E["finally&lt;br/&gt;always runs"]
+    D --&gt; E</code></pre>
 <hr />
 <h3 id="functional-programming"><strong>Functional Programming</strong><a class="headerlink" href="#functional-programming" title="Permanent link">¶</a></h3>
 <p><strong>Definition</strong>:<br />
@@ -3285,6 +3429,12 @@ console.log("End");
 // Output: Start, End, This message is delayed by 2 seconds</code></pre>
 <p><strong>Real-Life Example</strong>:<br />
 A spinner displayed during a network request can be hidden using <code>setTimeout</code> after the data is loaded.</p>
+<pre class="mermaid"><code>flowchart LR
+    A["setTimeout(fn, 1000)"] --&gt; B["Web API timer starts"]
+    B --&gt; C["After 1000ms → callback moved to callback queue"]
+    C --&gt; D{"Call stack empty?"}
+    D --&gt;|No| D
+    D --&gt;|Yes| E["Callback runs&lt;br/&gt;so 1000ms is the minimum, not exact"]</code></pre>
 <hr />
 <h3 id="setinterval-in-javascript"><strong><code>setInterval</code> in JavaScript</strong><a class="headerlink" href="#setinterval-in-javascript" title="Permanent link">¶</a></h3>
 <p>The <code>setInterval</code> method repeatedly executes a function at specified intervals.</p>
@@ -3344,7 +3494,7 @@ In a shopping cart, the DOM is used to dynamically add or remove items when user
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="January 28, 2025 13:26:31 UTC">January 28, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 16, 2026 09:47:30 UTC">August 16, 2026</span>
   </span>
 
     
